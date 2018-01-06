@@ -2,7 +2,7 @@
   "name": "meirelles",
   "version": "0.0.0",
   "license": "MIT",
-  "main": "app.js",
+  "main": "server/app.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
