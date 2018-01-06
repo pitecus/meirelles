@@ -6,14 +6,14 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist/index.html'));
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 const port = process.env.PORT || 3001;
 app.set('port', port);
 
 const server = http.createServer(app);
-server.listen(port, () => console.log('Running!'));
+server.listen(port, () => console.log(`Running at http://localhost:${port}`));
