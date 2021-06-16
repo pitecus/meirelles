@@ -1,0 +1,231 @@
+{
+  "awards": [
+    {
+      "awarder": "Company",
+      "date": "2014-11-01",
+      "summary": "There is no spoon.",
+      "title": "Award"
+    }
+  ],
+  "basics": {
+    "email": "pitecus@gmail.com",
+    "label": "Angular + DevOps",
+    "location": {
+      "address": "5 Greenbrier ct",
+      "city": "Wayne",
+      "countryCode": "US",
+      "postalCode": "07470",
+      "region": "New Jersey"
+    },
+    "name": "Leonardo Meirelles",
+    "phone": "(770) 298-3236",
+    "picture": "leo-meirelles.jpeg",
+    "profiles": [
+      {
+        "network": "Twitter",
+        "url": "https://twitter.com/eyeeyesir",
+        "username": "@eyeeyesir"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/leo-meirelles/",
+        "username": "Leo Meirelles"
+      }
+    ],
+    "summary": "Passionate for quality, creativity, and good design (code and UI), problem solving oriented professional with extensive experience in web/server architecture and development, a team player with excellent communication skills. I enjoy working in a dynamic environment which provides opportunities for new technical solutions. My skill set covers Linux, full stack Javascript (MongoDB, ExpressJS, AngularJS, NodeJS), Front End and Back End architecture and development.",
+    "website": "http://johndoe.com"
+  },
+  "education": [
+    {
+      "area": "Software Development",
+      "courses": [
+        "DB1101 - Basic SQL"
+      ],
+      "endDate": "2013-01-01",
+      "gpa": "4.0",
+      "institution": "University",
+      "startDate": "2011-01-01",
+      "studyType": "Bachelor"
+    }
+  ],
+  "interests": [
+    {
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ],
+      "name": "Wildlife"
+    }
+  ],
+  "languages": [
+    {
+      "fluency": "Native speaker",
+      "language": "Portugues"
+    },
+    {
+      "fluency": "Native speaker",
+      "language": "English"
+    }
+  ],
+  "publications": [
+    {
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "summary": "Description...",
+      "website": "http://publication.com"
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference..."
+    }
+  ],
+  "skills": [
+    {
+      "keywords": [
+        "Linux",
+        "full stack Javascript",
+        "MongoDB",
+        "MySQL",
+        "Ajax",
+        "JSON",
+        "SOAP",
+        "Advanced Bash shell script",
+        "Sed",
+        "Awk",
+        "HTML",
+        "CSS",
+        "XML",
+        "XSLT",
+        "PPML",
+        "C",
+        "TCP/IP"
+      ],
+      "level": "Master",
+      "name": "Markup Languages / Programming"
+    },
+    {
+      "keywords": [
+        "MEAN stack: MongoDB, ExpressJS, AngularJS, NodeJS.",
+        "Frontend experience with EmberJS and BackboneJS",
+        "Backend with Express",
+        "Automated development using Grunt and Gulp",
+        "Other libraries like D3,Karma, Mocha"
+      ],
+      "level": "Master",
+      "name": "Javascript Frameworks"
+    },
+    {
+      "keywords": [
+        "OmniGraffle",
+        "Google Analytics",
+        "AWS instances",
+        "version control (Github, SVN)",
+        "Hudson",
+        "Jenkins"
+      ],
+      "level": "Master",
+      "name": "Software"
+    },
+    {
+      "keywords": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "Internet Explorer"
+      ],
+      "level": "Master",
+      "name": "Browsers"
+    }
+  ],
+  "volunteer": [
+    {
+      "endDate": "2013-01-01",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ],
+      "organization": "Organization",
+      "position": "Volunteer",
+      "startDate": "2012-01-01",
+      "summary": "Description...",
+      "website": "http://organization.com/"
+    }
+  ],
+  "work": [
+    {
+      "company": "ADP",
+      "endDate": "2014-01-01",
+      "highlights": [
+        "GitOps for CI/CD",
+        "Continuous E2E tests using SauceLabs",
+        "Replace an Adobe Flash application using Angular, parsing XML and using HighCharts.",
+        "Create an application to identify incorrect paychecks using AWS Lambda (backend) and Kubernetes Helm Charts (frontend)",
+        "Scan containers on CI/CD process for vulnerabilities"
+      ],
+      "position": "Principal Architect",
+      "startDate": "2013-01-01",
+      "summary": "Improving the development process",
+      "website": "https://www.adp.com"
+    },
+    {
+      "company": "ADP",
+      "endDate": "2014-01-01",
+      "highlights": [
+        "Managed the front end development of Global Cloud Connects with 30 developers."
+      ],
+      "position": "Principal Software Engineer",
+      "startDate": "2013-01-01",
+      "summary": "Focus in one application and improving it",
+      "website": "https://www.adp.com"
+    },
+    {
+      "company": "Google",
+      "endDate": "2014-01-01",
+      "highlights": [
+        "Started the company"
+      ],
+      "position": "Principal Architect",
+      "startDate": "2013-01-01",
+      "summary": "Description...",
+      "website": "https://www.adp.com"
+    },
+    {
+      "company": "The New York Times",
+      "endDate": "2013-06-01",
+      "highlights": [
+        "Create new features, improve system’s performance and develop new applications in Business Intelligence analytics ecosystem. Develop software prototypes to streamline data access. Responsible for tag management and tracking systems for page and modules views, customer behavior, A/B testings, and subscription funnel.",
+        "Develop in MEAN stack. Enhance tracking data through systems integration. Create front-end applications for user friendly interaction with REST services. Partner with multiple stakeholders to prioritize features and manage development cycles"
+      ],
+      "position": "Senior Software Engineer",
+      "startDate": "2013-01-01",
+      "summary": "Description...",
+      "website": "https://www.nytimes.com"
+    },
+    {
+      "company": "The New York Times",
+      "endDate": "2013-06-01",
+      "highlights": [
+        "System architect for NYTimes-China site: planned the infra-structure, built the servers and successfully transitioned to the implementation team. Developed SEO (search engine optimization) features using ModEST publishing framework. Worked on Datacenter Move (DCI) project, providing solutions for server configurations migration between iPlanet and Apache.",
+        "Provided support and development for NY Times web site. Responsible for performance, stability and improvement of hundreds of servers in Production in two Datacenters (East and West) with millions of daily page views."
+      ],
+      "position": "Web Engineer",
+      "startDate": "2011-10-01",
+      "summary": "",
+      "website": "https://www.nytimes.com"
+    },
+    {
+      "company": "ADP",
+      "endDate": "2011-09-01",
+      "highlights": [
+        "Architect and design reusable components using Dojo, Java and Javascript. Develop UI web front ends, middle tier JSF to provide communication, security and performance to Web Services using SOAP. Generate code with cross browser compatibility for Firefox, Internet Explorer (7, 8 and 9) and Safari.",
+        "Provided analysis of new product features, advice about performance improvements and usability with business and analysis teams, review UI under development and create web applications in tight deadlines, with emphasis in high availability, low resources usage, security and performance."
+      ],
+      "position": "Lead Technical Analyst",
+      "startDate": "2008-12-08",
+      "summary": "Description...",
+      "website": "https://www.adp.com"
+    }
+  ]
+}

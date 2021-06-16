@@ -1,0 +1,500 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "additionalProperties": false,
+  "definitions": {
+    "iso8601": {
+      "description": "e.g. 2014-06-29",
+      "pattern": "^([1-2][0-9]{3}-[0-1][0-9]-[0-3][0-9]|[1-2][0-9]{3}-[0-1][0-9]|[1-2][0-9]{3})$",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "$schema": {
+      "description": "link to the version of the schema that can validate the resume",
+      "format": "uri",
+      "type": "string"
+    },
+    "awards": {
+      "additionalItems": false,
+      "description": "Specify any awards you have received throughout your professional career",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "awarder": {
+            "description": "e.g. Time Magazine",
+            "type": "string"
+          },
+          "date": {
+            "$ref": "#/definitions/iso8601"
+          },
+          "summary": {
+            "description": "e.g. Received for my work with Quantum Physics",
+            "type": "string"
+          },
+          "title": {
+            "description": "e.g. One of the 100 greatest minds of the century",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "basics": {
+      "additionalProperties": true,
+      "properties": {
+        "email": {
+          "description": "e.g. thomas@gmail.com",
+          "format": "email",
+          "type": "string"
+        },
+        "image": {
+          "description": "URL (as per RFC 3986) to a image in JPEG or PNG format",
+          "type": "string"
+        },
+        "label": {
+          "description": "e.g. Web Developer",
+          "type": "string"
+        },
+        "location": {
+          "additionalProperties": true,
+          "properties": {
+            "address": {
+              "description": "To add multiple address lines, use \n. For example, 1234 Glücklichkeit Straße\nHinterhaus 5. Etage li.",
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "countryCode": {
+              "description": "code as per ISO-3166-1 ALPHA-2, e.g. US, AU, IN",
+              "type": "string"
+            },
+            "postalCode": {
+              "type": "string"
+            },
+            "region": {
+              "description": "The general region where you live. Can be a US state, or a province, for instance.",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "name": {
+          "type": "string"
+        },
+        "phone": {
+          "description": "Phone numbers are stored as strings so use any format you like, e.g. 712-117-2923",
+          "type": "string"
+        },
+        "profiles": {
+          "additionalItems": false,
+          "description": "Specify any number of social networks that you participate in",
+          "items": {
+            "additionalProperties": true,
+            "properties": {
+              "network": {
+                "description": "e.g. Facebook or Twitter",
+                "type": "string"
+              },
+              "url": {
+                "description": "e.g. http://twitter.example.com/neutralthoughts",
+                "format": "uri",
+                "type": "string"
+              },
+              "username": {
+                "description": "e.g. neutralthoughts",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "summary": {
+          "description": "Write a short 2-3 sentence biography about yourself",
+          "type": "string"
+        },
+        "url": {
+          "description": "URL (as per RFC 3986) to your website, e.g. personal homepage",
+          "format": "uri",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "certificates": {
+      "additionalItems": false,
+      "description": "Specify any certificates you have received throughout your professional career",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "date": {
+            "description": "e.g. 1989-06-12",
+            "format": "date",
+            "type": "string"
+          },
+          "issuer": {
+            "description": "e.g. CNCF",
+            "type": "string"
+          },
+          "name": {
+            "description": "e.g. Certified Kubernetes Administrator",
+            "type": "string"
+          },
+          "url": {
+            "description": "e.g. http://example.com",
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "education": {
+      "additionalItems": false,
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "area": {
+            "description": "e.g. Arts",
+            "type": "string"
+          },
+          "courses": {
+            "additionalItems": false,
+            "description": "List notable courses/subjects",
+            "items": {
+              "description": "e.g. H1302 - Introduction to American history",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "endDate": {
+            "$ref": "#/definitions/iso8601"
+          },
+          "institution": {
+            "description": "e.g. Massachusetts Institute of Technology",
+            "type": "string"
+          },
+          "score": {
+            "description": "grade point average, e.g. 3.67/4.0",
+            "type": "string"
+          },
+          "startDate": {
+            "$ref": "#/definitions/iso8601"
+          },
+          "studyType": {
+            "description": "e.g. Bachelor",
+            "type": "string"
+          },
+          "url": {
+            "description": "e.g. http://facebook.example.com",
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "interests": {
+      "additionalItems": false,
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "keywords": {
+            "additionalItems": false,
+            "items": {
+              "description": "e.g. Friedrich Nietzsche",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "name": {
+            "description": "e.g. Philosophy",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "languages": {
+      "additionalItems": false,
+      "description": "List any other languages you speak",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "fluency": {
+            "description": "e.g. Fluent, Beginner",
+            "type": "string"
+          },
+          "language": {
+            "description": "e.g. English, Spanish",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "meta": {
+      "additionalProperties": true,
+      "description": "The schema version and any other tooling configuration lives here",
+      "properties": {
+        "canonical": {
+          "description": "URL (as per RFC 3986) to latest version of this document",
+          "format": "uri",
+          "type": "string"
+        },
+        "lastModified": {
+          "description": "Using ISO 8601 with YYYY-MM-DDThh:mm:ss",
+          "type": "string"
+        },
+        "version": {
+          "description": "A version field which follows semver - e.g. v1.0.0",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "projects": {
+      "additionalItems": false,
+      "description": "Specify career projects",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "description": {
+            "description": "Short summary of project. e.g. Collated works of 2017.",
+            "type": "string"
+          },
+          "endDate": {
+            "$ref": "#/definitions/iso8601"
+          },
+          "entity": {
+            "description": "Specify the relevant company/entity affiliations e.g. 'greenpeace', 'corporationXYZ'",
+            "type": "string"
+          },
+          "highlights": {
+            "additionalItems": false,
+            "description": "Specify multiple features",
+            "items": {
+              "description": "e.g. Directs you close but not quite there",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "keywords": {
+            "additionalItems": false,
+            "description": "Specify special elements involved",
+            "items": {
+              "description": "e.g. AngularJS",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "name": {
+            "description": "e.g. The World Wide Web",
+            "type": "string"
+          },
+          "roles": {
+            "additionalItems": false,
+            "description": "Specify your role on this project or in company",
+            "items": {
+              "description": "e.g. Team Lead, Speaker, Writer",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "startDate": {
+            "$ref": "#/definitions/iso8601"
+          },
+          "type": {
+            "description": " e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'",
+            "type": "string"
+          },
+          "url": {
+            "description": "e.g. http://www.computer.org/csdl/mags/co/1996/10/rx069-abs.html",
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "publications": {
+      "additionalItems": false,
+      "description": "Specify your publications through your career",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "description": "e.g. The World Wide Web",
+            "type": "string"
+          },
+          "publisher": {
+            "description": "e.g. IEEE, Computer Magazine",
+            "type": "string"
+          },
+          "releaseDate": {
+            "$ref": "#/definitions/iso8601"
+          },
+          "summary": {
+            "description": "Short summary of publication. e.g. Discussion of the World Wide Web, HTTP, HTML.",
+            "type": "string"
+          },
+          "url": {
+            "description": "e.g. http://www.computer.org.example.com/csdl/mags/co/1996/10/rx069-abs.html",
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "references": {
+      "additionalItems": false,
+      "description": "List references you have received",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "description": "e.g. Timothy Cook",
+            "type": "string"
+          },
+          "reference": {
+            "description": "e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing.",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "skills": {
+      "additionalItems": false,
+      "description": "List out your professional skill-set",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "keywords": {
+            "additionalItems": false,
+            "description": "List some keywords pertaining to this skill",
+            "items": {
+              "description": "e.g. HTML",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "level": {
+            "description": "e.g. Master",
+            "type": "string"
+          },
+          "name": {
+            "description": "e.g. Web Development",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "volunteer": {
+      "additionalItems": false,
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "endDate": {
+            "$ref": "#/definitions/iso8601"
+          },
+          "highlights": {
+            "additionalItems": false,
+            "description": "Specify accomplishments and achievements",
+            "items": {
+              "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "organization": {
+            "description": "e.g. Facebook",
+            "type": "string"
+          },
+          "position": {
+            "description": "e.g. Software Engineer",
+            "type": "string"
+          },
+          "startDate": {
+            "$ref": "#/definitions/iso8601"
+          },
+          "summary": {
+            "description": "Give an overview of your responsibilities at the company",
+            "type": "string"
+          },
+          "url": {
+            "description": "e.g. http://facebook.example.com",
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "work": {
+      "additionalItems": false,
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "description": {
+            "description": "e.g. Social Media Company",
+            "type": "string"
+          },
+          "endDate": {
+            "$ref": "#/definitions/iso8601"
+          },
+          "highlights": {
+            "additionalItems": false,
+            "description": "Specify multiple accomplishments",
+            "items": {
+              "description": "e.g. Increased profits by 20% from 2011-2012 through viral advertising",
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "location": {
+            "description": "e.g. Menlo Park, CA",
+            "type": "string"
+          },
+          "name": {
+            "description": "e.g. Facebook",
+            "type": "string"
+          },
+          "position": {
+            "description": "e.g. Software Engineer",
+            "type": "string"
+          },
+          "startDate": {
+            "$ref": "#/definitions/iso8601"
+          },
+          "summary": {
+            "description": "Give an overview of your responsibilities at the company",
+            "type": "string"
+          },
+          "url": {
+            "description": "e.g. http://facebook.example.com",
+            "format": "uri",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "title": "Resume Schema",
+  "type": "object"
+}
