@@ -33,18 +33,16 @@
       }
     ],
     "summary": "Passionate for quality, creativity, and good design (code and UI), problem solving oriented professional with extensive experience in web/server architecture and development, a team player with excellent communication skills. I enjoy working in a dynamic environment which provides opportunities for new technical solutions. My skill set covers Linux, full stack Javascript (MongoDB, ExpressJS, AngularJS, NodeJS), Front End and Back End architecture and development.",
-    "website": "http://johndoe.com"
+    "website": "https://pitecus.github.io/"
   },
   "education": [
     {
-      "area": "Software Development",
-      "courses": [
-        "DB1101 - Basic SQL"
-      ],
-      "endDate": "2013-01-01",
-      "gpa": "4.0",
-      "institution": "University",
-      "startDate": "2011-01-01",
+      "area": "Computer Science",
+      "courses": [],
+      "endDate": "2004-08-14",
+      "gpa": "",
+      "institution": "Pontifícia Universidade Católica (PUCRS)",
+      "startDate": "1998-07-06",
       "studyType": "Bachelor"
     }
   ],
@@ -156,7 +154,7 @@
   "work": [
     {
       "company": "ADP",
-      "endDate": "2014-01-01",
+      "endDate": "Current",
       "highlights": [
         "GitOps for CI/CD",
         "Continuous E2E tests using SauceLabs",
@@ -165,42 +163,43 @@
         "Scan containers on CI/CD process for vulnerabilities"
       ],
       "position": "Principal Architect",
-      "startDate": "2013-01-01",
-      "summary": "Improving the development process",
+      "startDate": "2018-09-21",
+      "summary": "Improving releases and development process. Design, build and deploy applications. Architect integration solutions.",
       "website": "https://www.adp.com"
     },
     {
       "company": "ADP",
-      "endDate": "2014-01-01",
+      "endDate": "2018-09-21",
       "highlights": [
         "Managed the front end development of Global Cloud Connects with 30 developers."
       ],
       "position": "Principal Software Engineer",
-      "startDate": "2013-01-01",
+      "startDate": "2016-10-01",
       "summary": "Focus in one application and improving it",
       "website": "https://www.adp.com"
     },
     {
       "company": "Google",
-      "endDate": "2014-01-01",
+      "endDate": "2016-10-01",
       "highlights": [
-        "Started the company"
+        "Architect, design and integrate AngularJS 1.4 components for Cloud SQL inside Google Cloud Platform. Use Google Analytics to improve user experience by evaluating and prioritizing features.",
+        "Coordinate with Google Site Reliability Engineering, project manager and back-end API team to prioritize bugs, features and release using experiments. Provide support for internal and external users. Create utility tools in Bash shell script, NodeJS and Chrome Extensions for internal usage."
       ],
-      "position": "Principal Architect",
-      "startDate": "2013-01-01",
-      "summary": "Description...",
-      "website": "https://www.adp.com"
+      "position": "Senior Software Engineer",
+      "startDate": "2015-05-04",
+      "summary": "Frontend development, API integration, release new features",
+      "website": "https://www.google.com"
     },
     {
       "company": "The New York Times",
-      "endDate": "2013-06-01",
+      "endDate": "2015-04-30",
       "highlights": [
         "Create new features, improve system’s performance and develop new applications in Business Intelligence analytics ecosystem. Develop software prototypes to streamline data access. Responsible for tag management and tracking systems for page and modules views, customer behavior, A/B testings, and subscription funnel.",
-        "Develop in MEAN stack. Enhance tracking data through systems integration. Create front-end applications for user friendly interaction with REST services. Partner with multiple stakeholders to prioritize features and manage development cycles"
+        "Develop in MEAN stack. Enhance tracking data through systems integration. Create front-end applications for user friendly interaction with REST services. Partner with multiple stakeholders to prioritize features and manage development cycles."
       ],
       "position": "Senior Software Engineer",
-      "startDate": "2013-01-01",
-      "summary": "Description...",
+      "startDate": "2013-06-01",
+      "summary": "Frontend development, API integration, Business Inteligence, user behavior analysis",
       "website": "https://www.nytimes.com"
     },
     {
@@ -211,21 +210,44 @@
         "Provided support and development for NY Times web site. Responsible for performance, stability and improvement of hundreds of servers in Production in two Datacenters (East and West) with millions of daily page views."
       ],
       "position": "Web Engineer",
-      "startDate": "2011-10-01",
-      "summary": "",
+      "startDate": "2011-10-17",
+      "summary": "DevOps, Production Support, frontend development, performance improvements",
       "website": "https://www.nytimes.com"
     },
     {
       "company": "ADP",
-      "endDate": "2011-09-01",
+      "endDate": "2011-10-14",
       "highlights": [
         "Architect and design reusable components using Dojo, Java and Javascript. Develop UI web front ends, middle tier JSF to provide communication, security and performance to Web Services using SOAP. Generate code with cross browser compatibility for Firefox, Internet Explorer (7, 8 and 9) and Safari.",
         "Provided analysis of new product features, advice about performance improvements and usability with business and analysis teams, review UI under development and create web applications in tight deadlines, with emphasis in high availability, low resources usage, security and performance."
       ],
       "position": "Lead Technical Analyst",
       "startDate": "2008-12-08",
-      "summary": "Description...",
+      "summary": "Full stack development with Java and Javascript. Cross browser compatibility. Performance improvements.",
       "website": "https://www.adp.com"
+    },
+    {
+      "company": "ADP",
+      "endDate": "2008-12-08",
+      "highlights": [
+        "Provided 3rd level support to ADP US Portal. The ADP Portal was developed under J2EE and had more than 5 millions of active users with an average of 2 millions of daily hits, providing a common interface to many enterprise products.",
+        "Responsible for administration and monitoring of several production and pre-production servers, troubleshoot and coordinate teams to fix issues efficiently. Provided technical support for other teams regarding WebSphere Portal environment and fixed security issues found during penetration tests."
+      ],
+      "position": "Senior programmer",
+      "startDate": "2006-11-01",
+      "summary": "Production support, release management, coordinate troubleshooting cross-teams",
+      "website": "https://www.adp.com.br"
+    },
+    {
+      "company": "ADP",
+      "endDate": "2006-11-01",
+      "highlights": [
+        "Developed and designed using Scrum methodology a product tailored for US human resources, including payroll, vacations and benefits. The system was based in JSP and Struts, with the front-end running inside WebSphere Portal. Used jUnit tests for reliability, quality and integration tests."
+      ],
+      "position": "Programmer",
+      "startDate": "2005-04-11",
+      "summary": "Java developer, unit tests.",
+      "website": "https://www.adp.com.br"
     }
   ]
 }
