@@ -14,8 +14,6 @@ export class AppComponent {
    * Initialize the component.
    */
   public constructor(httpClient: HttpClient) {
-    console.log('constructor');
-
     // Get the resume.
     httpClient.get<Resume>('/assets/leo-meirelles.json')
       .subscribe(

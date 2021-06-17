@@ -1,15 +1,15 @@
 <div class="flex flex-col justify-between p-4 space-y-2 min-h-screen max-w-4xl">
   <!-- Header -->
   <header class="p-2 rounded-lg bg-white shadow">
-    <div class="flex flex-row space-x-4">
+    <div class="flex sm:flex-row flex-col sm:space-x-4">
       <!-- Photo, location and contacts -->
-      <div class="whitespace-nowrap border-r pr-2 text-center w-56 profile-card ">
+      <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:w-56 sm:profile-card">
         <img class="rounded-full shadow-md border-indigo-200 print:hidden m-auto mt-2 border"
           width="200"
           height="200"
           alt="portrait"
           src="assets/leo-meirelles.jpeg">
-        <div>
+        <div class="sm:pb-0 pb-4">
           <!-- Name -->
           <h1 class="font-semibold text-2xl text-indigo-900 ">{{resume?.basics?.name}}</h1>
           <!-- Label -->
@@ -170,15 +170,14 @@
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 mb-2">
         Technical Skills
       </h2>
-      <table class="mb-4">
-        <tbody>
-          <tr *ngFor="let skill of resume?.skills"
-            class="border-b border-gray-300">
-            <td>{{skill.name}}</td>
-            <td>{{skill.keywords}}</td>
-          </tr>
-        </tbody>
-      </table>
+      <dl>
+        <ng-container *ngFor="let skill of resume?.skills">
+          <dt class="font-bold text-lg text-indigo-900 mb-1">{{ skill.name }}</dt>
+          <dd class="mb-4 font-sm">
+            {{ skill.keywords?.join(', ') }}
+          </dd>
+        </ng-container>
+      </dl>
     </div>
   </main>
   <!-- Footer -->
