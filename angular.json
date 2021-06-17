@@ -52,14 +52,17 @@
           "options": {
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "index": "src/index.html",
             "inlineStyleLanguage": "scss",
             "main": "src/main.ts",
+            "ngswConfigPath": "ngsw-config.json",
             "outputPath": "dist/resume",
             "polyfills": "src/polyfills.ts",
             "scripts": [],
+            "serviceWorker": true,
             "styles": [
               "src/styles.scss"
             ],
@@ -99,7 +102,8 @@
           "options": {
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "inlineStyleLanguage": "scss",
             "karmaConfig": "karma.conf.js",
