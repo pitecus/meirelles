@@ -139,8 +139,34 @@
         </div>
       </div>
     </div>
-    <!-- Technical skills -->
+    <!-- Education -->
     <div class="rounded-lg bg-white shadow p-2 mb-2">
+      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 mb-2">
+        Education
+      </h2>
+      <div class="flex flex-col">
+        <div class="mb-4"
+          *ngFor="let education of resume?.education">
+          <!-- PUCRS -->
+          <img *ngIf="education.institution === 'Pontifícia Universidade Católica (PUCRS)'"
+            width="24"
+            height="24"
+            alt="ADP Logo"
+            class="float-left rounded-full w-6 shadow mr-3"
+            src="assets/logo-pucrs.png">
+          <h3 class="font-bold text-lg">
+            {{education.institution}} - {{education.studyType}} {{education.area}}
+            <span class="float-right">
+              {{education.startDate | date: 'MMM yyyy'}}
+              -
+              {{education.endDate | date: 'MMM yyyy'}}
+            </span>
+          </h3>
+        </div>
+      </div>
+    </div>
+    <!-- Technical skills -->
+    <div class="rounded-lg bg-white shadow p-2">
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 mb-2">
         Technical Skills
       </h2>
@@ -153,10 +179,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
-    <!-- Education -->
-    <div class="rounded-lg bg-white shadow p-2">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">Education</h2>
     </div>
   </main>
   <!-- Footer -->
