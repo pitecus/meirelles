@@ -53,7 +53,7 @@
   "publications": [
     {
       "name": "GitOps + Ferris Wheel",
-      "publisher": "ADP Global Product & Development Connect Conference",
+      "publisher": "ADP Global Product & Development Connect",
       "releaseDate": "2020-09-30",
       "summary": "CI/CD backed by Bitbucket. It allows to have one single source of truth, process transparency, and auditing in one single place. Environment configuration, release approvals and notifications, clear process and responsibilities – all in one single place, accessible to everyone and traceable. And a rollback is just a Pull-Request away.",
       "website": "https://tech.adp.com/2020/11/20/adps-annual-developers-conference-video"
