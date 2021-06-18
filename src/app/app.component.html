@@ -1,114 +1,113 @@
 <div class="flex flex-col justify-between p-4 space-y-2 min-h-screen max-w-4xl">
   <!-- Header -->
-  <header class="p-2 rounded-lg bg-white shadow">
-    <div class="flex sm:flex-row flex-col sm:space-x-4">
-      <!-- Photo, location and contacts -->
-      <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:profile-card">
-        <img class="rounded-full shadow-md border-indigo-200 print:hidden m-auto mt-2 border"
-          width="200"
-          height="200"
-          alt="portrait"
-          src="assets/leo-meirelles.jpeg">
-        <div class="sm:pb-0 pb-4">
-          <!-- Name -->
-          <h1 class="font-semibold text-2xl text-indigo-900 ">{{resume?.basics?.name}}</h1>
-          <!-- Label -->
-          <p>{{resume?.basics?.label}}</p>
-          <!-- Location -->
-          <p class="text-gray-500 text-sm mb-2">{{resume?.basics?.location?.city}},
-            {{resume?.basics?.location?.region}},
-            {{resume?.basics?.location?.countryCode }}
-          </p>
-          <!-- Phone contact -->
-          <p class="flex pb-1 text-indigo-600">
-            <svg xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24">
-              <path
-                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.5 17.311l-1.76-3.397-1.032.505c-1.12.543-3.4-3.91-2.305-4.497l1.042-.513-1.747-3.409-1.053.52c-3.601 1.877 2.117 12.991 5.8 11.308l1.055-.517z" />
-            </svg>
-            <a class="pl-2"
-              rel="noopener noreferrer"
-              href="tel:{{resume?.basics?.phone}}">
-              {{resume?.basics?.phone}}
-            </a>
-          </p>
-          <!-- Email contact -->
-          <p class="flex pb-1 text-indigo-600">
-            <svg xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24">
-              <path
-                d="M12 2.02c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 12.55l-5.992-4.57h11.983l-5.991 4.57zm0 1.288l-6-4.629v6.771h12v-6.771l-6 4.629z" />
-            </svg>
-            <a class="pl-2"
-              rel="noopener noreferrer"
-              href="mailto:{{resume?.basics?.email}}">
-              {{resume?.basics?.email}}
-            </a>
-          </p>
-          <!-- Website -->
-          <p class="flex text-indigo-600">
-            <svg xmlns="http://www.w3.org/2000/svg"
-              class="inline h-6 w-6 stroke-current text-black"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <a class="pl-2"
-              rel="noopener noreferrer"
-              href="{{resume?.basics?.website}}">
-              {{resume?.basics?.website}}
-            </a>
-          </p>
-        </div>
-      </div>
-      <!-- Summary and links -->
-      <div class="flex flex-col w-full">
-        <!-- Summary -->
-        <p class="flex-grow pb-2 text-sm">{{resume?.basics?.summary}}</p>
-        <!-- Links -->
-        <div class="flex flex-row space-x-6 text-indigo-600">
-          <a *ngFor="let profile of resume?.basics?.profiles"
+  <header
+    class="p-2 rounded-lg bg-white shadow print:shadow-none flex sm:flex-row flex-col sm:space-x-4 print:flex-row print:space-x-4">
+    <!-- Photo, location and contacts -->
+    <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:profile-card">
+      <img class="rounded-full shadow-md border-indigo-200 print:hidden m-auto mt-2 border"
+        width="200"
+        height="200"
+        alt="portrait"
+        src="assets/leo-meirelles.jpeg">
+      <div class="sm:pb-0 pb-4 print:pb-0">
+        <!-- Name -->
+        <h1 class="font-semibold text-2xl text-indigo-900 ">{{resume?.basics?.name}}</h1>
+        <!-- Label -->
+        <p>{{resume?.basics?.label}}</p>
+        <!-- Location -->
+        <p class="text-gray-500 text-sm mb-2">{{resume?.basics?.location?.city}},
+          {{resume?.basics?.location?.region}},
+          {{resume?.basics?.location?.countryCode }}
+        </p>
+        <!-- Phone contact -->
+        <p class="flex pb-1 text-indigo-600">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24">
+            <path
+              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.5 17.311l-1.76-3.397-1.032.505c-1.12.543-3.4-3.91-2.305-4.497l1.042-.513-1.747-3.409-1.053.52c-3.601 1.877 2.117 12.991 5.8 11.308l1.055-.517z" />
+          </svg>
+          <a class="pl-2"
             rel="noopener noreferrer"
-            target="_blank"
-            href="{{profile.url}}">
-            <!-- Twitter -->
-            <svg *ngIf="profile.network == 'Twitter'"
-              class="mr-1 inline "
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24">
-              <path
-                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z" />
-            </svg>
-            <!-- LinkedIn -->
-            <svg *ngIf="profile.network == 'LinkedIn'"
-              class="mr-1 inline"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24">
-              <path
-                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z" />
-            </svg>
-            {{profile.username}}
+            href="tel:{{resume?.basics?.phone}}">
+            {{resume?.basics?.phone}}
           </a>
-        </div>
+        </p>
+        <!-- Email contact -->
+        <p class="flex pb-1 text-indigo-600">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24">
+            <path
+              d="M12 2.02c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 12.55l-5.992-4.57h11.983l-5.991 4.57zm0 1.288l-6-4.629v6.771h12v-6.771l-6 4.629z" />
+          </svg>
+          <a class="pl-2"
+            rel="noopener noreferrer"
+            href="mailto:{{resume?.basics?.email}}">
+            {{resume?.basics?.email}}
+          </a>
+        </p>
+        <!-- Website -->
+        <p class="flex text-indigo-600">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            class="inline h-6 w-6 stroke-current text-black"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <a class="pl-2"
+            rel="noopener noreferrer"
+            href="{{resume?.basics?.website}}">
+            {{resume?.basics?.website}}
+          </a>
+        </p>
+      </div>
+    </div>
+    <!-- Summary and links -->
+    <div class="flex flex-col w-full  justify-between">
+      <!-- Summary -->
+      <p class="pb-2 text-lg print:text-sm ">{{resume?.basics?.summary}}</p>
+      <!-- Links -->
+      <div class="flex flex-row space-x-6 text-indigo-600">
+        <a *ngFor="let profile of resume?.basics?.profiles"
+          rel="noopener noreferrer"
+          target="_blank"
+          href="{{profile.url}}">
+          <!-- Twitter -->
+          <svg *ngIf="profile.network == 'Twitter'"
+            class="mr-1 inline "
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24">
+            <path
+              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z" />
+          </svg>
+          <!-- LinkedIn -->
+          <svg *ngIf="profile.network == 'LinkedIn'"
+            class="mr-1 inline"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24">
+            <path
+              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z" />
+          </svg>
+          {{profile.username}}
+        </a>
       </div>
     </div>
   </header>
   <!-- Main -->
   <main class="flex-grow place-self-stretch">
     <!-- Professional Experience -->
-    <div class="rounded-lg bg-white shadow p-2 mb-2">
+    <div class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         Experience
       </h2>
@@ -141,7 +140,7 @@
           <h3 class="font-bold text-lg w-full">
             {{work.company}} - {{work.position}}
           </h3>
-          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right">
+          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36">
             {{work.startDate | date: 'MMM yy'}}
             <span class="hidden sm:inline">-</span>
             <span *ngIf="work.endDate === 'Current'">
@@ -153,16 +152,16 @@
           </div>
         </div>
         <!-- Summary -->
-        <h4 class="bg-gray-50 rounded-lg border italic p-1 mb-1 shadow">{{work.summary}}</h4>
+        <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:px-0">{{work.summary}}</h4>
         <!-- Highlights -->
         <p *ngFor="let highlight of work.highlights"
-          class="mb-2 text-sm">
+          class="mb-2 text-sm print:text-xs">
           {{highlight}}
         </p>
       </div>
     </div>
     <!-- Education -->
-    <div class="rounded-lg bg-white shadow p-2 mb-2">
+    <div class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         Education
       </h2>
@@ -179,24 +178,24 @@
           <h3 class="font-bold text-lg w-full">
             {{education.institution}}
           </h3>
-          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right">
+          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36">
             {{education.startDate | date: 'MMM yy'}}
             <span class="hidden sm:inline">-</span>
             {{education.endDate | date: 'MMM yy'}}
           </div>
         </div>
-        <h4 class="bg-gray-50 rounded-lg border italic p-1 mb-1 shadow">{{education.studyType}} {{education.area}}</h4>
+        <h4 class="p-1 mb-1">{{education.studyType}} {{education.area}}</h4>
       </div>
     </div>
     <!-- Technical skills -->
-    <div class="rounded-lg bg-white shadow p-2">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 mb-2">
+    <div class="rounded-lg bg-white shadow p-2 print:shadow-none">
+      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         Technical Skills
       </h2>
       <dl>
         <ng-container *ngFor="let skill of resume?.skills">
-          <dt class="font-bold text-lg mb-1">{{ skill.name }}</dt>
-          <dd class="mb-4 text-sm">
+          <dt class="font-bold text-lg mb-1 mt-2">{{ skill.name }}</dt>
+          <dd class="text-sm">
             {{ skill.keywords?.join(', ') }}
           </dd>
         </ng-container>
@@ -204,7 +203,7 @@
     </div>
   </main>
   <!-- Footer -->
-  <footer class="rounded-lg bg-white shadow p-2 flex space-x-6 text-sm text-indigo-600 font-bold">
+  <footer class="rounded-lg bg-white shadow p-2 flex space-x-6 text-sm text-indigo-600 font-bold print:hidden">
     <!-- Github link -->
     <a href="https://github.com/pitecus/meirelles"
       class="whitespace-nowrap"
