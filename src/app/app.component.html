@@ -109,12 +109,20 @@
     <!-- Professional Experience -->
     <div *ngIf="resume && resume.work"
       class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
-        Experience
+      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 flex justify-between">
+        <!-- Section title -->
+        <span>Experience</span>
+        <label class="flex items-center text-sm print:hidden">
+          <input type="checkbox"
+            [ngModel]="isWorkFiltered"
+            (click)="filterWork()"
+            class="form-checkbox h-4 w-4 text-indigo-500">
+          <span class="ml-2">Whitin last 10 years</span>
+        </label>
       </h2>
       <div class="mt-4 border-b"
         [ngClass]="{'border-b': isLast === false}"
-        *ngFor="let work of resume.work; last as isLast">
+        *ngFor="let work of filteredWork; last as isLast">
         <!-- ADP -->
         <img *ngIf="work.company === 'ADP'"
           width="24"
