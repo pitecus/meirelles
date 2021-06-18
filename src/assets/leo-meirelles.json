@@ -116,26 +116,29 @@
       "company": "ADP",
       "endDate": "Current",
       "highlights": [
-        "Architected and replaced an Adobe Flash application with XML APIs and using Business Objects Enterprise endpoints by Angular 11 and HighCharts.",
+        "Architected and replaced an Adobe Flash application using Business Objects Enterprise XML APIs by Angular 11 and HighCharts.",
         "Lead the GitOps implementation for CI/CD SDLC integrated with SonarQube, code review, automated releases and deployments.",
         "Improved the continuous E2E tests using SauceLabs, integrating with internal automation server using container sidecar and VPN/proxy connections.",
-        "Create an application to identify incorrect paychecks using AWS Lambda (backend) and Kubernetes Helm Charts (frontend)",
-        "Scan containers on CI/CD process for vulnerabilities"
+        "Created an application to identify incorrect paychecks using AWS Lambda (backend) and Kubernetes Helm Charts (frontend)",
+        "Working on DevSecOps by scanning containers for vulnerabilities and npm audits for Javascript projects."
       ],
       "position": "Principal Architect",
       "startDate": "2018-09-21",
-      "summary": "Improving releases and development process. Design, build and deploy applications. Architect integration solutions.",
+      "summary": "Design, build, audit, and deploy applications. Architect integration solutions. Improve security and optmize release cycles.",
       "website": "https://www.adp.com"
     },
     {
       "company": "ADP",
       "endDate": "2018-09-21",
       "highlights": [
-        "Managed the front end development of Global Cloud Connects with 30 developers."
+        "Worked with Product Owners, Project Managers, and multiple teams in different countries to delivery bi-weekly features, coordinating dependencies and requirements.",
+        "Containerized micro-frontend and micro-services for faster release cycle.",
+        "Advocate for meaninful code reviews, small pull requests, automated code quality with lint, SonarQube and unit-tests.",
+        "Upgrade from AngularJS 1.4 to Angular 6 by running both at the same time."
       ],
       "position": "Principal Software Engineer",
       "startDate": "2016-10-01",
-      "summary": "Focus in one application and improving it",
+      "summary": "Lead UI/UX + DevOps enginner for an application to integrate multi-country payroll systems with human capital management.",
       "website": "https://www.adp.com"
     },
     {
