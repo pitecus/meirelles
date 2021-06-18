@@ -1,20 +1,13 @@
 {
-  "awards": [
-    {
-      "awarder": "Company",
-      "date": "2014-11-01",
-      "summary": "There is no spoon.",
-      "title": "Award"
-    }
-  ],
+  "awards": [],
   "basics": {
     "email": "pitecus@gmail.com",
     "label": "Angular + DevOps",
     "location": {
-      "address": "5 Greenbrier ct",
+      "address": "",
       "city": "Wayne",
       "countryCode": "US",
-      "postalCode": "07470",
+      "postalCode": "",
       "region": "New Jersey"
     },
     "name": "Leonardo Meirelles",
@@ -46,15 +39,7 @@
       "studyType": "Bachelor"
     }
   ],
-  "interests": [
-    {
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ],
-      "name": "Wildlife"
-    }
-  ],
+  "interests": [],
   "languages": [
     {
       "fluency": "Native speaker",
@@ -65,21 +50,8 @@
       "language": "English"
     }
   ],
-  "publications": [
-    {
-      "name": "Publication",
-      "publisher": "Company",
-      "releaseDate": "2014-10-01",
-      "summary": "Description...",
-      "website": "http://publication.com"
-    }
-  ],
-  "references": [
-    {
-      "name": "Jane Doe",
-      "reference": "Reference..."
-    }
-  ],
+  "publications": [],
+  "references": [],
   "skills": [
     {
       "keywords": [
@@ -138,27 +110,15 @@
       "name": "Browsers"
     }
   ],
-  "volunteer": [
-    {
-      "endDate": "2013-01-01",
-      "highlights": [
-        "Awarded 'Volunteer of the Month'"
-      ],
-      "organization": "Organization",
-      "position": "Volunteer",
-      "startDate": "2012-01-01",
-      "summary": "Description...",
-      "website": "http://organization.com/"
-    }
-  ],
+  "volunteer": [],
   "work": [
     {
       "company": "ADP",
       "endDate": "Current",
       "highlights": [
-        "GitOps for CI/CD",
-        "Continuous E2E tests using SauceLabs",
-        "Replace an Adobe Flash application using Angular, parsing XML and using HighCharts.",
+        "Architected and replaced an Adobe Flash application with XML APIs and using Business Objects Enterprise endpoints by Angular 11 and HighCharts.",
+        "Lead the GitOps implementation for CI/CD SDLC integrated with SonarQube, code review, automated releases and deployments.",
+        "Improved the continuous E2E tests using SauceLabs, integrating with internal automation server using container sidecar and VPN/proxy connections.",
         "Create an application to identify incorrect paychecks using AWS Lambda (backend) and Kubernetes Helm Charts (frontend)",
         "Scan containers on CI/CD process for vulnerabilities"
       ],
