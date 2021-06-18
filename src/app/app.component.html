@@ -3,7 +3,7 @@
   <header class="p-2 rounded-lg bg-white shadow">
     <div class="flex sm:flex-row flex-col sm:space-x-4">
       <!-- Photo, location and contacts -->
-      <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:w-56 sm:profile-card">
+      <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:profile-card">
         <img class="rounded-full shadow-md border-indigo-200 print:hidden m-auto mt-2 border"
           width="200"
           height="200"
@@ -35,7 +35,7 @@
             </a>
           </p>
           <!-- Email contact -->
-          <p class="flex text-indigo-600">
+          <p class="flex pb-1 text-indigo-600">
             <svg xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -49,12 +49,30 @@
               {{resume?.basics?.email}}
             </a>
           </p>
+          <!-- Website -->
+          <p class="flex text-indigo-600">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="inline h-6 w-6 stroke-current text-black"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <a class="pl-2"
+              rel="noopener noreferrer"
+              href="{{resume?.basics?.website}}">
+              {{resume?.basics?.website}}
+            </a>
+          </p>
         </div>
       </div>
       <!-- Summary and links -->
       <div class="flex flex-col w-full">
         <!-- Summary -->
-        <p class="flex-grow text-sm">{{resume?.basics?.summary}}</p>
+        <p class="flex-grow pb-2 text-sm">{{resume?.basics?.summary}}</p>
         <!-- Links -->
         <div class="flex flex-row space-x-6 text-indigo-600">
           <a *ngFor="let profile of resume?.basics?.profiles"
@@ -184,6 +202,7 @@
   <footer class="rounded-lg bg-white shadow p-2 flex space-x-6 text-sm text-indigo-600 font-bold">
     <!-- Github link -->
     <a href="https://github.com/pitecus/meirelles"
+      class="whitespace-nowrap"
       target="_blank"
       rel="noopener noreferrer">
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -197,7 +216,7 @@
       <p class="inline align-middle">Git Repo</p>
     </a>
     <!-- Changelog -->
-    <div>
+    <div class=" whitespace-nowrap">
       <svg xmlns="http://www.w3.org/2000/svg"
         class="inline h-6 w-6 stroke-current text-black mr-1"
         fill="none"
