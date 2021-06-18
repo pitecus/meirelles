@@ -55,59 +55,53 @@
   "skills": [
     {
       "keywords": [
-        "Linux",
-        "full stack Javascript",
-        "MongoDB",
-        "MySQL",
-        "Ajax",
+        "UI/UX",
+        "Angular",
+        "TypeScript",
+        "Javascript",
         "JSON",
-        "SOAP",
-        "Advanced Bash shell script",
-        "Sed",
-        "Awk",
-        "HTML",
         "CSS",
+        "HTML",
         "XML",
-        "XSLT",
-        "PPML",
-        "C",
-        "TCP/IP"
-      ],
-      "level": "Master",
-      "name": "Markup Languages / Programming"
-    },
-    {
-      "keywords": [
-        "MEAN stack: MongoDB, ExpressJS, AngularJS, NodeJS.",
-        "Frontend experience with EmberJS and BackboneJS",
-        "Backend with Express",
-        "Automated development using Grunt and Gulp",
-        "Other libraries like D3,Karma, Mocha"
-      ],
-      "level": "Master",
-      "name": "Javascript Frameworks"
-    },
-    {
-      "keywords": [
-        "OmniGraffle",
         "Google Analytics",
-        "AWS instances",
-        "version control (Github, SVN)",
-        "Hudson",
-        "Jenkins"
+        "NestJS"
       ],
       "level": "Master",
-      "name": "Software"
+      "name": "Frontend/Backend"
     },
     {
       "keywords": [
-        "Chrome",
-        "Firefox",
-        "Safari",
-        "Internet Explorer"
+        "Linux",
+        "Docker",
+        "Kubernetes",
+        "TCP/IP",
+        "Network",
+        "DevSecOps",
+        "AWS",
+        "AWS Cloudformation",
+        "Jenkinsfile"
       ],
       "level": "Master",
-      "name": "Browsers"
+      "name": "DevOps"
+    },
+    {
+      "keywords": [
+        "Microservices",
+        "Micro-frontend"
+      ],
+      "level": "Master",
+      "name": "Architecture"
+    },
+    {
+      "keywords": [
+        "Sketch",
+        "Lucidchart",
+        "Jenkins",
+        "SonarQube",
+        "Artifactory"
+      ],
+      "level": "Master",
+      "name": "Applications"
     }
   ],
   "volunteer": [],

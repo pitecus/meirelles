@@ -195,8 +195,8 @@
       </h2>
       <dl>
         <ng-container *ngFor="let skill of resume?.skills">
-          <dt class="font-bold text-lg text-indigo-900 mb-1">{{ skill.name }}</dt>
-          <dd class="mb-4 font-sm">
+          <dt class="font-bold text-lg mb-1">{{ skill.name }}</dt>
+          <dd class="mb-4 text-sm">
             {{ skill.keywords?.join(', ') }}
           </dd>
         </ng-container>
