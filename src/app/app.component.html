@@ -1,6 +1,6 @@
 <div class="flex flex-col justify-between p-4 space-y-2 min-h-screen max-w-4xl">
   <!-- Header -->
-  <header
+  <header *ngIf="resume && resume.basics"
     class="p-2 rounded-lg bg-white shadow print:shadow-none flex sm:flex-row flex-col sm:space-x-4 print:flex-row print:space-x-4">
     <!-- Photo, location and contacts -->
     <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:profile-card">
@@ -11,13 +11,13 @@
         src="assets/leo-meirelles.jpeg">
       <div class="sm:pb-0 pb-4 print:pb-0">
         <!-- Name -->
-        <h1 class="font-semibold text-2xl text-indigo-900 ">{{resume?.basics?.name}}</h1>
+        <h1 class="font-semibold text-2xl text-indigo-900 ">{{resume.basics.name}}</h1>
         <!-- Label -->
-        <p>{{resume?.basics?.label}}</p>
+        <p>{{resume.basics.label}}</p>
         <!-- Location -->
-        <p class="text-gray-500 text-sm mb-2">{{resume?.basics?.location?.city}},
-          {{resume?.basics?.location?.region}},
-          {{resume?.basics?.location?.countryCode }}
+        <p class="text-gray-500 text-sm mb-2">{{resume.basics.location?.city}},
+          {{resume.basics.location?.region}},
+          {{resume.basics.location?.countryCode }}
         </p>
         <!-- Phone contact -->
         <p class="flex pb-1 text-indigo-600">
@@ -30,8 +30,8 @@
           </svg>
           <a class="pl-2"
             rel="noopener noreferrer"
-            href="tel:{{resume?.basics?.phone}}">
-            {{resume?.basics?.phone}}
+            href="tel:{{resume.basics.phone}}">
+            {{resume.basics.phone}}
           </a>
         </p>
         <!-- Email contact -->
@@ -45,8 +45,8 @@
           </svg>
           <a class="pl-2"
             rel="noopener noreferrer"
-            href="mailto:{{resume?.basics?.email}}">
-            {{resume?.basics?.email}}
+            href="mailto:{{resume.basics.email}}">
+            {{resume.basics.email}}
           </a>
         </p>
         <!-- Website -->
@@ -63,8 +63,8 @@
           </svg>
           <a class="pl-2"
             rel="noopener noreferrer"
-            href="{{resume?.basics?.website}}">
-            {{resume?.basics?.website}}
+            href="{{resume.basics.website}}">
+            {{resume.basics.website}}
           </a>
         </p>
       </div>
@@ -72,10 +72,10 @@
     <!-- Summary and links -->
     <div class="flex flex-col w-full  justify-between">
       <!-- Summary -->
-      <p class="pb-2 text-lg print:text-sm ">{{resume?.basics?.summary}}</p>
+      <p class="pb-2 text-lg print:text-sm ">{{resume.basics.summary}}</p>
       <!-- Links -->
       <div class="flex flex-row space-x-6 text-indigo-600">
-        <a *ngFor="let profile of resume?.basics?.profiles"
+        <a *ngFor="let profile of resume.basics.profiles"
           rel="noopener noreferrer"
           target="_blank"
           href="{{profile.url}}">
@@ -107,13 +107,14 @@
   <!-- Main -->
   <main class="flex-grow place-self-stretch">
     <!-- Professional Experience -->
-    <div class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
+    <div *ngIf="resume && resume.work"
+      class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         Experience
       </h2>
       <div class="mt-4 border-b"
         [ngClass]="{'border-b': isLast === false}"
-        *ngFor="let work of resume?.work; last as isLast">
+        *ngFor="let work of resume.work; last as isLast">
         <!-- ADP -->
         <img *ngIf="work.company === 'ADP'"
           width="24"
@@ -161,39 +162,62 @@
       </div>
     </div>
     <!-- Education -->
-    <div class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
-        Education
-      </h2>
-      <div class="mt-2"
-        *ngFor="let education of resume?.education">
-        <!-- PUCRS -->
-        <img *ngIf="education.institution === 'Pontifícia Universidade Católica (PUCRS)'"
-          width="24"
-          height="24"
-          alt="ADP Logo"
-          class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-pucrs.png">
-        <div class="flex justify-between space-x-2">
-          <h3 class="font-bold text-lg w-full">
-            {{education.institution}}
-          </h3>
-          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36">
-            {{education.startDate | date: 'MMM yy'}}
-            <span class="hidden sm:inline">-</span>
-            {{education.endDate | date: 'MMM yy'}}
+    <div *ngIf="resume && (resume.education || resume.languages)"
+      class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
+      <div *ngIf="resume.education">
+        <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
+          Education
+        </h2>
+        <div class="mt-2"
+          *ngFor="let education of resume.education">
+          <!-- PUCRS -->
+          <img *ngIf="education.institution === 'Pontifícia Universidade Católica (PUCRS)'"
+            width="24"
+            height="24"
+            alt="ADP Logo"
+            class="float-left rounded-full w-6 shadow mr-3"
+            src="assets/logo-pucrs.png">
+          <div class="flex justify-between space-x-2">
+            <h3 class="font-bold text-lg w-full">
+              {{education.institution}}
+            </h3>
+            <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36">
+              {{education.startDate | date: 'MMM yy'}}
+              <span class="hidden sm:inline">-</span>
+              {{education.endDate | date: 'MMM yy'}}
+            </div>
+          </div>
+          <h4 class="p-1 mb-1">{{education.studyType}} {{education.area}}</h4>
+        </div>
+      </div>
+      <!-- Languages -->
+      <div *ngIf="resume.education">
+        <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
+          Languages
+        </h2>
+        <div class="mt-2 flex flex-row space-x-4">
+          <div *ngFor="let language of resume.languages">
+            <p>
+              <!-- Brazilian Portuguese -->
+              <span *ngIf="language.language === 'Portugues'">🇧🇷</span>
+              <!-- USA English -->
+              <span *ngIf="language.language === 'English'">🇺🇸</span>
+              <!-- The language -->
+              <span class="pl-2 font-bold">{{language.language}}</span>:
+              <span>{{language.fluency}}</span>
+            </p>
           </div>
         </div>
-        <h4 class="p-1 mb-1">{{education.studyType}} {{education.area}}</h4>
       </div>
     </div>
     <!-- Technical skills -->
-    <div class="rounded-lg bg-white shadow p-2 print:shadow-none">
+    <div *ngIf="resume && resume.skills"
+      class="rounded-lg bg-white shadow p-2 print:shadow-none">
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         Technical Skills
       </h2>
       <dl>
-        <ng-container *ngFor="let skill of resume?.skills">
+        <ng-container *ngFor="let skill of resume.skills">
           <dt class="font-bold text-lg mb-1 mt-2">{{ skill.name }}</dt>
           <dd class="text-sm">
             {{ skill.keywords?.join(', ') }}

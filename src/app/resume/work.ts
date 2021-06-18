@@ -1,7 +1,7 @@
 interface Work {
   company: string;
   endDate: string;
-  highlights?: (string)[] | null;
+  highlights: string[];
   position: string;
   startDate: string;
   summary: string;

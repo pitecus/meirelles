@@ -22,5 +22,4 @@ export class AppComponent {
         }
       )
   }
-  title = 'resume';
 }

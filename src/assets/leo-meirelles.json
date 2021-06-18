@@ -42,12 +42,12 @@
   "interests": [],
   "languages": [
     {
-      "fluency": "Native speaker",
-      "language": "Portugues"
+      "fluency": "Bilingual",
+      "language": "English"
     },
     {
       "fluency": "Native speaker",
-      "language": "English"
+      "language": "Portugues"
     }
   ],
   "publications": [],
@@ -110,11 +110,8 @@
       "company": "ADP",
       "endDate": "Current",
       "highlights": [
-        "Architected and replaced an Adobe Flash application using Business Objects Enterprise XML APIs by Angular 11 and HighCharts.",
-        "Lead the GitOps implementation for CI/CD SDLC integrated with SonarQube, code review, automated releases and deployments.",
-        "Improved the continuous E2E tests using SauceLabs, integrating with internal automation server using container sidecar and VPN/proxy connections.",
-        "Created an application to identify incorrect paychecks using AWS Lambda (backend) and Kubernetes Helm Charts (frontend)",
-        "Working on DevSecOps by scanning containers for vulnerabilities and npm audits for Javascript projects."
+        "Lead the GitOps implementation for CI/CD SDLC integrated with code review, SonarQube, automated releases and deployments. Worked on DevSecOps by scanning containers for vulnerabilities and npm audits for Javascript projects. Improved the continuous E2E cross-browser tests using SauceLabs, integrating with internal automation services using container sidecar and VPN/proxy connections.",
+        "Architected and replaced an Adobe Flash application using Business Objects Enterprise XML APIs by Angular 11 and HighCharts. Working on an application to identify incorrect paychecks using AWS Lambda (backend), DynamoDB, SQS, S3, and Kubernetes Helm Charts (frontend)"
       ],
       "position": "Principal Architect",
       "startDate": "2018-09-21",
@@ -125,10 +122,8 @@
       "company": "ADP",
       "endDate": "2018-09-21",
       "highlights": [
-        "Worked with Product Owners, Project Managers, and multiple teams in different countries to delivery bi-weekly features, coordinating dependencies and requirements.",
-        "Containerized micro-frontend and micro-services for faster release cycle.",
-        "Advocate for meaninful code reviews, small pull requests, automated code quality with lint, SonarQube and unit-tests.",
-        "Upgrade from AngularJS 1.4 to Angular 6 by running both at the same time."
+        "Worked with Product Owners, Project Managers, and multiple teams in different countries to delivery bi-weekly features, coordinating dependencies and requirements. Containerized micro-frontend and micro-services for faster release cycle.",
+        "Advocate for meaninful code reviews, small pull requests, automated code quality with lint, SonarQube and unit-tests. Upgrade the application from AngularJS 1.4 to Angular 6 by running both at the same time."
       ],
       "position": "Principal Software Engineer",
       "startDate": "2016-10-01",

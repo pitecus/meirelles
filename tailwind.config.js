@@ -4,22 +4,24 @@ module.exports = {
       './src/**/*.{html,ts,scss}'
     ]
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: false,
   theme: {
     extend: {
       screens: {
-        'print': {'raw': 'print'},
-        // => @media print { ... }
+        print: {
+          raw: 'print'
+        },
       }
     },
     fontFamily: {
-      'sans': ['Raleway', 'sans'],
+      sans: [
+        'Raleway',
+        'sans'
+      ],
     }
   },
   variants: {
     extend: {},
   },
-  plugins: [
-    // require('@tailwindcss/forms')
-  ],
+  plugins: [],
 }

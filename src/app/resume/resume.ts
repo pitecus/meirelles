@@ -10,16 +10,16 @@ import { Volunteer } from './volunteer';
 import { Work } from './work';
 
 interface Resume {
-  awards?: Award[] | null;
+  awards: Award[];
   basics: Basics;
-  education?: Education[] | null;
-  interests?: Interests[] | null;
-  languages?: Language[] | null;
-  publications?: Publication[] | null;
-  references?: Reference[] | null;
-  skills?: Skill[] | null;
-  volunteer?: Volunteer[] | null;
-  work?: Work[] | null;
+  education: Education[];
+  interests: Interests[];
+  languages: Language[];
+  publications: Publication[];
+  references: Reference[];
+  skills: Skill[];
+  volunteer: Volunteer[];
+  work: Work[];
 }
 
 export { Resume };
