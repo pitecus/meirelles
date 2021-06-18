@@ -25,7 +25,7 @@
         "username": "Leo Meirelles"
       }
     ],
-    "summary": "Passionate for quality, best practices, and effortless usability (for developers and end users), problem solving oriented engineer with experience in UI/UX, continuous delivery and integration, micro-frontend and microservices architecture. Quick to adapt to changes of dynamic environments and requirements to provide the correct solution.",
+    "summary": "Passionate for quality, best practices, and effortless usability (for developers and end users), problem solving oriented engineer with experience in UI/UX, continuous delivery and integration, micro-frontend and microservices architecture. Quick to adapt to changes of dynamic environments and requirements to provide the optimal solution.",
     "website": "https://pitecus.github.io"
   },
   "education": [
@@ -50,7 +50,15 @@
       "language": "Portugues"
     }
   ],
-  "publications": [],
+  "publications": [
+    {
+      "name": "GitOps + Ferris Wheel",
+      "publisher": "ADP Global Product & Development Connect Conference",
+      "releaseDate": "2020-09-30",
+      "summary": "CI/CD backed by Bitbucket. It allows to have one single source of truth, process transparency, and auditing in one single place. Environment configuration, release approvals and notifications, clear process and responsibilities – all in one single place, accessible to everyone and traceable. And a rollback is just a Pull-Request away.",
+      "website": "https://tech.adp.com/2020/11/20/adps-annual-developers-conference-video"
+    }
+  ],
   "references": [],
   "skills": [
     {
@@ -110,7 +118,7 @@
       "company": "ADP",
       "endDate": "Current",
       "highlights": [
-        "Lead the GitOps implementation for CI/CD SDLC integrated with code review, SonarQube, automated releases and deployments. Worked on DevSecOps by scanning containers for vulnerabilities and npm audits for Javascript projects. Improved the continuous E2E cross-browser tests using SauceLabs, integrating with internal automation services using container sidecar and VPN/proxy connections.",
+        "Lead the GitOps implementation for CI/CD SDLC integrated with code review, SonarQube, automated releases and deployments. Work on DevSecOps by scanning containers for vulnerabilities and npm audits for Javascript projects. Improve the continuous E2E cross-browser tests using SauceLabs, integrating with internal automation services using container sidecar and VPN/proxy connections.",
         "Architected and replaced an Adobe Flash application using Business Objects Enterprise XML APIs by Angular 11 and HighCharts. Working on an application to identify incorrect paychecks using AWS Lambda (backend), DynamoDB, SQS, S3, and Kubernetes Helm Charts (frontend)"
       ],
       "position": "Principal Architect",

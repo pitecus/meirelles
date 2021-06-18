@@ -33,13 +33,12 @@ export class AppComponent {
    * Initialize the component.
    */
   public constructor(httpClient: HttpClient) {
-    // Calculate 10 years ago.
+    // Calculate 7 years ago.
     const now = new Date();
-    now.setFullYear(now.getFullYear() - 10);
+    now.setFullYear(now.getFullYear() - 7);
     const month: string = `${now.getMonth()}`.padStart(2, '0');
     const day: string = `${now.getDate()}`.padStart(2, '0');
     this.dateFilter = `${now.getFullYear()}-${month}-${day}`;
-    console.log(this.dateFilter);
 
     // Get the resume.
     httpClient.get<Resume>('/assets/leo-meirelles.json')
@@ -72,6 +71,5 @@ export class AppComponent {
       this.filteredWork = this.resume.work
       .filter((value: Work) => value.endDate > this.dateFilter);
     }
-    console.log(this.filteredWork);
   }
 }

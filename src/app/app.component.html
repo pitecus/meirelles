@@ -99,6 +99,7 @@
             <path
               d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z" />
           </svg>
+          <!-- Usermane -->
           {{profile.username}}
         </a>
       </div>
@@ -117,7 +118,7 @@
             [ngModel]="isWorkFiltered"
             (click)="filterWork()"
             class="form-checkbox h-4 w-4 text-indigo-500">
-          <span class="ml-2">Whitin last 10 years</span>
+          <span class="ml-2">Whitin last 7 years</span>
         </label>
       </h2>
       <div class="mt-4 border-b"
@@ -166,6 +167,38 @@
         <p *ngFor="let highlight of work.highlights"
           class="mb-2 text-sm print:text-xs">
           {{highlight}}
+        </p>
+      </div>
+    </div>
+    <!-- Publications -->
+    <div *ngIf="resume && resume.publications"
+      class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
+      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
+        <span>Conferences</span>
+      </h2>
+      <div class="mt-4"
+        *ngFor="let publication of resume.publications">
+        <!-- ADP -->
+        <img *ngIf="publication.publisher === 'ADP Global Product & Development Connect Conference'"
+          width="24"
+          height="24"
+          alt="ADP Logo"
+          class="float-left rounded-full w-6 shadow mr-3"
+          src="assets/logo-adp.jpeg">
+        <!-- Conference name -->
+        <div class="flex justify-between space-x-2">
+          <h3 class="font-bold text-lg w-full">
+            {{publication.publisher}}
+          </h3>
+        </div>
+        <!-- Title -->
+        <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:px-0 flex justify-between">
+          <span>{{publication.name}}</span>
+          <span class="not-italic text-sm">{{ publication.releaseDate | date: 'MMM yyyy'}}</span>
+        </h4>
+        <!-- Summary -->
+        <p class="mb-2 text-sm print:text-xs">
+          {{publication.summary}}
         </p>
       </div>
     </div>
