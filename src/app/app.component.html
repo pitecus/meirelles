@@ -109,78 +109,83 @@
   <main class="flex-grow place-self-stretch">
     <!-- Professional Experience -->
     <div class="rounded-lg bg-white shadow p-2 mb-2">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 mb-2">
+      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         Experience
       </h2>
-      <div class="flex flex-col">
-        <div class="mb-4"
-          *ngFor="let work of resume?.work">
-          <!-- ADP -->
-          <img *ngIf="work.company === 'ADP'"
-            width="24"
-            height="24"
-            alt="ADP Logo"
-            class="float-left rounded-full w-6 shadow mr-3"
-            src="assets/logo-adp.jpeg">
-          <!-- Google -->
-          <img *ngIf="work.company === 'Google'"
-            width="24"
-            height="24"
-            alt="Google logo"
-            class="float-left rounded-full w-6 shadow mr-3"
-            src="assets/logo-google.png">
-          <!-- NYT -->
-          <img *ngIf="work.company === 'The New York Times'"
-            width="24"
-            height="24"
-            alt="The New York Times logo"
-            class="float-left rounded-full w-6 shadow mr-3"
-            src="assets/logo-nyt.png">
-          <h3 class="font-bold text-lg">
+      <div class="mt-4 border-b"
+        [ngClass]="{'border-b': isLast === false}"
+        *ngFor="let work of resume?.work; last as isLast">
+        <!-- ADP -->
+        <img *ngIf="work.company === 'ADP'"
+          width="24"
+          height="24"
+          alt="ADP Logo"
+          class="float-left rounded-full w-6 shadow mr-3"
+          src="assets/logo-adp.jpeg">
+        <!-- Google -->
+        <img *ngIf="work.company === 'Google'"
+          width="24"
+          height="24"
+          alt="Google logo"
+          class="float-left rounded-full w-6 shadow mr-3"
+          src="assets/logo-google.png">
+        <!-- NYT -->
+        <img *ngIf="work.company === 'The New York Times'"
+          width="24"
+          height="24"
+          alt="The New York Times logo"
+          class="float-left rounded-full w-6 shadow mr-3"
+          src="assets/logo-nyt.png">
+        <!-- Company, position and period -->
+        <div class="flex justify-between space-x-2">
+          <h3 class="font-bold text-lg w-full">
             {{work.company}} - {{work.position}}
-            <span class="float-right">
-              {{work.startDate | date: 'MMM yyyy'}}
-              -
-              <span *ngIf="work.endDate === 'Current'">
-                Current
-              </span>
-              <span *ngIf="work.endDate !== 'Current'">
-                {{work.endDate | date: 'MMM yyyy'}}
-              </span>
-            </span>
           </h3>
-          <h4>{{work.summary}}</h4>
-          <p *ngFor="let highlight of work.highlights"
-            class="mb-2 text-sm">
-            {{highlight}}
-          </p>
+          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right">
+            {{work.startDate | date: 'MMM yy'}}
+            <span class="hidden sm:inline">-</span>
+            <span *ngIf="work.endDate === 'Current'">
+              Current
+            </span>
+            <span *ngIf="work.endDate !== 'Current'">
+              {{work.endDate | date: 'MMM yy'}}
+            </span>
+          </div>
         </div>
+        <!-- Summary -->
+        <h4 class="bg-gray-50 rounded-lg border italic p-1 mb-1 shadow">{{work.summary}}</h4>
+        <!-- Highlights -->
+        <p *ngFor="let highlight of work.highlights"
+          class="mb-2 text-sm">
+          {{highlight}}
+        </p>
       </div>
     </div>
     <!-- Education -->
     <div class="rounded-lg bg-white shadow p-2 mb-2">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 mb-2">
+      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         Education
       </h2>
-      <div class="flex flex-col">
-        <div class="mb-4"
-          *ngFor="let education of resume?.education">
-          <!-- PUCRS -->
-          <img *ngIf="education.institution === 'Pontifícia Universidade Católica (PUCRS)'"
-            width="24"
-            height="24"
-            alt="ADP Logo"
-            class="float-left rounded-full w-6 shadow mr-3"
-            src="assets/logo-pucrs.png">
-          <h3 class="font-bold text-lg">
-            {{education.institution}} - {{education.studyType}} {{education.area}}
-            <span class="float-right">
-              {{education.startDate | date: 'MMM yyyy'}}
-              -
-              {{education.endDate | date: 'MMM yyyy'}}
-            </span>
+      <div class="mt-2"
+        *ngFor="let education of resume?.education">
+        <!-- PUCRS -->
+        <img *ngIf="education.institution === 'Pontifícia Universidade Católica (PUCRS)'"
+          width="24"
+          height="24"
+          alt="ADP Logo"
+          class="float-left rounded-full w-6 shadow mr-3"
+          src="assets/logo-pucrs.png">
+        <div class="flex justify-between space-x-2">
+          <h3 class="font-bold text-lg w-full">
+            {{education.institution}}
           </h3>
+          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right">
+            {{education.startDate | date: 'MMM yy'}}
+            <span class="hidden sm:inline">-</span>
+            {{education.endDate | date: 'MMM yy'}}
+          </div>
         </div>
+        <h4 class="bg-gray-50 rounded-lg border italic p-1 mb-1 shadow">{{education.studyType}} {{education.area}}</h4>
       </div>
     </div>
     <!-- Technical skills -->
