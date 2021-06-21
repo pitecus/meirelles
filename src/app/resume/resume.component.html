@@ -1,306 +1,309 @@
-<div class="flex flex-col justify-between p-4 space-y-2 min-h-screen max-w-4xl">
-  <!-- Header -->
-  <header *ngIf="resume && resume.basics"
-    class="p-2 rounded-lg bg-white shadow print:shadow-none flex sm:flex-row flex-col sm:space-x-4 print:flex-row print:space-x-4">
-    <!-- Photo, location and contacts -->
-    <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:profile-card">
-      <img class="rounded-full shadow-md border-indigo-200 print:hidden m-auto mt-2 border"
-        width="200"
-        height="200"
-        alt="portrait"
-        src="assets/leo-meirelles.jpeg">
-      <div class="sm:pb-0 pb-4 print:pb-0">
-        <!-- Name -->
-        <h1 class="font-semibold text-2xl text-indigo-900 ">{{resume.basics.name}}</h1>
-        <!-- Label -->
-        <p>{{resume.basics.label}}</p>
-        <!-- Location -->
-        <p class="text-gray-500 text-sm mb-2">{{resume.basics.location?.city}},
-          {{resume.basics.location?.region}},
-          {{resume.basics.location?.countryCode }}
-        </p>
-        <!-- Phone contact -->
-        <p class="flex pb-1 text-indigo-600">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.5 17.311l-1.76-3.397-1.032.505c-1.12.543-3.4-3.91-2.305-4.497l1.042-.513-1.747-3.409-1.053.52c-3.601 1.877 2.117 12.991 5.8 11.308l1.055-.517z" />
-          </svg>
-          <a class="pl-2"
-            rel="noopener noreferrer"
-            href="tel:{{resume.basics.phone}}">
-            {{resume.basics.phone}}
-          </a>
-        </p>
-        <!-- Email contact -->
-        <p class="flex pb-1 text-indigo-600">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 2.02c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 12.55l-5.992-4.57h11.983l-5.991 4.57zm0 1.288l-6-4.629v6.771h12v-6.771l-6 4.629z" />
-          </svg>
-          <a class="pl-2"
-            rel="noopener noreferrer"
-            href="mailto:{{resume.basics.email}}">
-            {{resume.basics.email}}
-          </a>
-        </p>
-        <!-- Website -->
-        <p class="flex text-indigo-600">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            class="inline h-6 w-6 stroke-current text-black"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <a class="pl-2"
-            rel="noopener noreferrer"
-            href="{{resume.basics.website}}">
-            {{resume.basics.website}}
-          </a>
-        </p>
-      </div>
-    </div>
-    <!-- Summary and links -->
-    <div class="flex flex-col w-full  justify-between">
-      <!-- Summary -->
-      <p class="pb-2 text-md print:text-sm ">{{resume.basics.summary}}</p>
-      <!-- Links -->
-      <div class="flex flex-row space-x-6 text-indigo-600">
-        <a *ngFor="let profile of resume.basics.profiles"
-          rel="noopener noreferrer"
-          target="_blank"
-          href="{{profile.url}}">
-          <!-- Twitter -->
-          <svg *ngIf="profile.network == 'Twitter'"
-            class="mr-1 inline "
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z" />
-          </svg>
-          <!-- LinkedIn -->
-          <svg *ngIf="profile.network == 'LinkedIn'"
-            class="mr-1 inline"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z" />
-          </svg>
-          <!-- Usermane -->
-          {{profile.username}}
-        </a>
-      </div>
-    </div>
-  </header>
-  <!-- Main -->
-  <main class="flex-grow place-self-stretch">
-    <!-- Professional Experience -->
-    <div *ngIf="resume && resume.work"
-      class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 flex justify-between">
-        <!-- Section title -->
-        <span>Experience</span>
-        <label class="flex items-center text-sm print:hidden">
-          <input type="checkbox"
-            [ngModel]="isWorkFiltered"
-            (click)="filterWork()"
-            class="form-checkbox h-4 w-4 text-indigo-500">
-          <span class="ml-2">Whitin last 7 years</span>
-        </label>
-      </h2>
-      <div class="mt-4 border-b"
-        [ngClass]="{'border-b': isLast === false}"
-        *ngFor="let work of filteredWork; last as isLast">
-        <!-- ADP -->
-        <img *ngIf="work.company === 'ADP'"
-          width="24"
-          height="24"
-          alt="ADP Logo"
-          class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-adp.jpeg">
-        <!-- Google -->
-        <img *ngIf="work.company === 'Google'"
-          width="24"
-          height="24"
-          alt="Google logo"
-          class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-google.png">
-        <!-- NYT -->
-        <img *ngIf="work.company === 'The New York Times'"
-          width="24"
-          height="24"
-          alt="The New York Times logo"
-          class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-nyt.png">
-        <!-- Company, position and period -->
-        <div class="flex justify-between space-x-2">
-          <h3 class="font-bold text-lg w-full">
-            {{work.company}} - {{work.position}}
-          </h3>
-          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36">
-            {{work.startDate | date: 'MMM yy'}}
-            <span class="hidden sm:inline">-</span>
-            <span *ngIf="work.endDate === 'Current'">
-              Current
-            </span>
-            <span *ngIf="work.endDate !== 'Current'">
-              {{work.endDate | date: 'MMM yy'}}
-            </span>
-          </div>
+<div class="min-h-screen flex justify-center">
+  <div class="flex flex-col justify-between p-4 space-y-2 min-h-screen max-w-4xl">
+    <!-- Header -->
+    <header *ngIf="resume && resume.basics"
+      class="p-2 rounded-lg bg-white shadow print:shadow-none flex sm:flex-row flex-col sm:space-x-4 print:flex-row print:space-x-4">
+      <!-- Photo, location and contacts -->
+      <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:profile-card">
+        <img class="rounded-full shadow-md border-indigo-200 print:hidden m-auto mt-2 border"
+          width="200"
+          height="200"
+          alt="portrait"
+          src="assets/leo-meirelles.jpeg">
+        <div class="sm:pb-0 pb-4 print:pb-0">
+          <!-- Name -->
+          <h1 class="font-semibold text-2xl text-indigo-900 ">{{resume.basics.name}}</h1>
+          <!-- Label -->
+          <p>{{resume.basics.label}}</p>
+          <!-- Location -->
+          <p class="text-gray-500 text-sm mb-2">{{resume.basics.location?.city}},
+            {{resume.basics.location?.region}},
+            {{resume.basics.location?.countryCode }}
+          </p>
+          <!-- Phone contact -->
+          <p class="flex pb-1 text-indigo-600">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.5 17.311l-1.76-3.397-1.032.505c-1.12.543-3.4-3.91-2.305-4.497l1.042-.513-1.747-3.409-1.053.52c-3.601 1.877 2.117 12.991 5.8 11.308l1.055-.517z" />
+            </svg>
+            <a class="pl-2"
+              rel="noopener noreferrer"
+              href="tel:{{resume.basics.phone}}">
+              {{resume.basics.phone}}
+            </a>
+          </p>
+          <!-- Email contact -->
+          <p class="flex pb-1 text-indigo-600">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 2.02c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 12.55l-5.992-4.57h11.983l-5.991 4.57zm0 1.288l-6-4.629v6.771h12v-6.771l-6 4.629z" />
+            </svg>
+            <a class="pl-2"
+              rel="noopener noreferrer"
+              href="mailto:{{resume.basics.email}}">
+              {{resume.basics.email}}
+            </a>
+          </p>
+          <!-- Website -->
+          <p class="flex text-indigo-600">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              class="inline h-6 w-6 stroke-current text-black"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <a class="pl-2"
+              rel="noopener noreferrer"
+              href="{{resume.basics.website}}">
+              {{resume.basics.website}}
+            </a>
+          </p>
         </div>
-        <!-- Summary -->
-        <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:px-0">{{work.summary}}</h4>
-        <!-- Highlights -->
-        <p *ngFor="let highlight of work.highlights"
-          class="mb-2 text-sm print:text-xs">
-          {{highlight}}
-        </p>
       </div>
-    </div>
-    <!-- Publications -->
-    <div *ngIf="resume && resume.publications"
-      class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
-        <span>Conferences</span>
-      </h2>
-      <div class="mt-4"
-        *ngFor="let publication of resume.publications">
-        <!-- ADP -->
-        <img *ngIf="publication.publisher === 'ADP Global Product & Development Connect Conference'"
-          width="24"
-          height="24"
-          alt="ADP Logo"
-          class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-adp.jpeg">
-        <!-- Conference name -->
-        <div class="flex justify-between space-x-2">
-          <h3 class="font-bold text-lg w-full">
-            {{publication.publisher}}
-          </h3>
+      <!-- Summary and links -->
+      <div class="flex flex-col w-full  justify-between">
+        <!-- Summary -->
+        <p class="pb-2 text-md print:text-sm ">{{resume.basics.summary}}</p>
+        <!-- Links -->
+        <div class="flex flex-row space-x-6 text-indigo-600">
+          <a *ngFor="let profile of resume.basics.profiles"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="{{profile.url}}">
+            <!-- Twitter -->
+            <svg *ngIf="profile.network == 'Twitter'"
+              class="mr-1 inline "
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z" />
+            </svg>
+            <!-- LinkedIn -->
+            <svg *ngIf="profile.network == 'LinkedIn'"
+              class="mr-1 inline"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z" />
+            </svg>
+            <!-- Usermane -->
+            {{profile.username}}
+          </a>
         </div>
-        <!-- Title -->
-        <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:px-0 flex justify-between">
-          <span>{{publication.name}}</span>
-          <span class="not-italic text-sm">{{ publication.releaseDate | date: 'MMM yyyy'}}</span>
-        </h4>
-        <!-- Summary -->
-        <p class="mb-2 text-sm print:text-xs">
-          {{publication.summary}}
-        </p>
       </div>
-    </div>
-    <!-- Education -->
-    <div *ngIf="resume && (resume.education || resume.languages)"
-      class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
-      <div *ngIf="resume.education">
-        <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
-          Education
+    </header>
+    <!-- Main -->
+    <main class="flex-grow place-self-stretch">
+      <!-- Professional Experience -->
+      <div *ngIf="resume && resume.work"
+        class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
+        <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 flex justify-between">
+          <!-- Section title -->
+          <span>Experience</span>
+          <label class="flex items-center text-sm print:hidden">
+            <input type="checkbox"
+              [ngModel]="isWorkFiltered"
+              (click)="filterWork()"
+              class="form-checkbox h-4 w-4 text-indigo-500">
+            <span class="ml-2">Whitin last 7 years</span>
+          </label>
         </h2>
-        <div class="mt-2"
-          *ngFor="let education of resume.education">
-          <!-- PUCRS -->
-          <img *ngIf="education.institution === 'Pontifícia Universidade Católica (PUCRS)'"
+        <div class="mt-4 border-b"
+          [ngClass]="{'border-b': isLast === false}"
+          *ngFor="let work of filteredWork; last as isLast">
+          <!-- ADP -->
+          <img *ngIf="work.company === 'ADP'"
             width="24"
             height="24"
             alt="ADP Logo"
             class="float-left rounded-full w-6 shadow mr-3"
-            src="assets/logo-pucrs.png">
+            src="assets/logo-adp.jpeg">
+          <!-- Google -->
+          <img *ngIf="work.company === 'Google'"
+            width="24"
+            height="24"
+            alt="Google logo"
+            class="float-left rounded-full w-6 shadow mr-3"
+            src="assets/logo-google.png">
+          <!-- NYT -->
+          <img *ngIf="work.company === 'The New York Times'"
+            width="24"
+            height="24"
+            alt="The New York Times logo"
+            class="float-left rounded-full w-6 shadow mr-3"
+            src="assets/logo-nyt.png">
+          <!-- Company, position and period -->
           <div class="flex justify-between space-x-2">
             <h3 class="font-bold text-lg w-full">
-              {{education.institution}}
+              {{work.company}} - {{work.position}}
             </h3>
             <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36">
-              {{education.startDate | date: 'MMM yy'}}
+              {{work.startDate | date: 'MMM yy'}}
               <span class="hidden sm:inline">-</span>
-              {{education.endDate | date: 'MMM yy'}}
+              <span *ngIf="work.endDate === 'Current'">
+                Current
+              </span>
+              <span *ngIf="work.endDate !== 'Current'">
+                {{work.endDate | date: 'MMM yy'}}
+              </span>
             </div>
           </div>
-          <h4 class="p-1 mb-1">{{education.studyType}} {{education.area}}</h4>
+          <!-- Summary -->
+          <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:px-0">{{work.summary}}</h4>
+          <!-- Highlights -->
+          <p *ngFor="let highlight of work.highlights"
+            class="mb-2 text-sm print:text-xs">
+            {{highlight}}
+          </p>
         </div>
       </div>
-      <!-- Languages -->
-      <div *ngIf="resume.education">
+      <!-- Publications -->
+      <div *ngIf="resume && resume.publications"
+        class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
         <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
-          Languages
+          <span>Conferences</span>
         </h2>
-        <div class="mt-2 flex flex-row space-x-4">
-          <div *ngFor="let language of resume.languages">
-            <p>
-              <!-- Brazilian Portuguese -->
-              <span *ngIf="language.language === 'Portugues'">🇧🇷</span>
-              <!-- USA English -->
-              <span *ngIf="language.language === 'English'">🇺🇸</span>
-              <!-- The language -->
-              <span class="pl-2 font-bold">{{language.language}}</span>:
-              <span>{{language.fluency}}</span>
-            </p>
+        <div class="mt-4"
+          *ngFor="let publication of resume.publications">
+          <!-- ADP -->
+          <img *ngIf="publication.publisher === 'ADP Global Product & Development Connect Conference'"
+            width="24"
+            height="24"
+            alt="ADP Logo"
+            class="float-left rounded-full w-6 shadow mr-3"
+            src="assets/logo-adp.jpeg">
+          <!-- Conference name -->
+          <div class="flex justify-between space-x-2">
+            <h3 class="font-bold text-lg w-full">
+              {{publication.publisher}}
+            </h3>
+          </div>
+          <!-- Title -->
+          <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:px-0 flex justify-between">
+            <span>{{publication.name}}</span>
+            <span class="not-italic text-sm">{{ publication.releaseDate | date: 'MMM yyyy'}}</span>
+          </h4>
+          <!-- Summary -->
+          <p class="mb-2 text-sm print:text-xs">
+            {{publication.summary}}
+          </p>
+        </div>
+      </div>
+      <!-- Education -->
+      <div *ngIf="resume && (resume.education || resume.languages)"
+        class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
+        <div *ngIf="resume.education">
+          <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
+            Education
+          </h2>
+          <div class="mt-2"
+            *ngFor="let education of resume.education">
+            <!-- PUCRS -->
+            <img *ngIf="education.institution === 'Pontifícia Universidade Católica (PUCRS)'"
+              width="24"
+              height="24"
+              alt="ADP Logo"
+              class="float-left rounded-full w-6 shadow mr-3"
+              src="assets/logo-pucrs.png">
+            <div class="flex justify-between space-x-2">
+              <h3 class="font-bold text-lg w-full">
+                {{education.institution}}
+              </h3>
+              <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36">
+                {{education.startDate | date: 'MMM yy'}}
+                <span class="hidden sm:inline">-</span>
+                {{education.endDate | date: 'MMM yy'}}
+              </div>
+            </div>
+            <h4 class="p-1 mb-1">{{education.studyType}} {{education.area}}</h4>
+          </div>
+        </div>
+        <!-- Languages -->
+        <div *ngIf="resume.education">
+          <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
+            Languages
+          </h2>
+          <div class="mt-2 flex flex-row space-x-4">
+            <div *ngFor="let language of resume.languages">
+              <p>
+                <!-- Brazilian Portuguese -->
+                <span *ngIf="language.language === 'Portugues'">🇧🇷</span>
+                <!-- USA English -->
+                <span *ngIf="language.language === 'English'">🇺🇸</span>
+                <!-- The language -->
+                <span class="pl-2 font-bold">{{language.language}}</span>:
+                <span>{{language.fluency}}</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Technical skills -->
-    <div *ngIf="resume && resume.skills"
-      class="rounded-lg bg-white shadow p-2 print:shadow-none">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
-        Technical Skills
-      </h2>
-      <dl>
-        <ng-container *ngFor="let skill of resume.skills">
-          <dt class="font-bold text-lg mb-1 mt-2">{{ skill.name }}</dt>
-          <dd class="text-sm">
-            {{ skill.keywords?.join(', ') }}
-          </dd>
-        </ng-container>
-      </dl>
-    </div>
-  </main>
-  <!-- Footer -->
-  <footer class="rounded-lg bg-white shadow p-2 flex space-x-6 text-sm text-indigo-600 font-bold print:hidden">
-    <!-- Github link -->
-    <a href="https://github.com/pitecus/meirelles"
-      class="whitespace-nowrap"
-      target="_blank"
-      rel="noopener noreferrer">
-      <svg xmlns="http://www.w3.org/2000/svg"
-        class="inline mr-1"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24">
-        <path
-          d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
-      </svg>
-      <p class="inline align-middle">Git Repo</p>
-    </a>
-    <!-- Changelog -->
-    <div class=" whitespace-nowrap">
-      <svg xmlns="http://www.w3.org/2000/svg"
-        class="inline h-6 w-6 stroke-current text-black mr-1"
-        fill="none"
-        viewBox="0 0 24 24">
-        <path stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-      </svg>
-      <p class="inline align-middle">Changelog</p>
-    </div>
-    <!-- Build status badge -->
-    <div class="flex flex-col justify-center">
-      <img src="https://github.com/pitecus/meirelles/actions/workflows/node.js.yml/badge.svg"
-        alt="GitHub actions build status badge">
-    </div>
-  </footer>
+      <!-- Technical skills -->
+      <div *ngIf="resume && resume.skills"
+        class="rounded-lg bg-white shadow p-2 print:shadow-none">
+        <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
+          Technical Skills
+        </h2>
+        <dl>
+          <ng-container *ngFor="let skill of resume.skills">
+            <dt class="font-bold text-lg mb-1 mt-2">{{ skill.name }}</dt>
+            <dd class="text-sm">
+              {{ skill.keywords?.join(', ') }}
+            </dd>
+          </ng-container>
+        </dl>
+      </div>
+    </main>
+    <!-- Footer -->
+    <footer class="rounded-lg bg-white shadow p-2 flex space-x-6 text-sm text-indigo-600 font-bold print:hidden">
+      <!-- Github link -->
+      <a href="https://github.com/pitecus/meirelles"
+        class="whitespace-nowrap"
+        target="_blank"
+        rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          class="inline mr-1"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24">
+          <path
+            d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 6c-3.313 0-6 2.686-6 6 0 2.651 1.719 4.9 4.104 5.693.3.056.396-.13.396-.289v-1.117c-1.669.363-2.017-.707-2.017-.707-.272-.693-.666-.878-.666-.878-.544-.373.041-.365.041-.365.603.042.92.619.92.619.535.917 1.403.652 1.746.499.054-.388.209-.652.381-.802-1.333-.152-2.733-.667-2.733-2.965 0-.655.234-1.19.618-1.61-.062-.153-.268-.764.058-1.59 0 0 .504-.161 1.65.615.479-.133.992-.199 1.502-.202.51.002 1.023.069 1.503.202 1.146-.776 1.648-.615 1.648-.615.327.826.121 1.437.06 1.588.385.42.617.955.617 1.61 0 2.305-1.404 2.812-2.74 2.96.216.186.412.551.412 1.111v1.646c0 .16.096.347.4.288 2.383-.793 4.1-3.041 4.1-5.691 0-3.314-2.687-6-6-6z" />
+        </svg>
+        <p class="inline align-middle">Git Repo</p>
+      </a>
+      <!-- Changelog -->
+      <a class=" whitespace-nowrap"
+        routerLink="/changelog">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          class="inline h-6 w-6 stroke-current text-black mr-1"
+          fill="none"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+        </svg>
+        <p class="inline align-middle">Changelog</p>
+      </a>
+      <!-- Build status badge -->
+      <div class="flex flex-col justify-center">
+        <img src="https://github.com/pitecus/meirelles/actions/workflows/node.js.yml/badge.svg"
+          alt="GitHub actions build status badge">
+      </div>
+    </footer>
+  </div>
 </div>

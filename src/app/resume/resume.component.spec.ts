@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
+import { HttpClient } from '@angular/common/http';
 import { ResumeComponent } from './resume.component';
 import resume from '../../assets/resume.json';
 

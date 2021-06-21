@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
+import { ChangelogComponent } from './changelog/changelog.component';
 import { NgModule } from '@angular/core';
 import { ResumeComponent } from './resume/resume.component';
 
@@ -8,6 +9,12 @@ const routes: Routes = [
   {
     component: ResumeComponent,
     path: 'resume',
+    pathMatch: 'full'
+  },
+  // Changelog.
+  {
+    component: ChangelogComponent,
+    path: 'changelog',
     pathMatch: 'full'
   },
   // Default route for application.

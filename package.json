@@ -37,6 +37,7 @@
   "private": true,
   "scripts": {
     "build": "ng build",
+    "prebuild": "tsc bin/git-to-json.ts",
     "deploy": "NODE_ENV=production ng deploy",
     "dist": "NODE_ENV=production ng build --configuration production",
     "ng": "ng",
@@ -44,5 +45,5 @@
     "test": "ng test",
     "watch": "ng build --watch --configuration development"
   },
-  "version": "0.0.0"
+  "version": "1.0.0"
 }

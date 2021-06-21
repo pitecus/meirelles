@@ -7,11 +7,13 @@ import { NgModule } from '@angular/core';
 import { ResumeComponent } from './resume/resume.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ChangelogComponent } from './changelog/changelog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResumeComponent
+    ResumeComponent,
+    ChangelogComponent
   ],
   imports: [
     BrowserModule,
