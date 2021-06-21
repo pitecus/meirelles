@@ -105,6 +105,7 @@
               "src/assets",
               "src/manifest.webmanifest"
             ],
+            "codeCoverage": true,
             "inlineStyleLanguage": "scss",
             "karmaConfig": "karma.conf.js",
             "main": "src/test.ts",

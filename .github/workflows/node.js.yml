@@ -1,4 +1,4 @@
-name: Node.js CI
+name: CI Angular app
 
 on:
   push:
@@ -10,10 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '14.x'
-    - run: npm ci
-    - run: GH_TOKEN=${{ secrets.GH_TOKEN }} npm run deploy -- --message="$(git log -n 1 --pretty=format:"%s")"
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Setup
+        run: npm ci
+
+      - name: Test
+        run: npm test -- --no-watch --no-progress --code-coverage --browsers=ChromeHeadless
+
+      - name: Publish
+        run: GH_TOKEN=${{ secrets.GH_TOKEN }} npm run deploy -- --message="$(git log -n 1 --pretty=format:"%s")"

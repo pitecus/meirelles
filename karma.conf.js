@@ -3,15 +3,17 @@
 
 module.exports = function (config) {
   config.set({
+    autoWatch: true,
     basePath: '',
-    frameworks: ['jasmine', '@angular-devkit/build-angular'],
-    plugins: [
-      require('karma-jasmine'),
-      require('karma-chrome-launcher'),
-      require('karma-jasmine-html-reporter'),
-      require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
-    ],
+    browsers: ['Chrome'],
+    check: {
+      global: {
+        statements: 80,
+        branches: 80,
+        functions: 80,
+        lines: 80
+      }
+    },
     client: {
       jasmine: {
         // you can add configuration options for Jasmine here
@@ -21,9 +23,7 @@ module.exports = function (config) {
       },
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    jasmineHtmlReporter: {
-      suppressAll: true // removes the duplicated traces
-    },
+    colors: true,
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/resume'),
       subdir: '.',
@@ -32,13 +32,21 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml'],
-    port: 9876,
-    colors: true,
+    frameworks: ['jasmine', '@angular-devkit/build-angular'],
+    jasmineHtmlReporter: {
+      suppressAll: true // removes the duplicated traces
+    },
     logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage'),
+      require('@angular-devkit/build-angular/plugins/karma')
+    ],
+    port: 9876,
+    reporters: ['progress', 'kjhtml'],
+    restartOnFileChange: true,
+    singleRun: false
   });
 };
