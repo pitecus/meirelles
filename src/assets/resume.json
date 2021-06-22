@@ -25,7 +25,7 @@
         "username": "Leo Meirelles"
       }
     ],
-    "summary": "Passionate for quality, best practices, and effortless usability (for developers and end users), problem solving oriented engineer with experience in UI/UX, continuous delivery and integration, micro-frontend and microservices architecture. Quick to adapt to changes of dynamic environments and requirements to provide the optimal solution.",
+    "summary": "Passionate for quality, best practices, and effortless usability (for developers and end users), problem solving oriented engineer with experience in UI/UX, continuous delivery and integration, micro-frontend and microservices architecture, and containers. Quick to adapt to changes of dynamic environments and requirements to provide the optimal solution.",
     "website": "https://pitecus.github.io"
   },
   "education": [
@@ -81,6 +81,8 @@
       "keywords": [
         "Linux",
         "Docker",
+        "Docker swarm",
+        "Containers",
         "Kubernetes",
         "TCP/IP",
         "Network",
@@ -118,12 +120,12 @@
       "company": "ADP",
       "endDate": "Current",
       "highlights": [
-        "Lead the GitOps implementation for CI/CD SDLC integrated with code review, SonarQube, automated releases and deployments. Work on DevSecOps by scanning containers for vulnerabilities and npm audits for Javascript projects. Improve the continuous E2E cross-browser tests using SauceLabs, integrating with internal automation services using container sidecar and VPN/proxy connections.",
+        "Lead the GitOps implementation for CI/CD SDLC integrated with code review, SonarQube, automated releases using containers and deployments. Work on DevSecOps by scanning containers for vulnerabilities and npm audits for Javascript projects. Improve the continuous E2E cross-browser tests using SauceLabs, integrating with internal automation services using container sidecar and VPN/proxy connections.",
         "Architected and replaced an Adobe Flash application using Business Objects Enterprise XML APIs by Angular 11 and HighCharts. Working on an application to identify incorrect paychecks using AWS Lambda (backend), DynamoDB, SQS, S3, and Kubernetes Helm Charts (frontend)"
       ],
       "position": "Principal Architect",
       "startDate": "2018-09-21",
-      "summary": "Design, build, audit, and deploy applications. Architect integration solutions. Improve security and optmize release cycles.",
+      "summary": "Design, build, audit, and deploy containerized applications. Architect integration solutions. Improve security and optmize release cycles.",
       "website": "https://www.adp.com"
     },
     {
