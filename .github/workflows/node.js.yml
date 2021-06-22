@@ -34,22 +34,23 @@ jobs:
           git config push.followTags true
 
           # Update version
-          # npm version minor --no-git-tag-version
+          npm version minor --no-git-tag-version
           export RELEASE_VERSION=v$(node -p "require('./package.json').version")
-          # git commit -m "ci: release ${RELEASE_VERSION}"
+          git add -A
+          git commit -m "ci: release ${RELEASE_VERSION}"
 
           # Generate the changelog.
           npm run prebuild
           git log --pretty=format:'{"commiter":"%cn","date":"%ci","subject":"%s","decoration":"%d"}' | node bin/git-to-json.js > src/assets/changelog.json
           git add -A
-          # git commit --amend --no-edit
+          git commit --amend --no-edit
 
           # Tag the release
-          git commit -m "ci: release ${RELEASE_VERSION}"
           git tag ${RELEASE_VERSION}
 
           # Push changes
           git push
+          git push --tags
 
       - name: Publish
         run: GH_TOKEN=${{ secrets.GH_TOKEN }} npm run deploy -- --message="$(git log -n 1 --pretty=format:"%s")"
