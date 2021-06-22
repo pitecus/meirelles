@@ -79,7 +79,7 @@ describe('ChangelogComponent', () => {
     ]);
   });
 
-  fit('should create handle tagless commits', () => {
+  it('should create handle tagless commits', () => {
     // Given a commit.
     const changelog: Changelog = {
       "commiter":"Leo Meirelles",
