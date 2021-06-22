@@ -1,9 +1,29 @@
 import { Changelog } from "./changelog";
 import { ChangelogDetail } from "./changelog-detail";
 
+/**
+ * Release.
+ */
 interface Release {
+  /**
+   * Version.
+   */
   version: string;
-  changes: ChangelogDetail[];
+
+  /**
+   * Changes grouped by type.
+   */
+  changes: {
+    /**
+     * Change type.
+     */
+    type: string;
+
+    /**
+     * Changes.
+     */
+    changes: ChangelogDetail[]
+  }[];
 }
 
 /**

@@ -62,19 +62,24 @@ describe('ChangelogComponent', () => {
     // Then it should update the changelog.
     expect(component.releases)
       .toEqual([
-        {
-        changes:[
+      {
+        "changes": [
           {
-          commiter: changelog.commiter,
-          date: changelog.date,
-          message: {
-            type: 'test',
-            scope: '',
-            subject: 'enable unit tests'
+            "type": "test",
+            "changes": [
+              {
+                "commiter": "Leo Meirelles",
+                "date": "2021-06-21 11:43:42 -0400",
+                "message": {
+                  "scope": "",
+                  "subject": "enable unit tests",
+                  "type": "test"
+                }
+              }
+            ]
           }
-        }
-      ],
-        version: 'v1.0.0'
+        ],
+        "version": "v1.0.0"
       }
     ]);
   });
@@ -108,19 +113,24 @@ describe('ChangelogComponent', () => {
     expect(component.releases)
       .toEqual([
         {
-        changes:[
-          {
-          commiter: changelog.commiter,
-          date: changelog.date,
-          message: {
-            type: 'feat',
-            scope: '',
-            subject: 'create changelog page'
-          }
+          "changes": [
+            {
+              "type": "feat",
+              "changes": [
+                {
+                  "commiter": "Leo Meirelles",
+                  "date": "2021-06-21 15:18:08 -0400",
+                  "message": {
+                    "scope": "",
+                    "subject": "create changelog page",
+                    "type": "feat"
+                  }
+                }
+              ]
+            }
+          ],
+          "version": ""
         }
-      ],
-        version: ''
-      }
-    ]);
+      ]);
   });
 });
