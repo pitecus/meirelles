@@ -42,7 +42,6 @@ export class ChangelogComponent {
               .filter((entry:string) => entry.startsWith('tag:') === true)
               .pop();
 
-            console.log(tag);
             if (tag !== undefined) {
               // Initialize a release.
               currentRelease = {
