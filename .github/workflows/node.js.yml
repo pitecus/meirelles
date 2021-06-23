@@ -45,9 +45,9 @@ jobs:
 
           # Update version
           npm version minor --no-git-tag-version
-          export RELEASE_VERSION=v$(node -p "require('./package.json').version")
+          export RELEASE_VERSION=$(node -p "require('./package.json').version")
           git add -A
-          git commit -m "ci: release ${RELEASE_VERSION}"
+          git commit -m "ci: release v${RELEASE_VERSION}"
 
           # Update release
           echo '{"version":"'${RELEASE_VERSION}'"}' > src/assets/release.json
@@ -59,7 +59,7 @@ jobs:
           git commit --amend --no-edit
 
           # Tag the release
-          git tag ${RELEASE_VERSION}
+          git tag "v${RELEASE_VERSION}"
 
           # Push changes
           git push
