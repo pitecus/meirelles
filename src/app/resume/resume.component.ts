@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Release } from '../changelog/release';
 import { Resume } from './resume';
 import { Work } from './work';
 
@@ -13,6 +14,11 @@ export class ResumeComponent {
    * The resume.
    */
   public resume?: Resume;
+
+  /**
+   * The release.
+   */
+  public release?: Release;
 
   /**
    * Filter jobs withing 10 years.
@@ -51,6 +57,15 @@ export class ResumeComponent {
           this.filterWork();
         }
       );
+
+      // Get the resume.
+      httpClient.get<Release>('/assets/release.json')
+        .subscribe(
+          (release: Release) => {
+            // Get the resume
+            this.release = release;
+          }
+        );
   }
 
   /**

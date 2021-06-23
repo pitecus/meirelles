@@ -49,6 +49,9 @@ jobs:
           git add -A
           git commit -m "ci: release ${RELEASE_VERSION}"
 
+          # Update release
+          echo '{"version":"'${RELEASE_VERSION}'"}' > src/assets/release.json
+
           # Generate the changelog.
           npm run prebuild
           git log --pretty=format:'{"commiter":"%cn","date":"%ci","subject":"%s","decoration":"%d"}' | node bin/git-to-json.js > src/assets/changelog.json

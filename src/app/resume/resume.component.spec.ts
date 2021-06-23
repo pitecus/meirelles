@@ -3,6 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 
 import { HttpClient } from '@angular/common/http';
 import { ResumeComponent } from './resume.component';
+import release from '../../assets/release.json';
 import resume from '../../assets/resume.json';
 
 describe('ResumeComponent', () => {
@@ -59,6 +60,15 @@ describe('ResumeComponent', () => {
     // Then respond with mock data, causing Observable to resolve.
     req.flush(resume);
 
+    // Then it should call for the release
+    const req2 = httpTestingController.expectOne('/assets/release.json');
+
+    // Then it should be a get method.
+    expect(req2.request.method).toEqual('GET');
+
+    // Then respond with mock data, causing Observable to resolve.
+    req2.flush(release);
+
     // Then it should update the values.
     expect(component.resume)
     .toEqual(resume);
@@ -75,10 +85,12 @@ describe('ResumeComponent', () => {
 
   it('should unfilter the work', () => {
     // Given a call for the resume
-    const req = httpTestingController.expectOne('/assets/resume.json');
+    const req1 = httpTestingController.expectOne('/assets/resume.json');
+    req1.flush(resume);
 
-    // Given a resume
-    req.flush(resume);
+    // Given a call for the release
+    const req2 = httpTestingController.expectOne('/assets/release.json');
+    req2.flush(release);
 
     // When disabling work filter.
     component.filterWork();
@@ -110,10 +122,12 @@ describe('ResumeComponent', () => {
     expect(component.filteredWork)
       .toEqual([]);
 
-      // Given a call for the resume
-      const req = httpTestingController.expectOne('/assets/resume.json');
+    // Given a call for the resume
+    const req1 = httpTestingController.expectOne('/assets/resume.json');
+    req1.flush(resume);
 
-      // Given a resume
-      req.flush(resume);
+    // Given a call for the release
+    const req2 = httpTestingController.expectOne('/assets/release.json');
+    req2.flush(release);
   });
 });

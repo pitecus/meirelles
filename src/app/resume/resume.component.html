@@ -76,6 +76,7 @@
         <p class="pb-2 text-md print:text-sm ">{{resume.basics.summary}}</p>
         <!-- Links -->
         <div class="flex flex-row space-x-6 text-indigo-600">
+          <!-- Links -->
           <a *ngFor="let profile of resume.basics.profiles"
             rel="noopener noreferrer"
             target="_blank"
@@ -103,6 +104,11 @@
             <!-- Usermane -->
             {{profile.username}}
           </a>
+          <!-- Version -->
+          <div *ngIf="release"
+            class="flex flex-grow items-end justify-end place-items-end text-gray-400 text-xs">
+            <span class="text-right -mb-1">v{{release.version}}</span>
+          </div>
         </div>
       </div>
     </header>
