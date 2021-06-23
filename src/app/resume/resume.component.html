@@ -122,7 +122,7 @@
             <span class="ml-2">Whitin last 7 years</span>
           </label>
         </h2>
-        <div class="mt-4 border-b"
+        <div class="mt-2 border-b"
           [ngClass]="{'border-b': isLast === false}"
           *ngFor="let work of filteredWork; last as isLast">
           <!-- ADP -->
@@ -177,7 +177,7 @@
         <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
           <span>Conferences</span>
         </h2>
-        <div class="mt-4"
+        <div class="mt-2"
           *ngFor="let publication of resume.publications">
           <!-- ADP -->
           <img *ngIf="publication.publisher === 'ADP Global Product & Development Connect Conference'"
