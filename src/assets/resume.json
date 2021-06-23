@@ -80,7 +80,6 @@
     {
       "keywords": [
         "Linux",
-        "Docker",
         "Docker swarm",
         "Containers",
         "Kubernetes",
@@ -88,8 +87,10 @@
         "Network",
         "DevSecOps",
         "AWS",
-        "AWS Cloudformation",
-        "Jenkinsfile"
+        "AWS Cloudformation, Lambda, API Gateway",
+        "Jenkinsfile",
+        "Splunk",
+        "Instana"
       ],
       "level": "Master",
       "name": "DevOps"
