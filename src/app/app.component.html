@@ -1,5 +1,6 @@
 <!-- Menu -->
 <button class=" focus:outline-none z-20 absolute top-3 left-3 border rounded-lg shadow-md bg-white print:hidden"
+  aria-label="toogle navigation menu"
   (click)="toggleMenu()">
   <svg xmlns="http://www.w3.org/2000/svg"
     class="h-6 w-6 text-indigo-300"
@@ -15,7 +16,6 @@
 <!-- Menu -->
 <div [@openClose]="menuState"
   class="z-10 absolute top-12 bg-white w-44 rounded-r-lg shadow-md text-sm text-indigo-600 font-bold capitalize print:hidden"
-  aria-labelledby="modal-title"
   role="navigation">
   <div class="flex flex-col justify-center">
     <a *ngFor="let page of navigation"
