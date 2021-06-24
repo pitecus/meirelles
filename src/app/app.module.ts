@@ -1,13 +1,14 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { ChangelogComponent } from './changelog/changelog.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { ResumeComponent } from './resume/resume.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { ChangelogComponent } from './changelog/changelog.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ChangelogComponent } from './changelog/changelog.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
