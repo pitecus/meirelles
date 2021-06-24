@@ -12,10 +12,10 @@ import { Component } from '@angular/core';
         transform: 'translateX(-100%)'
       })),
       transition('open => closed', [
-        animate('200ms')
+        animate('350ms')
       ]),
       transition('closed => open', [
-        animate('200ms')
+        animate('350ms')
       ])
     ])
   ],
@@ -56,4 +56,11 @@ export class AppComponent {
     this.menuState = 'open';
   }
 
+  /**
+   * Close the menu
+   */
+  public closeNav(): void {
+    // Open menu.
+    this.menuState = 'closed';
+  }
 }

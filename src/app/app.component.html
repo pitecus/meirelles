@@ -19,6 +19,7 @@
   role="navigation">
   <div class="flex flex-col justify-center">
     <a *ngFor="let page of navigation"
+      (click)="closeNav()"
       class="h-12 py-3 px-3 border"
       [routerLink]="page.link">
       <!-- Resume -->
