@@ -5,4 +5,18 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  /**
+   * The navigation items.
+   */
+  public readonly navigation = [
+    {
+      label: 'resume',
+      link: '/resume'
+    },
+    {
+      label: 'changelog',
+      link: '/changelog'
+    }
+  ];
+
 }
