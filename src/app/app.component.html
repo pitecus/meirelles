@@ -14,7 +14,7 @@
   </svg>
 </button>
 <!-- Menu -->
-<div [@openClose]="menuState"
+<nav [@openClose]="menuState"
   class="z-10 absolute top-12 bg-white w-44 rounded-r-lg shadow-md text-sm text-indigo-600 font-bold capitalize print:hidden"
   role="navigation">
   <div class="flex flex-col justify-center">
@@ -47,7 +47,7 @@
       <span class="ml-2 inline align-middle">{{page.label}}</span>
     </a>
   </div>
-</div>
+</nav>
 <!-- Routing -->
 <div class="min-h-screen flex justify-center">
 

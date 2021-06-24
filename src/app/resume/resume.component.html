@@ -1,4 +1,10 @@
 <div class="flex flex-col justify-between p-2 space-y-2 min-h-screen max-w-4xl">
+  <header class="print:hidden">
+    <!-- Page title -->
+    <h1 class="border-b-2 border-gray-300 font-bold text-2xl text-indigo-900 flex justify-between">
+      Resume
+    </h1>
+  </header>
   <!-- Header -->
   <header *ngIf="resume && resume.basics"
     class="p-2 rounded-lg bg-white shadow print:shadow-none flex sm:flex-row flex-col sm:space-x-4 print:flex-row print:space-x-4">
