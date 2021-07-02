@@ -1,6 +1,5 @@
+import { Component, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-
-import { Component } from '@angular/core';
 
 @Component({
   animations: [
@@ -22,7 +21,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   /**
    * The navigation items.
    */
@@ -40,7 +39,13 @@ export class AppComponent {
   /**
    * Valid menu states.
    */
-  public menuState: 'open'|'closed' = 'closed';
+  public menuState: 'open'|'closed' = 'open';
+
+  public ngOnInit() {
+    setTimeout(() => {
+      this.toggleMenu();
+    }, 1000);
+  }
 
   /**
    * Toggle the menu
