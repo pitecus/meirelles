@@ -20,6 +20,13 @@
         <h1 class="font-semibold text-2xl text-indigo-900 ">{{resume.basics.name}}</h1>
         <!-- Label -->
         <p>{{resume.basics.label}}</p>
+        <!-- Label and pronoun -->
+        <div class="flex justify-between">
+          <!-- Label -->
+          <p>{{resume.basics.label}}</p>
+          <!-- Pronoun -->
+          <p class="text-gray-500">{{resume.basics.pronoun}}</p>
+        </div>
         <!-- Location -->
         <p class="text-gray-500 text-sm mb-2">{{resume.basics.location?.city}},
           {{resume.basics.location?.region}},

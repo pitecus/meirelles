@@ -11,6 +11,7 @@ interface Basics {
   name: string;
   phone: string;
   picture: string;
+  pronoun: string;
   profiles?: Profile[] | null;
   summary: string;
   website: string;
