@@ -2,7 +2,7 @@
   "awards": [],
   "basics": {
     "email": "pitecus@gmail.com",
-    "label": "Angular + DevOps",
+    "label": "Frontend + DevOps",
     "location": {
       "address": "",
       "city": "Wayne",
@@ -64,7 +64,8 @@
   "skills": [
     {
       "keywords": [
-        "UI/UX",
+        "User Interface",
+        "User Experience",
         "Angular",
         "TypeScript",
         "Javascript",
@@ -73,7 +74,8 @@
         "HTML",
         "XML",
         "Google Analytics",
-        "NestJS"
+        "ReactJS",
+        "Lambda functions"
       ],
       "level": "Master",
       "name": "Frontend/Backend"
@@ -91,7 +93,9 @@
         "AWS Cloudformation, Lambda, API Gateway",
         "Jenkinsfile",
         "Splunk",
-        "Instana"
+        "Instana",
+        "AWS API Gateway",
+        "AWS Load balancer"
       ],
       "level": "Master",
       "name": "DevOps"
