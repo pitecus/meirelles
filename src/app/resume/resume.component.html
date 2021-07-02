@@ -18,8 +18,6 @@
       <div class="sm:pb-0 pb-4 print:pb-0">
         <!-- Name -->
         <h1 class="font-semibold text-2xl text-indigo-900 ">{{resume.basics.name}}</h1>
-        <!-- Label -->
-        <p>{{resume.basics.label}}</p>
         <!-- Label and pronoun -->
         <div class="flex justify-between">
           <!-- Label -->
@@ -169,14 +167,14 @@
           <h3 class="font-bold text-lg w-full">
             {{work.company}} - {{work.position}}
           </h3>
-          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36">
-            {{work.startDate | date: 'MMM yy'}}
-            <span class="hidden sm:inline">-</span>
+          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36 print:text-right">
+            {{work.startDate | date: 'MMM/yyyy'}}
+            <br />
             <span *ngIf="work.endDate === 'Current'">
               Current
             </span>
             <span *ngIf="work.endDate !== 'Current'">
-              {{work.endDate | date: 'MMM yy'}}
+              {{work.endDate | date: 'MMM/yyyy'}}
             </span>
           </div>
         </div>
@@ -198,7 +196,7 @@
       <div class="mt-2"
         *ngFor="let publication of resume.publications">
         <!-- ADP -->
-        <img *ngIf="publication.publisher === 'ADP Global Product & Development Connect Conference'"
+        <img *ngIf="publication.publisher === 'ADP Global Product & Development Connect'"
           width="24"
           height="24"
           alt="ADP Logo"
@@ -241,10 +239,10 @@
             <h3 class="font-bold text-lg w-full">
               {{education.institution}}
             </h3>
-            <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36">
-              {{education.startDate | date: 'MMM yy'}}
-              <span class="hidden sm:inline">-</span>
-              {{education.endDate | date: 'MMM yy'}}
+            <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36 print:text-right">
+              {{education.startDate | date: 'MMM/yyy'}}
+              <br />
+              {{education.endDate | date: 'MMM/yyy'}}
             </div>
           </div>
           <h4 class="p-1 mb-1">{{education.studyType}} {{education.area}}</h4>
