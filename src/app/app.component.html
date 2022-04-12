@@ -1,57 +1,27 @@
-<!-- Menu -->
-<button class=" focus:outline-none z-20 absolute top-3 left-3 border rounded-lg shadow-md bg-white print:hidden"
-  aria-label="toogle navigation menu"
-  (click)="toggleMenu()">
-  <svg xmlns="http://www.w3.org/2000/svg"
-    class="h-6 w-6 text-indigo-300"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor">
-    <path stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-</button>
-<!-- Menu -->
-<nav [@openClose]="menuState"
-  class="z-10 absolute top-12 bg-white w-44 rounded-r-lg shadow-md text-sm text-indigo-600 font-bold capitalize print:hidden"
-  role="navigation">
-  <div class="flex flex-col justify-center">
-    <a *ngFor="let page of navigation"
-      (click)="closeNav()"
-      class="h-12 py-3 px-3 border"
-      [routerLink]="page.link">
-      <!-- Resume -->
-      <svg *ngIf="page.label === 'resume'"
-        xmlns="http://www.w3.org/2000/svg"
-        class="inline h-6 w-6 stroke-current text-black"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor">
-        <path stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-      <!-- Changelog -->
-      <svg xmlns="http://www.w3.org/2000/svg"
-        *ngIf="page.label === 'changelog'"
-        class="inline h-6 w-6 stroke-current text-black"
-        fill="none"
-        viewBox="0 0 24 24">
-        <path stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-      </svg>
-      <span class="ml-2 inline align-middle">{{page.label}}</span>
-    </a>
+<!-- Navigation -->
+<div class="flex h-10 bg-white print:hidden shadow">
+  <div class="flex flex-grow justify-between max-w-4xl align-middle px-2">
+    <!-- Left items -->
+    <div class="h-10 py-2">
+      <!-- Logo -->
+      <span class="p-1 rounded shadow-md font-bold text-white bg-indigo-700">LM</span>
+      <!-- Navigation links -->
+      <nav class="inline text-md text-indigo-600 font-black capitalize ml-3"
+        role="navigation">
+        <a routerLink="resume">Resume</a>
+        <a routerLink="changelog">Changelog</a>
+      </nav>
+    </div>
+    <!-- Right items -->
+    <div class="text-right h-10 py-2">
+      <a onClick={window.print}
+        class="sm:hidden inline h-6 w-6 text-gray-500 stroke-current">
+        <span class="sr-only">Print</span>
+      </a>
+    </div>
   </div>
-</nav>
-<!-- Routing -->
-<div class="min-h-screen flex justify-center">
-
+</div>
+<!-- Content -->
+<div class="calc(min-h-screen - h-10) flex justify-center">
   <router-outlet></router-outlet>
-
 </div>
