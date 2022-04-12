@@ -27,7 +27,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should have initial values',  () => {
+  it('should have initial values', () => {
     // Given a component.
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
@@ -45,10 +45,10 @@ describe('AppComponent', () => {
         }
       ]);
     expect(app.menuState)
-      .toBe('closed');
+      .toBe('open');
   });
 
-  it('should open the menu',  () => {
+  it('should open the menu', () => {
     // Given a component.
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
@@ -58,10 +58,10 @@ describe('AppComponent', () => {
 
     // Then it update the values.
     expect(app.menuState)
-      .toBe('open');
+      .toBe('closed');
   });
 
-  it('should open and close the menu',  () => {
+  it('should open and close the menu', () => {
     // Given a component.
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
@@ -72,6 +72,6 @@ describe('AppComponent', () => {
 
     // Then it update the values.
     expect(app.menuState)
-      .toBe('closed');
+      .toBe('open');
   });
 });
