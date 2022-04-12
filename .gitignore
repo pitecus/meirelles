@@ -46,3 +46,4 @@ Thumbs.db
 
 # Utility binaries.
 bin/*.js
+.npmrc
