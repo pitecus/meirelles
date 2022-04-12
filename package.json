@@ -1,17 +1,5 @@
 {
   "author": "Leo Meirelles <pitecus@gmail.com> (https://pitecus.github.io/)",
-  "browserslist": {
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ],
-    "production": [
-      ">1%",
-      "not dead",
-      "not op_mini all"
-    ]
-  },
   "dependencies": {
     "@angular/animations": "13.3.2",
     "@angular/common": "13.3.2",
