@@ -11,10 +11,13 @@ interface Basics {
   name: string;
   phone: string;
   picture: string;
-  pronoun: string;
   profiles?: Profile[] | null;
+  pronoun: string;
   summary: string;
   website: string;
 }
 
+/**
+ * Export the interface.
+ */
 export { Basics };

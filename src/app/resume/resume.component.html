@@ -1,8 +1,9 @@
 <div class="flex flex-col justify-between p-2 space-y-2 min-h-screen max-w-4xl">
   <header class="print:hidden">
     <!-- Page title -->
-    <h1 class="ml-10 lg:ml-0 border-b-2 border-gray-300 font-bold text-2xl text-indigo-900 flex justify-between">
+    <h1 class="border-b-2 border-gray-300 font-bold text-2xl text-indigo-900 flex justify-between items-end">
       Resume
+      <span class="text-gray-500 text-xs">v{{release?.version}} </span>
     </h1>
   </header>
   <!-- Header -->
@@ -11,13 +12,13 @@
     <!-- Photo, location and contacts -->
     <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:profile-card">
       <img class="rounded-full shadow-md border-indigo-200 print:hidden m-auto mt-2 border"
-        width="200"
-        height="200"
+        width="202"
+        height="202"
         alt="portrait"
-        src="assets/leo-meirelles.jpeg">
+        src="assets/leo-meirelles.jpeg" />
       <div class="sm:pb-0 pb-4 print:pb-0">
         <!-- Name -->
-        <h1 class="font-semibold text-2xl text-indigo-900 ">{{resume.basics.name}}</h1>
+        <h1 class="font-semibold text-2xl text-indigo-900">{{resume.basics.name}}</h1>
         <!-- Label and pronoun -->
         <div class="flex justify-between">
           <!-- Label -->
@@ -26,9 +27,10 @@
           <p class="text-gray-500">{{resume.basics.pronoun}}</p>
         </div>
         <!-- Location -->
-        <p class="text-gray-500 text-sm mb-2">{{resume.basics.location?.city}},
-          {{resume.basics.location?.region}},
-          {{resume.basics.location?.countryCode }}
+        <p class="text-gray-500 text-sm mb-2">
+          {{resume.basics.location?.city}}, &nbsp;
+          {{resume.basics.location?.region}}, &nbsp;
+          {{resume.basics.location?.countryCode}}
         </p>
         <!-- Phone contact -->
         <p class="flex pb-1 text-indigo-600">
@@ -81,52 +83,69 @@
       </div>
     </div>
     <!-- Summary and links -->
-    <div class="flex flex-col w-full  justify-between">
+    <div class="flex flex-col w-full justify-between">
       <!-- Summary -->
-      <p class="pb-2 text-md print:text-sm ">{{resume.basics.summary}}</p>
-      <!-- Links -->
-      <div class="flex flex-row space-x-6 text-indigo-600">
-        <!-- Links -->
-        <a *ngFor="let profile of resume.basics.profiles"
-          rel="noopener noreferrer"
-          target="_blank"
-          href="{{profile.url}}">
-          <!-- Twitter -->
-          <svg *ngIf="profile.network == 'Twitter'"
-            class="mr-1 inline "
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z" />
-          </svg>
-          <!-- LinkedIn -->
-          <svg *ngIf="profile.network == 'LinkedIn'"
-            class="mr-1 inline"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z" />
-          </svg>
-          <!-- Usermane -->
-          {{profile.username}}
-        </a>
+      <p class="text-md sm:text-xl print:text-sm">
+        <!-- TODO: add QR code -->
+        {{resume.basics.summary}}
+      </p>
+      <!-- Links and version -->
+      <div class="flex flex-row justify-between">
+        <div class="flex flex-row content-end flex-wrap text-indigo-600">
+          <!-- Links -->
+          <a *ngFor="let profile of resume.basics.profiles"
+            class="whitespace-nowrap mr-6"
+            rel="noopener noreferrer"
+            target="_blank"
+            href="{{profile.url}}">
+            <!-- Twitter -->
+            <svg *ngIf="profile.network == 'Twitter'"
+              class="mr-1 inline"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z" />
+            </svg>
+            <!-- LinkedIn -->
+            <svg *ngIf="profile.network == 'LinkedIn'"
+              class="mr-1 inline"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z" />
+            </svg>
+            <!-- GitHub -->
+            <svg *ngIf="profile.network == 'GitHub'"
+              class="mr-1 inline"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            <!-- Usermane -->
+            {{profile.username}}
+          </a>
+        </div>
         <!-- Version -->
         <div *ngIf="release"
-          class="flex flex-grow items-end justify-end place-items-end text-gray-500 text-xs">
-          <span class="text-right -mb-1">v{{release.version}}</span>
+          class="flex flex-grow items-end justify-end">
+          <span class="text-right -mb-1 text-gray-500 text-xs hidden print:inline">v{{release.version}} </span>
         </div>
       </div>
     </div>
   </header>
+
   <!-- Main -->
   <main class="flex-grow place-self-stretch">
     <!-- Professional Experience -->
     <div *ngIf="resume && resume.work"
-      class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
+      class="rounded-lg bg-white shadow p-2 mb-2 print:pt-0 print:mt-4 print:shadow-none">
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 flex justify-between">
         <!-- Section title -->
         <span>Experience</span>
@@ -134,11 +153,11 @@
           <input type="checkbox"
             [ngModel]="isWorkFiltered"
             (click)="filterWork()"
-            class="form-checkbox h-4 w-4 text-indigo-500">
+            class="form-checkbox h-4 w-4 text-indigo-500" />
           <span class="ml-2">Whitin last 7 years</span>
         </label>
       </h2>
-      <div class="mt-2 border-b"
+      <div class="mt-4 print:mb-2"
         [ngClass]="{'border-b': isLast === false}"
         *ngFor="let work of filteredWork; last as isLast">
         <!-- ADP -->
@@ -147,107 +166,103 @@
           height="24"
           alt="ADP Logo"
           class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-adp.jpeg">
+          src="assets/logo-adp.jpeg" />
         <!-- Google -->
         <img *ngIf="work.company === 'Google'"
           width="24"
           height="24"
           alt="Google logo"
           class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-google.png">
+          src="assets/logo-google.png" />
         <!-- NYT -->
         <img *ngIf="work.company === 'The New York Times'"
           width="24"
           height="24"
           alt="The New York Times logo"
           class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-nyt.png">
+          src="assets/logo-nyt.png" />
         <!-- Company, position and period -->
         <div class="flex justify-between space-x-2">
-          <h3 class="font-bold text-lg w-full">
+          <h3 class="text-lg flex-grow">
             {{work.company}} - {{work.position}}
           </h3>
-          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36 print:text-right">
+          <div class="text-sm pl-1 text-right print:whitespace-nowrap">
             {{work.startDate | date: 'MMM/yyyy'}}
-            <br />
-            <span *ngIf="work.endDate === 'Current'">
-              Current
-            </span>
-            <span *ngIf="work.endDate !== 'Current'">
-              {{work.endDate | date: 'MMM/yyyy'}}
-            </span>
+            <br className="print:hidden" />
+            <span className="hidden print:inline"> to </span>
+            {{work.endDate | date: 'MMM/yyyy'}}
           </div>
         </div>
         <!-- Summary -->
-        <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:px-0">{{work.summary}}</h4>
+        <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:bg-white print:px-0">{{work.summary}}</h4>
         <!-- Highlights -->
         <p *ngFor="let highlight of work.highlights"
-          class="mb-2 text-sm print:text-xs">
+          class="text-sm print:text-xs">
           {{highlight}}
         </p>
       </div>
     </div>
-    <!-- Publications -->
+    <!-- Publications and conferences -->
     <div *ngIf="resume && resume.publications"
-      class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
+      class="rounded-lg bg-white shadow p-2 mb-2 print:pt-0 print:mt-4 print:shadow-none">
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         <span>Conferences</span>
       </h2>
-      <div class="mt-2"
-        *ngFor="let publication of resume.publications">
+      <div *ngFor="let publication of resume.publications"
+        class="mt-2">
         <!-- ADP -->
         <img *ngIf="publication.publisher === 'ADP Global Product & Development Connect'"
           width="24"
           height="24"
           alt="ADP Logo"
           class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-adp.jpeg">
+          src="assets/logo-adp.jpeg" />
         <!-- Conference name -->
         <div class="flex justify-between space-x-2">
-          <h3 class="font-bold text-lg w-full">
-            {{publication.publisher}}
-          </h3>
+          <h3 class="font-bold text-lg w-full">{{publication.publisher}}</h3>
           <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36 print:text-right ">
             {{ publication.releaseDate | date: 'MMM/yyyy'}}
           </div>
         </div>
         <!-- Title -->
-        <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:px-0 flex justify-between">
+        <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:mb-0 print:bg-white print:px-0 flex justify-between">
           <span>{{publication.name}}</span>
         </h4>
         <!-- Summary -->
-        <p class="mb-2 text-sm print:text-xs">
+        <p class="text-sm print:text-xs">
           {{publication.summary}}
         </p>
       </div>
     </div>
-    <!-- Education -->
+    <!-- Education and languages-->
     <div *ngIf="resume && (resume.education || resume.languages)"
-      class="rounded-lg bg-white shadow p-2 mb-2 print:shadow-none">
-      <div *ngIf="resume.education">
-        <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
-          Education
-        </h2>
-        <div class="mt-2"
-          *ngFor="let education of resume.education">
+      class="rounded-lg bg-white shadow p-2 mb-2 print:pt-0 print:-mt-2 print:shadow-none">
+      <!-- Education -->
+      <div>
+        <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">Education</h2>
+        <div *ngFor="let education of resume.education"
+          class="mt-2">
           <!-- PUCRS -->
           <img *ngIf="education.institution === 'Pontifícia Universidade Católica (PUCRS)'"
             width="24"
             height="24"
             alt="ADP Logo"
             class="float-left rounded-full w-6 shadow mr-3"
-            src="assets/logo-pucrs.png">
+            src="assets/logo-pucrs.png" />
           <div class="flex justify-between space-x-2">
-            <h3 class="font-bold text-lg w-full">
+            <h3 class="font-bold text-lg flex-grow">
               {{education.institution}}
             </h3>
-            <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36 print:text-right">
-              {{education.startDate | date: 'MMM/yyy'}}
-              <br />
-              {{education.endDate | date: 'MMM/yyy'}}
+            <div class="text-sm pl-1 text-right print:whitespace-nowrap">
+              {{education.startDate | date: 'MMM/yyyy'}}
+              <br className="print:hidden" />
+              <span className="hidden print:inline"> to </span>
+              {{education.endDate | date: 'MMM/yyyy'}}
             </div>
           </div>
-          <h4 class="p-1 mb-1">{{education.studyType}} {{education.area}}</h4>
+          <h4 class="p-1">
+            {{education.studyType}} {{education.area}}
+          </h4>
         </div>
       </div>
       <!-- Languages -->
@@ -255,18 +270,17 @@
         <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
           Languages
         </h2>
-        <div class="mt-2 flex flex-row flex-wrap">
-          <div *ngFor="let language of resume.languages">
-            <p class="mr-4">
-              <!-- Brazilian Portuguese -->
-              <span *ngIf="language.language === 'Portugues'">🇧🇷</span>
-              <!-- USA English -->
-              <span *ngIf="language.language === 'English'">🇺🇸</span>
-              <!-- The language -->
-              <span class="pl-2 font-bold">{{language.language}}</span>:
-              <span>{{language.fluency}}</span>
-            </p>
-          </div>
+        <div *ngFor="let language of resume.languages"
+          class="mt-2 flex flex-row flex-wrap">
+          <p class="mr-4">
+            <!-- Brazilian Portuguese -->
+            <span *ngIf="language.language === 'Portugues'">🇧🇷</span>
+            <!-- USA English -->
+            <span *ngIf="language.language === 'English'">🇺🇸</span>
+            <!-- The language -->
+            <span class="pl-2 font-bold">{{language.language}}</span>:&nbsp;
+            <span>{{language.fluency}}</span>
+          </p>
         </div>
       </div>
     </div>
@@ -276,14 +290,15 @@
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         Technical Skills
       </h2>
-      <dl>
-        <ng-container *ngFor="let skill of resume.skills">
-          <dt class="font-bold text-lg mb-1 mt-2">{{ skill.name }}</dt>
-          <dd class="text-sm">
-            {{ skill.keywords?.join(', ') }}
-          </dd>
-        </ng-container>
-      </dl>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 print:grid-cols-2 gap-2 mt-2">
+        <div *ngFor="let skill of resume.skills"
+          class="border-b print:shadow-none">
+          <h2 class="font-bold rounded-lg p-1 text-md bg-gray-100 print:bg-white">{{skill.name}}</h2>
+          <span class="text-sm print:text-xs">
+            {{skill.keywords?.join(', ')}}
+          </span>
+        </div>
+      </div>
     </div>
   </main>
   <!-- Footer -->
@@ -306,7 +321,9 @@
     <!-- Build status badge -->
     <div class="flex flex-col justify-center">
       <img src="https://github.com/pitecus/meirelles/actions/workflows/node.js.yml/badge.svg"
-        alt="GitHub actions build status badge">
+        width="111"
+        height="20"
+        alt="GitHub actions build status badge" />
     </div>
   </footer>
 </div>
