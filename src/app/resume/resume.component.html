@@ -12,8 +12,8 @@
     <!-- Photo, location and contacts -->
     <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:profile-card">
       <img class="rounded-full shadow-md border-indigo-200 print:hidden m-auto mt-2 border"
-        width="202"
-        height="202"
+        width="200"
+        height="200"
         alt="portrait"
         src="assets/leo-meirelles.jpeg" />
       <div class="sm:pb-0 pb-4 print:pb-0">
@@ -86,7 +86,11 @@
     <div class="flex flex-col w-full justify-between">
       <!-- Summary -->
       <p class="text-md sm:text-xl print:text-sm">
-        <!-- TODO: add QR code -->
+        <img class="float-right hidden print:inline"
+          width="50"
+          height="50"
+          alt="QR code"
+          src={{qrCode}} />
         {{resume.basics.summary}}
       </p>
       <!-- Links and version -->

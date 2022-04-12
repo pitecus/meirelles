@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Release } from '../changelog/release';
 import { Resume } from './resume';
 import { Work } from './work';
+import QRCode from 'qrcode';
 
 @Component({
   selector: 'app-resume',
@@ -36,6 +37,11 @@ export class ResumeComponent {
   private dateFilter: string;
 
   /**
+   * The QR code for the page
+   */
+  public qrCode: string = '';
+
+  /**
    * Initialize the component.
    */
   public constructor(httpClient: HttpClient) {
@@ -58,14 +64,25 @@ export class ResumeComponent {
         }
       );
 
-      // Get the resume.
-      httpClient.get<Release>('/assets/release.json')
-        .subscribe(
-          (release: Release) => {
-            // Get the resume
-            this.release = release;
-          }
-        );
+    // Get the resume.
+    httpClient.get<Release>('/assets/release.json')
+      .subscribe(
+        (release: Release) => {
+          // Get the resume
+          this.release = release;
+        }
+      );
+
+    // Generate the QR code for the resume
+    QRCode.toDataURL(
+      window.location.href,
+      {
+        errorCorrectionLevel: 'low'
+      },
+      (error, url) => {
+        this.qrCode = url;
+      }
+    );
   }
 
   /**
@@ -82,9 +99,9 @@ export class ResumeComponent {
     }
 
     // Filter the work.
-    if(this.resume && this.resume.work) {
+    if (this.resume && this.resume.work) {
       this.filteredWork = this.resume.work
-      .filter((value: Work) => value.endDate > this.dateFilter);
+        .filter((value: Work) => value.endDate > this.dateFilter);
     }
   }
 }
