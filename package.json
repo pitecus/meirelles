@@ -49,5 +49,5 @@
     "test": "ng test",
     "watch": "ng build --watch --configuration development"
   },
-  "version": "1.18.0"
+  "version": "1.19.0"
 }
