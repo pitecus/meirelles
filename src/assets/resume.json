@@ -24,9 +24,14 @@
         "network": "LinkedIn",
         "url": "https://www.linkedin.com/in/leo-meirelles/",
         "username": "Leo Meirelles"
+      },
+      {
+        "network": "GitHub",
+        "url": "https://github.com/pitecus",
+        "username": "pitecus"
       }
     ],
-    "summary": "Passionate for quality, best practices, and effortless usability (for developers and end users), problem solving oriented engineer with experience in UI/UX, continuous delivery and integration, micro-frontend and microservices architecture, and containers. Quick to adapt to changes of dynamic environments and requirements to provide the optimal solution.",
+    "summary": "Passionate for quality, best practices, and effortless usability (for developers and end-users), problem-solving-oriented engineer with experience in UI/UX, continuous delivery and integration, micro-frontend and microservices architecture, and containers. Quickly adapt to changes in dynamic environments and requirements to provide the optimal solution.",
     "website": "https://pitecus.github.io"
   },
   "education": [
@@ -43,7 +48,7 @@
   "interests": [],
   "languages": [
     {
-      "fluency": "Bilingual",
+      "fluency": "Fluent",
       "language": "English"
     },
     {
@@ -56,7 +61,7 @@
       "name": "GitOps + Ferris Wheel",
       "publisher": "ADP Global Product & Development Connect",
       "releaseDate": "2020-09-30",
-      "summary": "CI/CD backed by Bitbucket. It allows to have one single source of truth, process transparency, and auditing in one single place. Environment configuration, release approvals and notifications, clear process and responsibilities – all in one single place, accessible to everyone and traceable. And a rollback is just a Pull-Request away.",
+      "summary": "GitOps is a process of how to have your whole application (development, infrastructure, releases, deployments, and changelog) in BitBucket. It may sound too extreme, but developers and DevOps are using Bitbucket daily already. It takes advantage of existing tools to automate everything so that everyone can focus on what matters: new features and stability. Since we adopted the GitOps process, we are at 700+ releases, 0 downtime deployments, with rollback happening in minutes. The right people approve new releases without having to send emails or text messages. Most importantly, it keeps track of changes that allow quick troubleshooting by knowing when they happened.",
       "website": "https://tech.adp.com/2020/11/20/adps-annual-developers-conference-video"
     }
   ],
@@ -64,41 +69,67 @@
   "skills": [
     {
       "keywords": [
-        "User Interface",
-        "User Experience",
         "Angular",
         "TypeScript",
+        "React",
         "Javascript",
+        "User Interface (UI)",
+        "User Experience (UX)",
         "JSON",
         "CSS",
         "HTML",
         "XML",
-        "Google Analytics",
-        "ReactJS",
-        "Lambda functions"
+        "Cross-Origin Resource Sharing (CORS)",
+        "Content-Security-Policy (CSP)",
+        "RestFul API",
+        "GraphQL"
       ],
       "level": "Master",
-      "name": "Frontend/Backend"
+      "name": "Development"
+    },
+    {
+      "keywords": [
+        "Docker",
+        "Docker swarm",
+        "Kubernetes",
+        "Dockerfile",
+        "docker-compose",
+        "helm charts"
+      ],
+      "level": "Master",
+      "name": "Containers"
+    },
+    {
+      "keywords": [
+        "DevSecOps",
+        "AWS",
+        "Jenkinsfile",
+        "Splunk",
+        "Ansible",
+        "AWS IAM roles",
+        "AWS Cloudformation",
+        "AWS API Gateway",
+        "AWS Load Balancer",
+        "AWS Lambda"
+      ],
+      "level": "Master",
+      "name": "DevOps"
     },
     {
       "keywords": [
         "Linux",
-        "Docker swarm",
-        "Containers",
-        "Kubernetes",
         "TCP/IP",
         "Network",
-        "DevSecOps",
-        "AWS",
-        "AWS Cloudformation, Lambda, API Gateway",
-        "Jenkinsfile",
-        "Splunk",
-        "Instana",
-        "AWS API Gateway",
-        "AWS Load balancer"
+        "DNS",
+        "awk",
+        "sed",
+        "bash",
+        "curl",
+        "NGINX",
+        "Nest"
       ],
       "level": "Master",
-      "name": "DevOps"
+      "name": "Linux"
     },
     {
       "keywords": [
@@ -114,7 +145,11 @@
         "Lucidchart",
         "Jenkins",
         "SonarQube",
-        "Artifactory"
+        "Artifactory",
+        "Google Analytics",
+        "Splunk",
+        "Instana",
+        "LogRocket"
       ],
       "level": "Master",
       "name": "Applications"
@@ -126,56 +161,56 @@
       "company": "ADP",
       "endDate": "Current",
       "highlights": [
-        "Lead the GitOps implementation for CI/CD SDLC integrated with code review, SonarQube, automated releases using containers and deployments. Work on DevSecOps by scanning containers for vulnerabilities and npm audits for Javascript projects. Improve the continuous E2E cross-browser tests using SauceLabs, integrating with internal automation services using container sidecar and VPN/proxy connections.",
-        "Architected and replaced an Adobe Flash application using Business Objects Enterprise XML APIs by Angular 11 and HighCharts. Working on an application to identify incorrect paychecks using AWS Lambda (backend), DynamoDB, SQS, S3, and Kubernetes Helm Charts (frontend)"
+        "Reverse-engineered an Adobe Flash application with XML/SOAP API and replaced it with a new web application with a small team under a tight deadline. Integrated cross-browsing tests using SauceLabs with the ADP's CI/CD framework using VPN reverse-proxies and side-car containers.",
+        "Building a proof-of-concept application to recognize payroll documents misdeliveries using images from PDF documents. It prevents security incidents for clients and employees; while allowing seamless integrations across multiple payroll services."
       ],
       "position": "Principal Architect",
       "startDate": "2018-09-21",
-      "summary": "Design, build, audit, and deploy containerized applications. Architect integration solutions. Improve security and optmize release cycles.",
+      "summary": "Design and build full-stack applications; create, audit, and deploy containers. Improve security, advocate for automated tests, and optimize release workflow.",
       "website": "https://www.adp.com"
     },
     {
       "company": "ADP",
       "endDate": "2018-09-21",
       "highlights": [
-        "Worked with Product Owners, Project Managers, and multiple teams in different countries to delivery bi-weekly features, coordinating dependencies and requirements. Containerized micro-frontend and micro-services for faster release cycle.",
-        "Advocate for meaninful code reviews, small pull requests, automated code quality with lint, SonarQube and unit-tests. Upgrade the application from AngularJS 1.4 to Angular 6 by running both at the same time."
+        "Lead the frontend engineer team on a multi-country payroll application. I provided guidance and direction to multiple co-workers in multiple geographic locations. Engaged in UI/UX reviews, prioritized features and, facilitated the development between teams. Enforced code standards, performed code reviews, and helped with unit tests. Built containers and implemented a CI/CD pipeline for deployments in 4 different environments.",
+        "Improved existing CI/CD pipeline using GitOps. Automated the approval process of releases, improved the deployment time (from 30 to 3 minutes), and optimized the build by updating only the necessary services (from 40 to 10 minutes)."
       ],
       "position": "Principal Software Engineer",
       "startDate": "2016-10-01",
-      "summary": "Lead UI/UX + DevOps enginner for an application to integrate multi-country payroll systems with human capital management.",
+      "summary": "Lead UI/UX + DevOps engineers for an application to integrate multi-country payroll systems with human capital management.",
       "website": "https://www.adp.com"
     },
     {
       "company": "Google",
       "endDate": "2016-10-01",
       "highlights": [
-        "Architect, design and integrate AngularJS 1.4 components for Cloud SQL inside Google Cloud Platform. Use Google Analytics to improve user experience by evaluating and prioritizing features.",
-        "Coordinate with Google Site Reliability Engineering, project manager and back-end API team to prioritize bugs, features and release using experiments. Provide support for internal and external users. Create utility tools in Bash shell script, NodeJS and Chrome Extensions for internal usage."
+        "Architected, designed, and integrated AngularJS 1.4 components for Cloud SQL inside Google Cloud Platform. Used Google Analytics to improve user experience by evaluating and prioritizing features.",
+        "Coordinated with Google Site Reliability Engineering, project manager, and backend API team to prioritize bugs, features, and releases using feature flags experiments. Built utility tools in Shell script, NodeJS, and Chrome Extensions for internal usage."
       ],
       "position": "Senior Software Engineer",
       "startDate": "2015-05-04",
-      "summary": "Frontend development, API integration, release new features",
+      "summary": "Engineered frontend components, working with API integrations and releases of new features.",
       "website": "https://www.google.com"
     },
     {
       "company": "The New York Times",
       "endDate": "2015-04-30",
       "highlights": [
-        "Create new features, improve system’s performance and develop new applications in Business Intelligence analytics ecosystem. Develop software prototypes to streamline data access. Responsible for tag management and tracking systems for page and modules views, customer behavior, A/B testings, and subscription funnel.",
-        "Develop in MEAN stack. Enhance tracking data through systems integration. Create front-end applications for user friendly interaction with REST services. Partner with multiple stakeholders to prioritize features and manage development cycles."
+        "Create new features, improve system performance and develop new applications in the Business Intelligence analytics ecosystem. Develop software prototypes to streamline data access. Responsible for tag management and tracking systems for page and modules views, customer behavior, A/B testings, and subscription funnel.",
+        "Used MEAN stack (MongoDB, Express, Angular, and Node.JS) to enhanced user behavior data tracking. Created applications for user-friendly interaction with REST services. Worked together with multiple stakeholders to prioritize features and manage development cycles."
       ],
       "position": "Senior Software Engineer",
       "startDate": "2013-06-01",
-      "summary": "Frontend development, API integration, Business Inteligence, user behavior analysis",
+      "summary": "Developed frontend features, integrating with API and Business Intelligence tools, interpreting user behavior.",
       "website": "https://www.nytimes.com"
     },
     {
       "company": "The New York Times",
       "endDate": "2013-06-01",
       "highlights": [
-        "System architect for NYTimes-China site: planned the infra-structure, built the servers and successfully transitioned to the implementation team. Developed SEO (search engine optimization) features using ModEST publishing framework. Worked on Datacenter Move (DCI) project, providing solutions for server configurations migration between iPlanet and Apache.",
-        "Provided support and development for NY Times web site. Responsible for performance, stability and improvement of hundreds of servers in Production in two Datacenters (East and West) with millions of daily page views."
+        "Designed the architecture for the NYTimes-China website: planned the infrastructure, built the servers, and successfully transitioned to the implementation team. Developed SEO (search engine optimization) features using ModEST publishing framework. Worked on Datacenter Move (DCI) project, providing solutions for server configurations migration between iPlanet and Apache.",
+        "Fixed issues and developed new features for the NY Times website. Responsible for performance, stability, and improvement of hundreds of servers in Production in two Datacenters (East and West) with millions of daily page views."
       ],
       "position": "Web Engineer",
       "startDate": "2011-10-17",
@@ -186,20 +221,20 @@
       "company": "ADP",
       "endDate": "2011-10-14",
       "highlights": [
-        "Architect and design reusable components using Dojo, Java and Javascript. Develop UI web front ends, middle tier JSF to provide communication, security and performance to Web Services using SOAP. Generate code with cross browser compatibility for Firefox, Internet Explorer (7, 8 and 9) and Safari.",
-        "Provided analysis of new product features, advice about performance improvements and usability with business and analysis teams, review UI under development and create web applications in tight deadlines, with emphasis in high availability, low resources usage, security and performance."
+        "Architected and designed reusable components using Dojo, Java, and Javascript. Developed UI web frontend, middle-tier JSF to provide communication, security, and performance to Web Services using SOAP. Generated code with cross-browser compatibility for Firefox, Internet Explorer (7, 8, and 9), and Safari.",
+        "Created new features, advised about performance improvements and usability with business and analysis teams. Reviewed UI under development and built web applications under tight deadlines, with high availability, low resources usage, security, and performance."
       ],
       "position": "Lead Technical Analyst",
       "startDate": "2008-12-08",
-      "summary": "Full stack development with Java and Javascript. Cross browser compatibility. Performance improvements.",
+      "summary": "Fullstack developer with Java and Javascript. Cross-browser compatibility. Performance improvements.",
       "website": "https://www.adp.com"
     },
     {
       "company": "ADP",
       "endDate": "2008-12-08",
       "highlights": [
-        "Provided 3rd level support to ADP US Portal. The ADP Portal was developed under J2EE and had more than 5 millions of active users with an average of 2 millions of daily hits, providing a common interface to many enterprise products.",
-        "Responsible for administration and monitoring of several production and pre-production servers, troubleshoot and coordinate teams to fix issues efficiently. Provided technical support for other teams regarding WebSphere Portal environment and fixed security issues found during penetration tests."
+        "Provided 3rd level support to ADP Portal in the United States. The ADP Portal was build using Java. It had more than 5 million active users with an average of 2 million daily hits, providing one interface to many enterprise products.",
+        "Was responsible for administration and monitoring of several servers in production and pre-production environments, troubleshoot, and coordinated teams to fix issues efficiently. Helped other co-workers to configure, maintain, and troubleshoot WebSphere Portal environments. Fixed security issues found during penetration tests."
       ],
       "position": "Senior programmer",
       "startDate": "2006-11-01",
@@ -210,11 +245,11 @@
       "company": "ADP",
       "endDate": "2006-11-01",
       "highlights": [
-        "Developed and designed using Scrum methodology a product tailored for US human resources, including payroll, vacations and benefits. The system was based in JSP and Struts, with the front-end running inside WebSphere Portal. Used jUnit tests for reliability, quality and integration tests."
+        "Strived as a software developer for an application to support US human resources, payroll, vacations, and benefits. It uses Java Server Pages and Struts framework, with the frontend running inside WebSphere Portal. Created unit and integration tests."
       ],
       "position": "Programmer",
       "startDate": "2005-04-11",
-      "summary": "Java developer, unit tests.",
+      "summary": "Fullstack developer Java developer.",
       "website": "https://www.adp.com.br"
     }
   ]

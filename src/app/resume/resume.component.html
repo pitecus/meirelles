@@ -194,7 +194,9 @@
             {{work.startDate | date: 'MMM/yyyy'}}
             <br className="print:hidden" />
             <span className="hidden print:inline"> to </span>
-            {{work.endDate | date: 'MMM/yyyy'}}
+            <span *ngIf="work.endDate == 'Current'">Current</span>
+            <span *ngIf="work.endDate != 'Current'">{{work.endDate | date: 'MMM/yyyy'}}</span>
+
           </div>
         </div>
         <!-- Summary -->

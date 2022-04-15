@@ -35,6 +35,7 @@
               ],
               "buildOptimizer": true,
               "commonChunk": true,
+              "extractLicenses": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
