@@ -1,24 +1,16 @@
-<div class="flex flex-col justify-between p-2 space-y-2 min-h-screen max-w-4xl">
-  <header class="print:hidden">
-    <!-- Page title -->
-    <h1 class="border-b-2 border-gray-300 font-bold text-2xl text-indigo-900 flex justify-between items-end">
-      Resume
-      <span class="text-gray-500 text-xs">v{{release?.version}} </span>
-    </h1>
-  </header>
-  <!-- Header -->
-  <header *ngIf="resume && resume.basics"
-    class="p-2 rounded-lg bg-white shadow print:shadow-none flex sm:flex-row flex-col sm:space-x-4 print:flex-row print:space-x-4">
+<div class="flex flex-col justify-between min-h-screen pt-4">
+  <!-- First row: personal info and summary -->
+  <div *ngIf="resume && resume.basics"
+    class="flex container gap-3 md:flex-row print:flex-row flex-col">
     <!-- Photo, location and contacts -->
-    <div class="whitespace-nowrap sm:border-r sm:pr-2 text-center sm:profile-card">
-      <img class="rounded-full shadow-md border-indigo-200 print:hidden m-auto mt-2 border"
-        width="200"
-        height="200"
+    <div class="rounded bg-white whitespace-nowrap sm:border-r text-center shadow-lg ">
+      <!-- Photo -->
+      <img class="p-2 rounded-full shadow-lg print:hidden m-auto mt-4 border border-indigo-200 "
         alt="portrait"
         src="assets/leo-meirelles.jpeg" />
-      <div class="sm:pb-0 pb-4 print:pb-0">
+      <div class="p-4 print:pb-0">
         <!-- Name -->
-        <h1 class="font-semibold text-2xl text-indigo-900">{{resume.basics.name}}</h1>
+        <h1 class="font-semibold text-2xl print:text-xl text-indigo-900">{{resume.basics.name}}</h1>
         <!-- Label and pronoun -->
         <div class="flex justify-between">
           <!-- Label -->
@@ -82,9 +74,9 @@
         </p>
       </div>
     </div>
-    <!-- Summary and links -->
-    <div class="flex flex-col w-full justify-between">
-      <!-- Summary -->
+
+    <!-- Summary -->
+    <div class="w-auto rounded bg-white sm:border-r sm:pr-2 flex flex-col flex-grow justify-between p-4 shadow-lg">
       <p class="text-md sm:text-xl print:text-sm">
         <img class="float-right hidden print:inline"
           width="50"
@@ -139,14 +131,27 @@
         <!-- Version -->
         <div *ngIf="release"
           class="flex flex-grow items-end justify-end">
-          <span class="text-right -mb-1 text-gray-500 text-xs hidden print:inline">v{{release.version}} </span>
+          <span class="text-right -mb-1 text-gray-500 text-sm print:text-xs inline">v{{release.version}} </span>
         </div>
       </div>
     </div>
-  </header>
+  </div>
 
   <!-- Main -->
   <main class="flex-grow place-self-stretch">
+
+    <!-- Page title -->
+    <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 flex justify-between items-end">
+      Professional Experience
+      <label class="flex items-center text-sm print:hidden">
+        <input type="checkbox"
+          [ngModel]="isWorkFiltered"
+          (click)="filterWork()"
+          class="form-checkbox h-4 w-4 text-indigo-500" />
+        <span class="ml-2">Whitin last 7 years</span>
+      </label>
+    </h2>
+
     <!-- Professional Experience -->
     <div *ngIf="resume && resume.work"
       class="rounded-lg bg-white shadow p-2 mb-2 print:pt-0 print:mt-4 print:shadow-none">
