@@ -47,7 +47,6 @@ export class ChangelogComponent {
     httpClient.get<Changelog[]>('/assets/changelog.json')
       .subscribe(
         (changelog: Changelog[]) => {
-          debugger;
           // Current release.
           let currentRelease: Release;
           let currentChanges: { [type: string]: ChangelogDetail[] };
