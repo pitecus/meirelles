@@ -28,6 +28,7 @@
     "ajv": "6.12.6",
     "angular-cli-ghpages": "1.0.0-rc.2",
     "autoprefixer": "10.2.6",
+    "husky": "7.0.4",
     "jasmine-core": "3.7.1",
     "karma": "6.3.16",
     "karma-chrome-launcher": "3.1.0",
@@ -47,7 +48,8 @@
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "prepare": "husky install"
   },
   "version": "1.25.0"
 }
