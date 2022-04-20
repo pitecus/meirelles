@@ -9,12 +9,21 @@ import { NgModule } from '@angular/core';
 import { ResumeComponent } from './resume/resume.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pages-dropdown.component";
+import { IndexDropdownComponent } from "./components/dropdowns/index-dropdown/index-dropdown.component";
+import { IndexNavbarComponent } from './components/navbars/index-navbar/index-navbar.component';
 
 @NgModule({
+  bootstrap: [
+    AppComponent
+  ],
   declarations: [
     AppComponent,
-    ResumeComponent,
-    ChangelogComponent
+    ChangelogComponent,
+    IndexDropdownComponent,
+    IndexNavbarComponent,
+    PagesDropdownComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +38,11 @@ import { environment } from '../environments/environment';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: Window,
+      useValue: window
+    }
+  ]
 })
 export class AppModule { }
