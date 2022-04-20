@@ -1,0 +1,61 @@
+<nav class="top-0 sticky z-50 w-full flex flex-wrap items-center justify-between p-1 navbar-expand-lg bg-white shadow">
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+      <!-- Logo -->
+      <a [routerLink]="['/resume']"
+        class="text-blueGray-700 text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase">
+        <span class="inline-block w-8 h-8 p-1.5 rounded-lg shadow-md font-bold text-white bg-indigo-700">LM</span>
+        Leonardo Meirelles
+      </a>
+      <!-- Navigation for mobile -->
+      <button
+        class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+        type="button"
+        (click)="setNavbarOpen()">
+        <span class="material-icons-outlined">
+          menu
+        </span>
+      </button>
+    </div>
+    <!-- Navigation bar for mobile -->
+    <div class="lg:flex flex-grow items-center"
+      [ngClass]="{ hidden: !navbarOpen, block: navbarOpen }"
+      id="example-navbar-warning">
+      <!-- Left items -->
+      <ul class="flex flex-col lg:flex-row list-none mr-auto">
+        <!-- Resume -->
+        <li class="flex items-center">
+          <a class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+            [routerLink]="['/resume']">
+            <span class="material-icons-outlined sm:pr-1">
+              description
+            </span>
+            Resume
+          </a>
+        </li>
+        <!-- Changelog -->
+        <li class="flex items-center">
+          <a class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold"
+            [routerLink]="['/changelog']">
+            <span class="material-icons-outlined  sm:pr-1">
+              summarize
+            </span>
+            Changelog
+          </a>
+        </li>
+      </ul>
+      <!-- Right items -->
+      <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
+        <li class="flex items-center sm:hidden">
+          <a (click)="window.print()"
+            class="hover:text-blueGray-500 text-blueGray-700 px-3 py-2 flex items-center text-xs uppercase font-bold">
+            <span class="material-icons-outlined  sm:pr-1">
+              print
+            </span>
+            Print
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

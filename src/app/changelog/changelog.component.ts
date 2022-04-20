@@ -20,12 +20,12 @@ export class ChangelogComponent {
   /**
    * Commit type.
    */
-  public commitTypes: {[commitType: string]: CommitType} = commitTypes;
+  public commitTypes: { [commitType: string]: CommitType } = commitTypes;
 
   /**
    * Sorting commit types.
    */
-  private sortingTypes: {[type: string]: number} = {
+  private sortingTypes: { [type: string]: number } = {
     feat: 1,
     fix: 2,
     perf: 3,
@@ -47,9 +47,10 @@ export class ChangelogComponent {
     httpClient.get<Changelog[]>('/assets/changelog.json')
       .subscribe(
         (changelog: Changelog[]) => {
+          debugger;
           // Current release.
           let currentRelease: Release;
-          let currentChanges: {[type: string]: ChangelogDetail[]};
+          let currentChanges: { [type: string]: ChangelogDetail[] };
 
           // Loop throught the changelog and populate the release.
           changelog.forEach((entry: Changelog): void => {
@@ -58,7 +59,7 @@ export class ChangelogComponent {
               .decoration
               .replace(/[ \(\)]/g, '')
               .split(',')
-              .filter((entry:string) => entry.startsWith('tag:') === true)
+              .filter((entry: string) => entry.startsWith('tag:') === true)
               .pop();
 
             if (tag !== undefined || currentRelease === undefined) {

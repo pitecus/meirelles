@@ -22,6 +22,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
+  public navbarOpen = false;
+
   /**
    * The navigation items.
    */
@@ -39,7 +41,7 @@ export class AppComponent implements OnInit {
   /**
    * Valid menu states.
    */
-  public menuState: 'open'|'closed' = 'open';
+  public menuState: 'open' | 'closed' = 'open';
 
   public ngOnInit() {
     setTimeout(() => {
@@ -67,5 +69,9 @@ export class AppComponent implements OnInit {
   public closeNav(): void {
     // Open menu.
     this.menuState = 'closed';
+  }
+
+  setNavbarOpen() {
+    this.navbarOpen = !this.navbarOpen;
   }
 }

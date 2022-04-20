@@ -1,26 +1,7 @@
-<!-- Navigation -->
-<div class="flex h-10 bg-white print:hidden shadow">
-  <div class="flex flex-grow justify-between max-w-4xl align-middle px-2">
-    <!-- Left items -->
-    <div class="h-10 py-2">
-      <!-- Logo -->
-      <span class="p-1 rounded shadow-md font-bold text-white bg-indigo-700">LM</span>
-      <!-- Navigation links -->
-      <nav class="inline text-md text-indigo-600 font-black capitalize ml-3"
-        role="navigation">
-        <a routerLink="resume">Resume</a>
-        <a routerLink="changelog">Changelog</a>
-      </nav>
-    </div>
-    <!-- Right items -->
-    <div class="text-right h-10 py-2">
-      <a onClick={window.print}
-        class="sm:hidden inline h-6 w-6 text-gray-500 stroke-current">
-        <span class="sr-only">Print</span>
-      </a>
-    </div>
-  </div>
-</div>
+<app-index-navbar class="print:hidden"></app-index-navbar>
+
+
+
 <!-- Content -->
 <div class="calc(min-h-screen - h-10) flex justify-center">
   <router-outlet></router-outlet>
