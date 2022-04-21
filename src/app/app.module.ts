@@ -14,6 +14,7 @@ import { IndexDropdownComponent } from "./components/dropdowns/index-dropdown/in
 import { IndexNavbarComponent } from './components/navbars/index-navbar/index-navbar.component';
 import { ProfileCardComponent } from './components/cards/profile-card/profile-card.component';
 import { SummaryCardComponent } from './components/cards/summary-card/summary-card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   bootstrap: [
@@ -27,7 +28,8 @@ import { SummaryCardComponent } from './components/cards/summary-card/summary-ca
     PagesDropdownComponent,
     ResumeComponent,
     ProfileCardComponent,
-    SummaryCardComponent
+    SummaryCardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
