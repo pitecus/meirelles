@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Release } from '../changelog/release';
 import { Resume } from './resume';
 import { Work } from './work';
-import QRCode from 'qrcode';
 
 @Component({
   selector: 'app-resume',
@@ -37,11 +36,6 @@ export class ResumeComponent {
   private dateFilter: string;
 
   /**
-   * The QR code for the page
-   */
-  public qrCode: string = '';
-
-  /**
    * Initialize the component.
    */
   public constructor(httpClient: HttpClient) {
@@ -72,17 +66,6 @@ export class ResumeComponent {
           this.release = release;
         }
       );
-
-    // Generate the QR code for the resume
-    QRCode.toDataURL(
-      window.location.href,
-      {
-        errorCorrectionLevel: 'low'
-      },
-      (error, url) => {
-        this.qrCode = url;
-      }
-    );
   }
 
   /**

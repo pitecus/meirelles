@@ -13,6 +13,7 @@ import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pa
 import { IndexDropdownComponent } from "./components/dropdowns/index-dropdown/index-dropdown.component";
 import { IndexNavbarComponent } from './components/navbars/index-navbar/index-navbar.component';
 import { ProfileCardComponent } from './components/cards/profile-card/profile-card.component';
+import { SummaryCardComponent } from './components/cards/summary-card/summary-card.component';
 
 @NgModule({
   bootstrap: [
@@ -25,7 +26,8 @@ import { ProfileCardComponent } from './components/cards/profile-card/profile-ca
     IndexNavbarComponent,
     PagesDropdownComponent,
     ResumeComponent,
-    ProfileCardComponent
+    ProfileCardComponent,
+    SummaryCardComponent
   ],
   imports: [
     BrowserModule,
