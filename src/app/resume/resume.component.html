@@ -1,7 +1,7 @@
 <div class="flex flex-col justify-between min-h-screen pt-4 print:pt-0">
   <!-- First row: personal info and summary -->
   <div *ngIf="resume && resume.basics"
-    class="flex container gap-3 md:flex-row print:flex-row flex-col">
+    class="flex container gap-3 flex-col md:flex-row print:flex-row ">
     <!-- Photo, location and contacts -->
     <app-profile-card [basics]="resume.basics"></app-profile-card>
 
@@ -12,8 +12,7 @@
   </div>
 
   <!-- Body -->
-  <main class="flex-grow pt-4 print:pt-0">
-    <!-- Professional Experience -->
+  <main class="pt-4 print:pt-0">
     <div *ngIf="resume?.work"
       class="rounded bg-white border border-gray-300 shadow-lg p-2 mb-2 print:p-0 print:mt-4 print:shadow-none print:border-0">
       <div class="flex justify-between border-b-2 mb-4">
