@@ -7,7 +7,13 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-serif;
     @apply font-light;
   }
