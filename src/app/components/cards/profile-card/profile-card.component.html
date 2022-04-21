@@ -1,5 +1,6 @@
 <!-- Photo, location and contacts -->
-<div class="rounded bg-white whitespace-nowrap sm:border-r text-center shadow-lg pt-4 ">
+<div
+  class="pt-4 print:pt-0 rounded bg-white whitespace-nowrap sm:border-r text-center shadow-lg print:shadow-none print:p-0">
   <!-- Photo -->
   <!-- TODO: update the photo to be provided by basics interface -->
   <img class="p-2 rounded-full shadow-lg print:hidden m-auto border border-indigo-200 "
@@ -7,7 +8,7 @@
     src="assets/leo-meirelles.jpeg" />
   <!-- Details -->
   <div *ngIf="basics"
-    class="p-4 print:pb-0">
+    class="p-4 print:p-0">
     <!-- Name -->
     <h1 class="font-semibold text-2xl print:text-xl text-indigo-900">{{basics.name}}</h1>
     <!-- Label and pronoun -->
