@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pages-dropdown.component";
 import { IndexDropdownComponent } from "./components/dropdowns/index-dropdown/index-dropdown.component";
 import { IndexNavbarComponent } from './components/navbars/index-navbar/index-navbar.component';
+import { ProfileCardComponent } from './components/cards/profile-card/profile-card.component';
 
 @NgModule({
   bootstrap: [
@@ -23,7 +24,8 @@ import { IndexNavbarComponent } from './components/navbars/index-navbar/index-na
     IndexDropdownComponent,
     IndexNavbarComponent,
     PagesDropdownComponent,
-    ResumeComponent
+    ResumeComponent,
+    ProfileCardComponent
   ],
   imports: [
     BrowserModule,

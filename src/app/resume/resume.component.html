@@ -3,77 +3,7 @@
   <div *ngIf="resume && resume.basics"
     class="flex container gap-3 md:flex-row print:flex-row flex-col">
     <!-- Photo, location and contacts -->
-    <div class="rounded bg-white whitespace-nowrap sm:border-r text-center shadow-lg ">
-      <!-- Photo -->
-      <img class="p-2 rounded-full shadow-lg print:hidden m-auto mt-4 border border-indigo-200 "
-        alt="portrait"
-        src="assets/leo-meirelles.jpeg" />
-      <div class="p-4 print:pb-0">
-        <!-- Name -->
-        <h1 class="font-semibold text-2xl print:text-xl text-indigo-900">{{resume.basics.name}}</h1>
-        <!-- Label and pronoun -->
-        <div class="flex justify-between">
-          <!-- Label -->
-          <p>{{resume.basics.label}}</p>
-          <!-- Pronoun -->
-          <p class="text-gray-500">{{resume.basics.pronoun}}</p>
-        </div>
-        <!-- Location -->
-        <p class="text-gray-500 text-sm mb-2">
-          {{resume.basics.location?.city}}, &nbsp;
-          {{resume.basics.location?.region}}, &nbsp;
-          {{resume.basics.location?.countryCode}}
-        </p>
-        <!-- Phone contact -->
-        <p class="flex pb-1 text-indigo-600">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.5 17.311l-1.76-3.397-1.032.505c-1.12.543-3.4-3.91-2.305-4.497l1.042-.513-1.747-3.409-1.053.52c-3.601 1.877 2.117 12.991 5.8 11.308l1.055-.517z" />
-          </svg>
-          <a class="pl-2"
-            rel="noopener noreferrer"
-            href="tel:{{resume.basics.phone}}">
-            {{resume.basics.phone}}
-          </a>
-        </p>
-        <!-- Email contact -->
-        <p class="flex pb-1 text-indigo-600">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24">
-            <path
-              d="M12 2.02c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 12.55l-5.992-4.57h11.983l-5.991 4.57zm0 1.288l-6-4.629v6.771h12v-6.771l-6 4.629z" />
-          </svg>
-          <a class="pl-2"
-            rel="noopener noreferrer"
-            href="mailto:{{resume.basics.email}}">
-            {{resume.basics.email}}
-          </a>
-        </p>
-        <!-- Website -->
-        <p class="flex text-indigo-600">
-          <svg xmlns="http://www.w3.org/2000/svg"
-            class="inline h-6 w-6 stroke-current text-black"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-            <path stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <a class="pl-2"
-            rel="noopener noreferrer"
-            href="{{resume.basics.website}}">
-            {{resume.basics.website}}
-          </a>
-        </p>
-      </div>
-    </div>
+    <app-profile-card [basics]="resume.basics"></app-profile-card>
 
     <!-- Summary -->
     <div class="w-auto rounded bg-white sm:border-r sm:pr-2 flex flex-col flex-grow justify-between p-4 shadow-lg">
@@ -140,7 +70,7 @@
   <!-- Main -->
   <main class="flex-grow place-self-stretch">
 
-    <!-- Page title -->
+    <!-- Professional experience -->
     <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 flex justify-between items-end">
       Professional Experience
       <label class="flex items-center text-sm print:hidden">
@@ -155,17 +85,6 @@
     <!-- Professional Experience -->
     <div *ngIf="resume && resume.work"
       class="rounded-lg bg-white shadow p-2 mb-2 print:pt-0 print:mt-4 print:shadow-none">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900 flex justify-between">
-        <!-- Section title -->
-        <span>Experience</span>
-        <label class="flex items-center text-sm print:hidden">
-          <input type="checkbox"
-            [ngModel]="isWorkFiltered"
-            (click)="filterWork()"
-            class="form-checkbox h-4 w-4 text-indigo-500" />
-          <span class="ml-2">Whitin last 7 years</span>
-        </label>
-      </h2>
       <div class="mt-4 print:mb-2"
         [ngClass]="{'border-b': isLast === false}"
         *ngFor="let work of filteredWork; last as isLast">
@@ -312,6 +231,7 @@
       </div>
     </div>
   </main>
+
   <!-- Footer -->
   <footer class="rounded-lg bg-white shadow p-2 flex space-x-6 text-sm text-indigo-600 font-bold print:hidden">
     <!-- Github link -->
