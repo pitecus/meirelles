@@ -11,25 +11,27 @@
       [releaseVersion]="release?.version || ''"></app-summary-card>
   </div>
 
-  <!-- Main -->
-  <main class="flex-grow place-self-stretch pt-4">
-
-    <!-- Professional experience -->
-    <h2
-      class="border-b-2 border-gray-300 font-bold text-3xl text-indigo-900 flex justify-between items-end mb-4 print:mb-0 print:text-xl">
-      Professional Experience
-      <label class="flex items-center text-sm print:hidden">
-        <input type="checkbox"
-          [ngModel]="isWorkFiltered"
-          (click)="filterWork()"
-          class="form-checkbox h-4 w-4 text-indigo-500" />
-        <span class="ml-2">Whitin last 7 years</span>
-      </label>
-    </h2>
-
+  <!-- Body -->
+  <main class="flex-grow pt-4 print:pt-0">
     <!-- Professional Experience -->
-    <div *ngIf="resume && resume.work"
-      class="rounded-lg bg-white shadow p-2 mb-2 print:pt-0 print:mt-4 print:shadow-none">
+    <div *ngIf="resume?.work"
+      class="rounded bg-white shadow-lg p-2 mb-2 print:p-0 print:mt-4 print:shadow-none">
+      <div class="flex justify-between border-b-2 mb-4">
+        <h2 class="text-2xl flex justify-between items-end print:mb-0 print:text-lg">
+          <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+            work_history
+          </span>
+          Professional Experience
+        </h2>
+        <!-- Filter -->
+        <label class="flex items-center text-sm print:hidden">
+          <input type="checkbox"
+            [ngModel]="isWorkFiltered"
+            (click)="filterWork()"
+            class="form-checkbox h-4 w-4 text-indigo-500" />
+          <span class="ml-2">Last 7 years</span>
+        </label>
+      </div>
       <div class="mt-4 print:mb-2"
         [ngClass]="{'border-b': isLast === false}"
         *ngFor="let work of filteredWork; last as isLast">
