@@ -12,11 +12,11 @@
   </div>
 
   <!-- Body -->
-  <main class="pt-4 print:pt-0">
-    <div *ngIf="resume?.work"
-      class="rounded bg-white border border-gray-300 shadow-lg p-2 mb-2 print:p-0 print:mt-4 print:shadow-none print:border-0">
-      <div class="flex justify-between border-b-2 mb-4">
-        <h2 class="text-2xl flex justify-between items-end print:mb-0 print:text-lg">
+  <main class="pt-4">
+    <!-- Work experience -->
+    <app-card>
+      <div class="flex justify-between">
+        <h2 class="text-2xl flex justify-between items-endprint:text-lg">
           <span class="material-icons-outlined leading-normal pr-1 print:hidden">
             work_history
           </span>
@@ -31,57 +31,17 @@
           <span class="ml-2">Last 7 years</span>
         </label>
       </div>
-      <div class="mt-4 print:mb-2"
-        [ngClass]="{'border-b': isLast === false}"
-        *ngFor="let work of filteredWork; last as isLast">
-        <!-- ADP -->
-        <img *ngIf="work.company === 'ADP'"
-          width="24"
-          height="24"
-          alt="ADP Logo"
-          class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-adp.jpeg" />
-        <!-- Google -->
-        <img *ngIf="work.company === 'Google'"
-          width="24"
-          height="24"
-          alt="Google logo"
-          class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-google.png" />
-        <!-- NYT -->
-        <img *ngIf="work.company === 'The New York Times'"
-          width="24"
-          height="24"
-          alt="The New York Times logo"
-          class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-nyt.png" />
-        <!-- Company, position and period -->
-        <div class="flex justify-between space-x-2">
-          <h3 class="text-lg flex-grow">
-            {{work.company}} - {{work.position}}
-          </h3>
-          <div class="text-sm pl-1 text-right print:whitespace-nowrap">
-            {{work.startDate | date: 'MMM/yyyy'}}
-            <br className="print:hidden" />
-            <span className="hidden print:inline"> to </span>
-            <span *ngIf="work.endDate == 'Current'">Current</span>
-            <span *ngIf="work.endDate != 'Current'">{{work.endDate | date: 'MMM/yyyy'}}</span>
+    </app-card>
 
-          </div>
-        </div>
-        <!-- Summary -->
-        <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:bg-white print:px-0">{{work.summary}}</h4>
-        <!-- Highlights -->
-        <p *ngFor="let highlight of work.highlights"
-          class="text-sm print:text-xs">
-          {{highlight}}
-        </p>
-      </div>
+    <div class="grid lg:grid-cols-2 gap-4 mt-4">
+      <app-work-experience-card *ngFor="let work of filteredWork; last as isLast"
+        [work]="work">
+      </app-work-experience-card>
     </div>
 
     <!-- Publications and conferences -->
     <div *ngIf="resume && resume.publications"
-      class="rounded-lg bg-white shadow p-2 mb-2 print:pt-0 print:mt-4 print:shadow-none">
+      class="rounded-lg bg-white shadow p-2 mt-4 print:pt-0 print:mt-4 print:shadow-none">
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         <span>Conferences</span>
       </h2>
@@ -114,7 +74,7 @@
 
     <!-- Education and languages-->
     <div *ngIf="resume && (resume.education || resume.languages)"
-      class="rounded-lg bg-white shadow p-2 mb-2 print:pt-0 print:-mt-2 print:shadow-none">
+      class="rounded-lg bg-white shadow p-2 mt-4 print:pt-0 print:-mt-2 print:shadow-none">
       <!-- Education -->
       <div>
         <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">Education</h2>
@@ -145,7 +105,7 @@
       </div>
       <!-- Languages -->
       <div *ngIf="resume.education">
-        <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
+        <h2 class="border-b-2 mt-4 border-gray-300 font-bold text-xl text-indigo-900">
           Languages
         </h2>
         <div *ngFor="let language of resume.languages"
@@ -165,7 +125,7 @@
 
     <!-- Technical skills -->
     <div *ngIf="resume && resume.skills"
-      class="rounded-lg bg-white shadow p-2 print:shadow-none">
+      class="rounded-lg bg-white shadow mt-4  p-2 print:shadow-none">
       <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
         Technical Skills
       </h2>

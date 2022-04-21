@@ -14,6 +14,7 @@ import { ProfileCardComponent } from './components/cards/profile-card/profile-ca
 import { ResumeComponent } from './resume/resume.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { SummaryCardComponent } from './components/cards/summary-card/summary-card.component';
+import { WorkExperienceCardComponent } from './components/cards/work-experience-card/work-experience-card.component';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -30,7 +31,8 @@ import { environment } from '../environments/environment';
     ProfileCardComponent,
     SummaryCardComponent,
     FooterComponent,
-    CardComponent
+    CardComponent,
+    WorkExperienceCardComponent
   ],
   imports: [
     BrowserModule,
