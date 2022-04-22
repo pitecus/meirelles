@@ -6,16 +6,16 @@
       <!-- ADP -->
       <img *ngIf="work.company === 'ADP'"
         alt="ADP Logo"
-        class="w-20 h-20"
+        class="w-20 h-20 rounded-tl"
         src="assets/logo-adp.jpeg" />
       <!-- Google -->
       <img *ngIf="work.company === 'Google'"
-        class="w-20 h-20"
+        class="w-20 h-20 rounded-tl"
         alt="Google logo"
         src="assets/logo-google.png" />
       <!-- NYT -->
       <img *ngIf="work.company === 'The New York Times'"
-        class="w-20 h-20"
+        class="w-20 h-20 rounded-tl"
         alt="The New York Times logo"
         src="assets/logo-nyt.png" />
     </div>
@@ -35,7 +35,6 @@
       <span className="hidden print:inline"> to </span>
       <span *ngIf="work.endDate == 'Current'">Present</span>
       <span *ngIf="work.endDate != 'Current'">{{work.endDate | date: 'MMM yyyy'}}</span>
-
     </div>
   </div>
   <!-- Summary -->
