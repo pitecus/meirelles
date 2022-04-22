@@ -6,8 +6,7 @@ import { Work } from './work';
 
 @Component({
   selector: 'app-resume',
-  templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.scss']
+  templateUrl: './resume.component.html'
 })
 export class ResumeComponent {
   /**
