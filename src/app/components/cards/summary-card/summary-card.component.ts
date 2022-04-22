@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Profile } from 'src/app/resume/profile';
+
+import { Profile } from '../../../resume/profile';
 import QRCode from 'qrcode';
 
 /**

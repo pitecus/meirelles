@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Work } from 'src/app/resume/work';
+import { Work } from '../../../resume/work';
 
 @Component({
   selector: 'app-work-experience-card',

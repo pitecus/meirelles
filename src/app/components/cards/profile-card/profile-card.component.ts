@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Basics } from 'src/app/resume/basics';
+
+import { Basics } from '../../../resume/basics';
 
 /**
  * Profile card

@@ -1,12 +1,15 @@
 <!-- Photo, location and contacts -->
 <app-card>
   <!-- Photo -->
-  <!-- TODO: update the photo to be provided by basics interface -->
-  <img class="p-2 mt-2 rounded-full shadow-lg print:hidden m-auto border border-indigo-200 "
-    alt="portrait"
-    src="assets/leo-meirelles.jpeg" />
+  <div class="p-4 print:hidden">
+    <!-- TODO: update the photo to be provided by basics interface -->
+    <img class="p-2 mt-2 rounded-full shadow-lg m-auto border border-indigo-200 "
+      alt="portrait"
+      src="assets/leo-meirelles.jpeg" />
+  </div>
   <!-- Details -->
-  <div *ngIf="basics">
+  <div *ngIf="basics"
+    class="p-4 print:p-0">
     <!-- Name -->
     <h1 class="font-semibold text-2xl print:text-xl text-indigo-900">{{basics.name}}</h1>
     <!-- Label and pronoun -->
