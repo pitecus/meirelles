@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IndexDropdownComponent } from "./components/dropdowns/index-dropdown/index-dropdown.component";
 import { IndexNavbarComponent } from './components/navbars/index-navbar/index-navbar.component';
+import { LogoCardComponent } from './components/cards/logo-card/logo-card.component';
 import { NgModule } from '@angular/core';
 import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pages-dropdown.component";
 import { ProfileCardComponent } from './components/cards/profile-card/profile-card.component';
@@ -34,7 +35,8 @@ import { environment } from '../environments/environment';
     FooterComponent,
     CardComponent,
     WorkExperienceCardComponent,
-    PublicationCardComponent
+    PublicationCardComponent,
+    LogoCardComponent
   ],
   imports: [
     BrowserModule,

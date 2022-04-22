@@ -4,20 +4,17 @@
     <!-- Company -->
     <div>
       <!-- ADP -->
-      <img *ngIf="work.company === 'ADP'"
-        alt="ADP Logo"
-        class="w-20 h-20 rounded-tl"
-        src="assets/logo-adp.jpeg" />
+      <app-logo-card *ngIf="work.company === 'ADP'"
+        src="assets/logo-adp.jpeg"
+        alt="ADP logo"></app-logo-card>
       <!-- Google -->
-      <img *ngIf="work.company === 'Google'"
-        class="w-20 h-20 rounded-tl"
-        alt="Google logo"
-        src="assets/logo-google.png" />
+      <app-logo-card *ngIf="work.company === 'Google'"
+        src="assets/logo-google.png"
+        alt="Google logo"></app-logo-card>
       <!-- NYT -->
-      <img *ngIf="work.company === 'The New York Times'"
-        class="w-20 h-20 rounded-tl"
+      <app-logo-card *ngIf="work.company === 'The New York Times'"
         alt="The New York Times logo"
-        src="assets/logo-nyt.png" />
+        src="assets/logo-nyt.png"></app-logo-card>
     </div>
     <!-- Position -->
     <div class="pt-4 text-center">
@@ -40,6 +37,7 @@
   <!-- Summary -->
   <h4 class="px-4 bg-gray-50 shadow border border-y-gray-300 py-1 print:bg-white text-lg">
     {{work.summary}}</h4>
+
   <!-- Highlights -->
   <div class="p-4 pt-0 print:p-0 leading-relaxed text-base print:text-xs">
     <p *ngFor="let highlight of work.highlights"
