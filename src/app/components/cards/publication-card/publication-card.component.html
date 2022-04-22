@@ -1,0 +1,35 @@
+<app-card *ngIf="publication"
+  class="mt-2">
+
+  <!-- Title -->
+  <div class="flex justify-between">
+    <!-- Company -->
+    <div>
+      <!-- ADP -->
+      <img *ngIf="publication.publisher === 'ADP Global Product & Development Connect'"
+        alt="ADP Logo"
+        class="w-20 h-20"
+        src="assets/logo-adp.jpeg" />
+    </div>
+    <!-- Position -->
+    <div class="pt-4 text-center">
+      <h3 class="text-xl">
+        {{publication.name}}
+      </h3>
+      <span class="text-sm">
+        {{publication.publisher}}
+      </span>
+    </div>
+    <!-- Period -->
+    <div class="p-4 text-sm pl-1 text-right print:whitespace-nowrap">
+      {{ publication.releaseDate | date: 'MMM/yyyy'}}
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="p-4 pt-0 print:p-0 leading-relaxed text-base print:text-xs">
+    <p class="pt-4">
+      {{publication.summary}}
+    </p>
+  </div>
+</app-card>

@@ -11,6 +11,7 @@ import { IndexNavbarComponent } from './components/navbars/index-navbar/index-na
 import { NgModule } from '@angular/core';
 import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pages-dropdown.component";
 import { ProfileCardComponent } from './components/cards/profile-card/profile-card.component';
+import { PublicationCardComponent } from './components/cards/publication-card/publication-card.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { SummaryCardComponent } from './components/cards/summary-card/summary-card.component';
@@ -32,7 +33,8 @@ import { environment } from '../environments/environment';
     SummaryCardComponent,
     FooterComponent,
     CardComponent,
-    WorkExperienceCardComponent
+    WorkExperienceCardComponent,
+    PublicationCardComponent
   ],
   imports: [
     BrowserModule,

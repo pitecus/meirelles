@@ -40,35 +40,23 @@
     </div>
 
     <!-- Publications and conferences -->
-    <div *ngIf="resume && resume.publications"
-      class="rounded-lg bg-white shadow p-2 mt-4 print:pt-0 print:mt-4 print:shadow-none">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
-        <span>Conferences</span>
-      </h2>
-      <div *ngFor="let publication of resume.publications"
-        class="mt-2">
-        <!-- ADP -->
-        <img *ngIf="publication.publisher === 'ADP Global Product & Development Connect'"
-          width="24"
-          height="24"
-          alt="ADP Logo"
-          class="float-left rounded-full w-6 shadow mr-3"
-          src="assets/logo-adp.jpeg" />
-        <!-- Conference name -->
-        <div class="flex justify-between space-x-2">
-          <h3 class="font-bold text-lg w-full">{{publication.publisher}}</h3>
-          <div class="text-sm w-20 pl-1 sm:w-36 sm:text-right print:w-36 print:text-right ">
-            {{ publication.releaseDate | date: 'MMM/yyyy'}}
-          </div>
+    <div *ngIf="resume?.publications != null"
+      class="pt-4">
+      <app-card class="mt-4">
+        <div class="flex justify-between p-4 print:p-0">
+          <h2 class="text-2xl flex justify-between items-end print:text-lg">
+            <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+              mic_external_on
+            </span>
+            Conferences
+          </h2>
         </div>
-        <!-- Title -->
-        <h4 class="bg-gray-100 rounded-lg italic p-1 mb-1 print:mb-0 print:bg-white print:px-0 flex justify-between">
-          <span>{{publication.name}}</span>
-        </h4>
-        <!-- Summary -->
-        <p class="text-sm print:text-xs">
-          {{publication.summary}}
-        </p>
+      </app-card>
+
+      <!-- List of publications/conferences -->
+      <div class="grid lg:grid-cols-2 gap-4 mt-4">
+        <app-publication-card *ngFor="let publication of resume?.publications || []"
+          [publication]="publication"></app-publication-card>
       </div>
     </div>
 
