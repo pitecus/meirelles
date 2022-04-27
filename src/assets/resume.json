@@ -53,7 +53,6 @@
     },
     {
       "fluency": "Native speaker",
-      "language": "Portugues"
     }
   ],
   "publications": [
@@ -63,6 +62,13 @@
       "releaseDate": "2020-09-30",
       "summary": "GitOps is a process of how to have your whole application (development, infrastructure, releases, deployments, and changelog) in BitBucket. It may sound too extreme, but developers and DevOps are using Bitbucket daily already. It takes advantage of existing tools to automate everything so that everyone can focus on what matters: new features and stability. Since we adopted the GitOps process, we are at 700+ releases, 0 downtime deployments, with rollback happening in minutes. The right people approve new releases without having to send emails or text messages. Most importantly, it keeps track of changes that allow quick troubleshooting by knowing when they happened.",
       "website": "https://tech.adp.com/2020/11/20/adps-annual-developers-conference-video"
+    },
+    {
+      "name": "CI/CD at ADP: Going Global with GitOps",
+      "publisher": "ADP Tech & Innovation Blog",
+      "releaseDate": "2020-09-30",
+      "summary": "Leo Meirelles (Principal Software Engineer) discusses the continuous integration and development (CI/CD) process he implemented with his team.",
+      "website": "https://tech.adp.com/2021/09/27/ci-cd-at-adp-going-global-with-gitops/"
     }
   ],
   "references": [],
