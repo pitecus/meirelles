@@ -1,0 +1,29 @@
+<app-card *ngIf="education"
+  class="mt-2">
+  <!-- Title -->
+  <div class="flex justify-between border-b border-b-gray-300 shadow">
+
+    <!-- Logo card -->
+    <app-logo-card *ngIf="education.institution === 'Pontifícia Universidade Católica (PUCRS)'"
+      src="assets/logo-pucrs.png"
+      alt="Pontifícia Universidade Católica (PUCRS)"></app-logo-card>
+
+
+    <!-- Position -->
+    <div class="pt-4 text-center">
+      <h3 class="text-xl">
+        {{education.studyType}} {{education.area}}
+      </h3>
+      <span class="text-sm">
+        {{education.institution}}
+      </span>
+    </div>
+
+    <div class="p-4 text-sm pl-1 text-right print:whitespace-nowrap">
+      {{education.startDate | date: 'MMM/yyyy'}}
+      <br className="print:hidden" />
+      <span className="hidden print:inline"> to </span>
+      {{education.endDate | date: 'MMM/yyyy'}}
+    </div>
+  </div>
+</app-card>

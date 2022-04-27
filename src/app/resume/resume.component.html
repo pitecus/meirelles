@@ -40,7 +40,7 @@
     </div>
 
     <!-- Publications and conferences -->
-    <div *ngIf="resume?.publications != null"
+    <div *ngIf="resume?.publications"
       class="pt-4">
       <app-card class="mt-4">
         <div class="flex justify-between p-4 print:p-0">
@@ -49,6 +49,11 @@
               mic_external_on
             </span>
             Conferences
+            <span class="px-2">/</span>
+            <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+              article
+            </span>
+            Publications
           </h2>
         </div>
       </app-card>
@@ -61,36 +66,41 @@
     </div>
 
     <!-- Education and languages-->
+
+    <div *ngIf="resume?.education || resume?.languages"
+      class="pt-4">
+      <app-card class="mt-4">
+        <div class="flex justify-between p-4 print:p-0">
+          <h2 class="text-2xl flex justify-between items-end print:text-lg">
+            <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+              school
+            </span>
+            Education
+            <span class="px-2">/</span>
+            <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+              language
+            </span>
+            Languages
+          </h2>
+        </div>
+      </app-card>
+
+      <!-- List of schools and languages -->
+      <div class="grid lg:grid-cols-2 gap-4 mt-4">
+        <app-education-card *ngFor="let education of resume?.education || []"
+          [education]="education"></app-education-card>
+
+      </div>
+    </div>
+
+
     <div *ngIf="resume && (resume.education || resume.languages)"
       class="rounded-lg bg-white shadow p-2 mt-4 print:pt-0 print:-mt-2 print:shadow-none">
       <!-- Education -->
       <div>
         <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">Education</h2>
-        <div *ngFor="let education of resume.education"
-          class="mt-2">
-          <!-- PUCRS -->
-          <img *ngIf="education.institution === 'Pontifícia Universidade Católica (PUCRS)'"
-            width="24"
-            height="24"
-            alt="ADP Logo"
-            class="float-left rounded-full w-6 shadow mr-3"
-            src="assets/logo-pucrs.png" />
-          <div class="flex justify-between space-x-2">
-            <h3 class="font-bold text-lg flex-grow">
-              {{education.institution}}
-            </h3>
-            <div class="text-sm pl-1 text-right print:whitespace-nowrap">
-              {{education.startDate | date: 'MMM/yyyy'}}
-              <br className="print:hidden" />
-              <span className="hidden print:inline"> to </span>
-              {{education.endDate | date: 'MMM/yyyy'}}
-            </div>
-          </div>
-          <h4 class="p-1">
-            {{education.studyType}} {{education.area}}
-          </h4>
-        </div>
       </div>
+
       <!-- Languages -->
       <div *ngIf="resume.education">
         <h2 class="border-b-2 mt-4 border-gray-300 font-bold text-xl text-indigo-900">
