@@ -66,7 +66,6 @@
     </div>
 
     <!-- Education and languages-->
-
     <div *ngIf="resume?.education || resume?.languages"
       class="pt-4">
       <app-card class="mt-4">
@@ -98,19 +97,23 @@
     </div>
 
     <!-- Technical skills -->
-    <div *ngIf="resume && resume.skills"
-      class="rounded-lg bg-white shadow mt-4  p-2 print:shadow-none">
-      <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">
-        Technical Skills
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 print:grid-cols-2 gap-2 mt-2">
-        <div *ngFor="let skill of resume.skills"
-          class="border-b print:shadow-none">
-          <h2 class="font-bold rounded-lg p-1 text-md bg-gray-100 print:bg-white">{{skill.name}}</h2>
-          <span class="text-sm print:text-xs">
-            {{skill.keywords?.join(', ')}}
-          </span>
+    <div *ngIf="resume?.skills"
+      class="pt-4">
+      <app-card class="mt-4">
+        <div class="flex justify-between p-4 print:p-0">
+          <h2 class="text-2xl flex justify-between items-end print:text-lg">
+            <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+              verified
+            </span>
+            Technical Skills
+          </h2>
         </div>
+      </app-card>
+
+      <!-- List of languages -->
+      <div class="grid lg:grid-cols-3 gap-4 mt-4">
+        <app-skill-card *ngFor="let skill of resume?.skills || []"
+          [skill]="skill"></app-skill-card>
       </div>
     </div>
   </main>

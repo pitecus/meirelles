@@ -20,6 +20,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { SummaryCardComponent } from './components/cards/summary-card/summary-card.component';
 import { WorkExperienceCardComponent } from './components/cards/work-experience-card/work-experience-card.component';
 import { environment } from '../environments/environment';
+import { SkillCardComponent } from './components/cards/skill-card/skill-card.component';
 
 @NgModule({
   bootstrap: [
@@ -40,7 +41,8 @@ import { environment } from '../environments/environment';
     PublicationCardComponent,
     LogoCardComponent,
     EducationCardComponent,
-    LanguageCardComponent
+    LanguageCardComponent,
+    SkillCardComponent
   ],
   imports: [
     BrowserModule,
