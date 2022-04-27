@@ -85,39 +85,15 @@
         </div>
       </app-card>
 
-      <!-- List of schools and languages -->
+      <!-- List of schools -->
       <div class="grid lg:grid-cols-2 gap-4 mt-4">
         <app-education-card *ngFor="let education of resume?.education || []"
           [education]="education"></app-education-card>
-
       </div>
-    </div>
-
-
-    <div *ngIf="resume && (resume.education || resume.languages)"
-      class="rounded-lg bg-white shadow p-2 mt-4 print:pt-0 print:-mt-2 print:shadow-none">
-      <!-- Education -->
-      <div>
-        <h2 class="border-b-2 border-gray-300 font-bold text-xl text-indigo-900">Education</h2>
-      </div>
-
-      <!-- Languages -->
-      <div *ngIf="resume.education">
-        <h2 class="border-b-2 mt-4 border-gray-300 font-bold text-xl text-indigo-900">
-          Languages
-        </h2>
-        <div *ngFor="let language of resume.languages"
-          class="mt-2 flex flex-row flex-wrap">
-          <p class="mr-4">
-            <!-- Brazilian Portuguese -->
-            <span *ngIf="language.language === 'Portugues'">🇧🇷</span>
-            <!-- USA English -->
-            <span *ngIf="language.language === 'English'">🇺🇸</span>
-            <!-- The language -->
-            <span class="pl-2 font-bold">{{language.language}}</span>:&nbsp;
-            <span>{{language.fluency}}</span>
-          </p>
-        </div>
+      <!-- List of languages -->
+      <div class="grid lg:grid-cols-4 gap-4 mt-4">
+        <app-language-card *ngFor="let language of resume?.languages || []"
+          [language]="language"></app-language-card>
       </div>
     </div>
 

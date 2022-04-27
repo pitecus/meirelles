@@ -1,0 +1,21 @@
+<app-card *ngIf="language"
+  class="">
+  <div class="flex flex-row border-b border-b-gray-300 shadow">
+
+    <p class="flex justify-center items-center w-20 h-20 rounded-tl text-7xl mt-1">
+      <!-- Brazilian Portuguese -->
+      <span *ngIf="language.language === 'Portugues'">🇧🇷</span>
+      <!-- USA English -->
+      <span *ngIf="language.language === 'English'">🇺🇸</span>
+    </p>
+
+    <div class="pt-4 text-center flex-grow mr-20">
+      <h3 class="text-xl">
+        {{language.language}}
+      </h3>
+      <span class="text-sm">
+        {{language.fluency}}
+      </span>
+    </div>
+  </div>
+</app-card>
