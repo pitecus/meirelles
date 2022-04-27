@@ -8,8 +8,7 @@ import commitTypes from './commit-types.json';
 
 @Component({
   selector: 'app-changelog',
-  templateUrl: './changelog.component.html',
-  styleUrls: ['./changelog.component.scss']
+  templateUrl: './changelog.component.html'
 })
 export class ChangelogComponent {
   /**
@@ -84,7 +83,15 @@ export class ChangelogComponent {
             }
 
             // Parse the commit message.
-            const [type, subject] = entry.subject.split(':', 2);
+            const [type, subject] = entry
+              .subject
+              .replace(/\(.*\):/, ':')
+              .split(':', 2);
+
+            // Ignore malformed messages
+            if (subject == null) {
+              return;
+            }
 
             // Check if type already exists.
             if (currentChanges[type] === undefined) {
