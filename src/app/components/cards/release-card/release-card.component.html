@@ -1,0 +1,27 @@
+<app-card *ngIf="release"
+  class="mt-2">
+
+  <!-- Release -->
+  <div class="flex justify-center border-b border-b-gray-300 shadow">
+    <!-- Version -->
+    <div class="p-4 text-center">
+      <h3 class="text-xl">
+        Release {{release.version}}
+      </h3>
+    </div>
+  </div>
+
+  <!-- List of changes -->
+  <div class="grid grid-cols-2 gap-4 p-4">
+    <app-card *ngFor="let commit of release.changes">
+      <h3 class="text-lg text-gray-700 border-b-2 p-2">
+        {{commitTypes[commit.type].emoji}}
+        <span class="ml-2">{{commitTypes[commit.type].title}}</span>
+      </h3>
+      <ul class="list-disc list-inside p-2">
+        <!-- Commit type -->
+        <li *ngFor="let change of commit.changes">{{change.message.subject }}</li>
+      </ul>
+    </app-card>
+  </div>
+</app-card>

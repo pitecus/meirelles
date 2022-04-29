@@ -21,6 +21,7 @@ import { SummaryCardComponent } from './components/cards/summary-card/summary-ca
 import { WorkExperienceCardComponent } from './components/cards/work-experience-card/work-experience-card.component';
 import { environment } from '../environments/environment';
 import { SkillCardComponent } from './components/cards/skill-card/skill-card.component';
+import { ReleaseCardComponent } from './components/cards/release-card/release-card.component';
 
 @NgModule({
   bootstrap: [
@@ -42,7 +43,8 @@ import { SkillCardComponent } from './components/cards/skill-card/skill-card.com
     LogoCardComponent,
     EducationCardComponent,
     LanguageCardComponent,
-    SkillCardComponent
+    SkillCardComponent,
+    ReleaseCardComponent
   ],
   imports: [
     BrowserModule,
