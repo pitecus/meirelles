@@ -1,20 +1,16 @@
-<app-card *ngIf="skill"
-  class="mt-2">
-
+<app-card *ngIf="skill">
   <!-- Title -->
-  <div class="flex justify-center border-b border-b-gray-300 shadow">
+  <div class="flex justify-center border-b border-b-gray-300 shadow print:justify-start print:border-0 print:shadow-none">
     <!-- Position -->
-    <div class="p-4 text-center">
-      <h3 class="text-xl">
-        {{skill.name}}
-      </h3>
-    </div>
+    <h3 class="py-2 text-xl print:py-0 print:text-base">
+      {{skill.name}}
+    </h3>
   </div>
 
   <!-- Summary -->
-  <div class="p-4 pt-0 print:p-0 leading-relaxed text-base print:text-xs">
-    <p class="pt-4">
-      {{skill.keywords?.join(', ')}}
+  <div class="p-4 pt-0 print:p-0 print:pt-0 leading-relaxed text-base print:text-xs">
+    <p class="pt-4 print:pt-0">
+      {{skill.keywords?.join(', ')}}.
     </p>
   </div>
 </app-card>

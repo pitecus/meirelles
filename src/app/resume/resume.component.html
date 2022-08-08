@@ -84,14 +84,14 @@
         </div>
       </app-card>
 
-      <div class="grid lg:grid-cols-4 gap-4 mt-4">
+      <div class="grid lg:grid-cols-4 grid-cols-2 print:grid-cols-2 gap-4 mt-4">
         <!-- List of schools -->
         <app-education-card *ngFor="let education of resume?.education || []"
           [education]="education"
           class="col-span-2"></app-education-card>
         <!-- List of languages -->
         <app-language-card *ngFor="let language of resume?.languages || []"
-          [language]="language"></app-language-card>
+          [language]="language" class="print:border"></app-language-card>
       </div>
     </div>
 
@@ -109,8 +109,8 @@
         </div>
       </app-card>
 
-      <!-- List of languages -->
-      <div class="grid lg:grid-cols-3 gap-4 mt-4">
+      <!-- List of skills -->
+      <div class="grid lg:grid-cols-3 print:grid-cols-2 md:grid-cols-2 gap-4 pt-4 print:pt-2">
         <app-skill-card *ngFor="let skill of resume?.skills || []"
           [skill]="skill"></app-skill-card>
       </div>

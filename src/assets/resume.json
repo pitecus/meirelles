@@ -40,7 +40,7 @@
       "courses": [],
       "endDate": "2004-08-14",
       "gpa": "",
-      "institution": "Pontifícia Universidade Católica (PUCRS)",
+      "institution": "Pontifícia Universidade Católica",
       "startDate": "1998-07-06",
       "studyType": "Bachelor"
     }
@@ -79,6 +79,7 @@
         "Angular",
         "TypeScript",
         "React",
+        "NestJS",
         "Javascript",
         "User Interface (UI)",
         "User Experience (UX)",
@@ -86,25 +87,11 @@
         "CSS",
         "HTML",
         "XML",
-        "Cross-Origin Resource Sharing (CORS)",
-        "Content-Security-Policy (CSP)",
         "RestFul API",
         "GraphQL"
       ],
       "level": "Master",
       "name": "Development"
-    },
-    {
-      "keywords": [
-        "Docker",
-        "Docker swarm",
-        "Kubernetes",
-        "Dockerfile",
-        "docker-compose",
-        "helm charts"
-      ],
-      "level": "Master",
-      "name": "Containers"
     },
     {
       "keywords": [
@@ -117,10 +104,32 @@
         "AWS Cloudformation",
         "AWS API Gateway",
         "AWS Load Balancer",
-        "AWS Lambda"
+        "AWS Lambda",
+        "GCP CloudRun"
       ],
       "level": "Master",
       "name": "DevOps"
+    },
+    {
+      "keywords": [
+        "Cross-Origin Resource Sharing (CORS)",
+        "Content-Security-Policy (CSP)"
+      ],
+      "level": "Master",
+      "name": "Security"
+    },
+    {
+      "keywords": [
+        "Docker",
+        "Docker swarm",
+        "Kubernetes",
+        "Dockerfile",
+        "docker-compose",
+        "helm charts",
+        "distroless"
+      ],
+      "level": "Master",
+      "name": "Containers"
     },
     {
       "keywords": [
@@ -141,7 +150,8 @@
     {
       "keywords": [
         "Microservices",
-        "Micro-frontend"
+        "Micro-frontend",
+        "Webpack"
       ],
       "level": "Master",
       "name": "Architecture"
