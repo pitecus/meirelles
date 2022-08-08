@@ -17,31 +17,32 @@
         src="assets/logo-nyt.png"></app-logo-card>
     </div>
     <!-- Position -->
-    <div class="pt-4 text-center">
-      <h3 class="text-xl">
+    <div class="flex place-content-center flex-col text-center print:flex-grow print:text-left print:pl-4">
+      <h3 class="text-xl print:text-lg">
         {{work.position}}
+        <span class="block text-sm print:inline-block">
+          {{work.company}}
+        </span>
       </h3>
-      <span class="text-sm">
-        {{work.company}}
-      </span>
     </div>
     <!-- Period -->
-    <div class="p-4 text-sm pl-1 text-right print:whitespace-nowrap">
+    <div class="flex place-content-center flex-col text-sm pr-4 print:whitespace-nowrap print:flex-row print:pr-0 print:items-center">
       {{work.startDate | date: 'MMM yyyy'}}
-      <br className="print:hidden" />
-      <span className="hidden print:inline"> to </span>
+      <br class="print:hidden" />
+      <span class="hidden print:inline">&nbsp;to&nbsp;</span>
       <span *ngIf="work.endDate == 'Current'">Present</span>
       <span *ngIf="work.endDate != 'Current'">{{work.endDate | date: 'MMM yyyy'}}</span>
     </div>
   </div>
   <!-- Summary -->
-  <h4 class="px-4 bg-gray-50 shadow border border-y-gray-300 py-1 print:bg-white text-lg">
-    {{work.summary}}</h4>
+  <h4 class="px-4 bg-gray-50 text-lg shadow border border-y-gray-300 py-1 print:mt-2 print:p-0 print:border-0 print:shadow-none print:bg-white print:text-sm">
+    {{work.summary}}
+  </h4>
 
   <!-- Highlights -->
   <div class="p-4 pt-0 print:p-0 leading-relaxed text-base print:text-xs">
     <p *ngFor="let highlight of work.highlights"
-      class="pt-4">
+      class="pt-3">
       {{highlight}}
     </p>
   </div>
