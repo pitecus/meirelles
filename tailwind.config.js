@@ -69,8 +69,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      'sans': ['Raleway', 'ui-sans-serif', 'system-ui'],
-      'serif': ['Merriweather', 'ui-serif', 'Georgia'],
+      'sans': ['Albert Sans', 'ui-sans-serif', 'system-ui'],
+      'serif': ['Oxygen', 'ui-serif', 'Georgia'],
     }
   },
   variants: [
