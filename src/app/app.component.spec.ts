@@ -1,7 +1,9 @@
 import { AppComponent } from './app.component';
+import { CardComponent } from './components/cards/card/card.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { IndexNavbarComponent } from './components/navbars/index-navbar/index-navbar.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TestBed } from '@angular/core/testing';
-import { IndexNavbarComponent } from './components/navbars/index-navbar/index-navbar.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -11,6 +13,8 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
+        CardComponent,
+        FooterComponent,
         IndexNavbarComponent
       ],
       providers: [

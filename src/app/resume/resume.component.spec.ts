@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { HttpClient } from '@angular/common/http';
+import { CardComponent } from '../components/cards/card/card.component';
+import { FormsModule } from '@angular/forms';
 import { ResumeComponent } from './resume.component';
 import release from '../../assets/release.json';
 import resume from '../../assets/resume.json';
@@ -9,24 +10,28 @@ import resume from '../../assets/resume.json';
 describe('ResumeComponent', () => {
   let component: ResumeComponent;
   let fixture: ComponentFixture<ResumeComponent>;
-  let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ],
-      declarations: [ ResumeComponent ]
+      imports: [
+        HttpClientTestingModule,
+        FormsModule
+      ],
+      declarations: [
+        CardComponent,
+        ResumeComponent
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     // Inject the http service and test controller for each test
-    httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
   });
 
   beforeEach(() => {
     // Mock a date.
-    var baseTime = new Date(2021, 6, 21);
+    const baseTime = new Date(2021, 6, 21);
     jasmine.clock().mockDate(baseTime);
 
     fixture = TestBed.createComponent(ResumeComponent);
@@ -71,7 +76,7 @@ describe('ResumeComponent', () => {
 
     // Then it should update the values.
     expect(component.resume)
-    .toEqual(resume);
+      .toEqual(resume);
     expect(component.isWorkFiltered)
       .toBeTrue();
     expect(component.filteredWork)
