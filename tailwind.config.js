@@ -1,12 +1,10 @@
 const plugin = require("tailwindcss/plugin");
-const colors = require("tailwindcss/colors");
 
 module.exports = {
   content: [
     './src/**/*.{html,ts,scss}'
   ],
   theme: {
-    colors,
     extend: {
       screens: {
         print: {
