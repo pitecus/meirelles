@@ -3,7 +3,6 @@
   "cli": {
     "analytics": "455bd536-c179-421d-a2c2-464d33345e3e"
   },
-  "defaultProject": "resume",
   "newProjectRoot": "projects",
   "projects": {
     "resume": {
