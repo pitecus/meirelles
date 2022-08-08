@@ -1,21 +1,20 @@
 <app-card *ngIf="language"
   class="">
-  <div class="flex flex-row border-b border-b-gray-300 shadow">
-
-    <p class="flex justify-center items-center w-20 h-20 rounded-tl text-7xl mt-1">
+  <div class="flex print:border-0 print:shadow-none">
+    <p class="flex justify-center items-center w-20 h-20 rounded-tl text-7xl print:text-5xl print:w-10 print:h-10">
       <!-- Brazilian Portuguese -->
       <span *ngIf="language.language === 'Portuguese'">🇧🇷</span>
       <!-- USA English -->
       <span *ngIf="language.language === 'English'">🇺🇸</span>
     </p>
 
-    <div class="pt-4 text-center flex-grow mr-20">
-      <h3 class="text-xl">
+    <div class="flex place-content-center flex-grow flex-col text-center print:flex-grow print:text-left print:pl-4">
+      <h3 class="text-xl print:text-lg print:-mt-1">
         {{language.language}}
+        <span class="block text-sm print:text-xs">
+          {{language.fluency}}
+        </span>
       </h3>
-      <span class="text-sm">
-        {{language.fluency}}
-      </span>
     </div>
   </div>
 </app-card>

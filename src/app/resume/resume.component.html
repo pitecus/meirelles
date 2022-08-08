@@ -84,13 +84,12 @@
         </div>
       </app-card>
 
-      <!-- List of schools -->
-      <div class="grid lg:grid-cols-2 gap-4 mt-4">
-        <app-education-card *ngFor="let education of resume?.education || []"
-          [education]="education"></app-education-card>
-      </div>
-      <!-- List of languages -->
       <div class="grid lg:grid-cols-4 gap-4 mt-4">
+        <!-- List of schools -->
+        <app-education-card *ngFor="let education of resume?.education || []"
+          [education]="education"
+          class="col-span-2"></app-education-card>
+        <!-- List of languages -->
         <app-language-card *ngFor="let language of resume?.languages || []"
           [language]="language"></app-language-card>
       </div>
