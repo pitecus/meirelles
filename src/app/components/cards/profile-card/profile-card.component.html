@@ -9,54 +9,58 @@
   </div>
   <!-- Details -->
   <div *ngIf="basics"
-    class="p-4 print:p-0">
-    <!-- Name -->
-    <h1 class="font-semibold text-2xl print:text-xl text-indigo-900">{{basics.name}}</h1>
-    <!-- Label and pronoun -->
-    <div class="flex justify-between">
-      <!-- Label -->
-      <p>{{basics.label}}</p>
-      <!-- Pronoun -->
-      <p class="text-gray-500">{{basics.pronoun}}</p>
+    class="p-4 flex flex-col lg:flex-row lg:gap-4 justify-between print:p-0 print:h-full">
+      <div>
+      <!-- Name -->
+      <h1 class="font-semibold text-2xl whitespace-nowrap print:text-xl text-indigo-900">{{basics.name}}</h1>
+      <!-- Label and pronoun -->
+      <div class="flex justify-between">
+        <!-- Label -->
+        <p>{{basics.label}}</p>
+        <!-- Pronoun -->
+        <p class="text-gray-500">{{basics.pronoun}}</p>
+      </div>
+      <!-- Location -->
+      <p class="text-center text-gray-500 text-sm mb-2">
+        {{basics.location.city}}, &nbsp;
+        {{basics.location.region}}, &nbsp;
+        {{basics.location.countryCode}}
+      </p>
     </div>
-    <!-- Location -->
-    <p class="text-gray-500 text-sm mb-2">
-      {{basics.location.city}}, &nbsp;
-      {{basics.location.region}}, &nbsp;
-      {{basics.location.countryCode}}
-    </p>
-    <!-- Phone contact -->
-    <p class="flex pb-1 text-indigo-600">
-      <span class="material-icons-outlined text-black">
-        phone
-      </span>
-      <a class="pl-2"
-        rel="noopener noreferrer"
-        href="tel:{{basics.phone}}">
-        {{basics.phone}}
-      </a>
-    </p>
-    <!-- Email contact -->
-    <p class="flex pb-1 text-indigo-600">
-      <span class="material-icons-outlined text-black">
-        alternate_email
-      </span>
-      <a class="pl-2"
-        rel="noopener noreferrer"
-        href="mailto:{{basics.email}}">
-        {{basics.email}}
-      </a>
-    </p>
-    <!-- Website -->
-    <p class="flex text-indigo-600">
-      <span class="material-icons-outlined text-black">
-        contact_page
-      </span>
-      <a class="pl-2"
-        rel="noopener noreferrer"
-        href="{{basics.website}}">
-        {{basics.website}}
-      </a>
-    </p>
+    <div>
+      <!-- Phone contact -->
+      <p class="flex pb-1 text-indigo-600">
+        <span class="material-icons-outlined text-black">
+          phone
+        </span>
+        <a class="pl-2"
+          rel="noopener noreferrer"
+          href="tel:{{basics.phone}}">
+          {{basics.phone}}
+        </a>
+      </p>
+      <!-- Email contact -->
+      <p class="flex pb-1 text-indigo-600">
+        <span class="material-icons-outlined text-black">
+          alternate_email
+        </span>
+        <a class="pl-2"
+          rel="noopener noreferrer"
+          href="mailto:{{basics.email}}">
+          {{basics.email}}
+        </a>
+      </p>
+      <!-- Website -->
+      <p class="flex text-indigo-600">
+        <span class="material-icons-outlined text-black">
+          contact_page
+        </span>
+        <a class="pl-2"
+          rel="noopener noreferrer"
+          href="{{basics.website}}">
+          {{basics.website}}
+        </a>
+      </p>
+    </div>
   </div>
 </app-card>
