@@ -1,7 +1,7 @@
 <app-card *ngIf="publication"
   class="mt-2">
   <!-- Title -->
-  <div class="flex justify-between border-b border-b-gray-300 shadow">
+  <div class="flex justify-between border-b border-b-gray-300 shadow print:border-0 print:shadow-none">
     <!-- Company -->
     <div>
       <!-- ADP -->
@@ -14,16 +14,16 @@
         alt="ADP logo"></app-logo-card>
     </div>
     <!-- Position -->
-    <div class="pt-4 text-center">
-      <h3 class="text-xl">
+    <div class="flex place-content-center flex-col text-center print:flex-grow print:text-left print:pl-4">
+      <h3 class="text-xl print:text-lg print:-mt-1">
         {{publication.name}}
+        <span class="block text-sm print:text-xs">
+          {{publication.publisher}}
+        </span>
       </h3>
-      <span class="text-sm">
-        {{publication.publisher}}
-      </span>
     </div>
     <!-- Period -->
-    <div class="p-4 text-sm pl-1 text-right print:whitespace-nowrap">
+    <div class="flex place-content-center flex-col text-sm pr-4 print:whitespace-nowrap print:flex-row print:pr-0 print:items-center">
       {{ publication.releaseDate | date: 'MMM/yyyy'}}
     </div>
   </div>
