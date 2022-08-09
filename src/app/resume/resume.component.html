@@ -1,7 +1,7 @@
 <div class="flex flex-col justify-between min-h-screen pt-4 print:pt-0">
   <!-- First row: personal info and summary -->
   <div *ngIf="resume && resume.basics"
-    class="flex justify-around container content-evenly gap-4 flex-col md:flex-row print:flex-row ">
+    class="flex justify-around container content-evenly gap-4 flex-col sm:flex-row print:flex-row ">
     <!-- Photo, location and contacts -->
     <app-profile-card [basics]="resume.basics"></app-profile-card>
 
@@ -17,7 +17,7 @@
     <app-card>
       <div class="flex justify-between p-4 print:p-0">
         <h2 class="text-2xl flex print:border-b print:justify-start print:text-lg print:flex-grow">
-          <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+          <span class="material-icons-outlined leading-normal pr-1 hidden sm:inline">
             work_history
           </span>
           Experience
@@ -45,12 +45,12 @@
       <app-card class="mt-4">
         <div class="flex justify-between p-4 print:p-0">
           <h2 class="text-2xl flex justify-between items-end print:border-b print:justify-start print:text-lg print:flex-grow">
-            <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+            <span class="material-icons-outlined leading-normal pr-1 hidden sm:inline">
               mic_external_on
             </span>
             Conferences
             <span class="px-2">/</span>
-            <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+            <span class="material-icons-outlined leading-normal pr-1 hidden sm:inline">
               article
             </span>
             Publications
@@ -71,12 +71,12 @@
       <app-card class="mt-4">
         <div class="flex justify-between p-4 print:p-0">
           <h2 class="text-2xl flex justify-between items-end print:border-b print:justify-start print:text-lg print:flex-grow">
-            <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+            <span class="material-icons-outlined leading-normal pr-1 hidden sm:inline">
               school
             </span>
             Education
             <span class="px-2">/</span>
-            <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+            <span class="material-icons-outlined leading-normal pr-1 hidden sm:inline">
               language
             </span>
             Languages
@@ -101,7 +101,7 @@
       <app-card class="mt-4">
         <div class="flex justify-between p-4 print:p-0">
           <h2 class="text-2xl flex justify-between items-end print:border-b print:justify-start print:text-lg print:flex-grow">
-            <span class="material-icons-outlined leading-normal pr-1 print:hidden">
+            <span class="material-icons-outlined leading-normal pr-1 hidden sm:inline">
               verified
             </span>
             Technical Skills
