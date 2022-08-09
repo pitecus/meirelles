@@ -1,7 +1,7 @@
 <div class="flex flex-col justify-between min-h-screen pt-4 print:pt-0">
   <!-- First row: personal info and summary -->
   <div *ngIf="resume && resume.basics"
-    class="flex justify-around container content-evenly gap-4 flex-col sm:flex-row print:flex-row ">
+    class="flex justify-between content-evenly gap-4 flex-col sm:flex-row print:flex-row ">
     <!-- Photo, location and contacts -->
     <app-profile-card [basics]="resume.basics"></app-profile-card>
 

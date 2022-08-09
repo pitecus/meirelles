@@ -10,7 +10,8 @@
   <!-- Details -->
   <div *ngIf="basics"
     class="p-4 flex flex-col lg:flex-row lg:gap-4 justify-between print:p-0 print:h-full">
-      <div>
+    <!-- Top: photo, basic information -->
+    <div>
       <!-- Name -->
       <h1 class="font-semibold text-2xl whitespace-nowrap print:text-xl text-indigo-900">{{basics.name}}</h1>
       <!-- Label and pronoun -->
@@ -27,9 +28,10 @@
         {{basics.location.countryCode}}
       </p>
     </div>
-    <div>
+    <!-- Bottom: contact information -->
+    <div class="border flex flex-col justify-end">
       <!-- Phone contact -->
-      <p class="flex pb-1 text-indigo-600">
+      <p class="flex text-indigo-600">
         <span class="material-icons-outlined text-black">
           phone
         </span>
@@ -40,7 +42,7 @@
         </a>
       </p>
       <!-- Email contact -->
-      <p class="flex pb-1 text-indigo-600">
+      <p class="flex pt-1 text-indigo-600">
         <span class="material-icons-outlined text-black">
           alternate_email
         </span>
@@ -51,7 +53,7 @@
         </a>
       </p>
       <!-- Website -->
-      <p class="flex text-indigo-600">
+      <p class="flex pt-1 text-indigo-600">
         <span class="material-icons-outlined text-black">
           contact_page
         </span>
