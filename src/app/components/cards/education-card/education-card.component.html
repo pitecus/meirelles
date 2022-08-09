@@ -1,7 +1,7 @@
 <app-card *ngIf="education"
   class="mt-2">
   <!-- Title -->
-  <div class="flex justify-between">
+  <div class="grid grid-flow-col grid-cols-[80px_1fr_80px] print:flex print:justify-between">
     <!-- Logo card -->
     <app-logo-card *ngIf="education.institution === 'Pontifícia Universidade Católica'"
       src="assets/logo-pucrs.png"

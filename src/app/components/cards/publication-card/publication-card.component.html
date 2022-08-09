@@ -1,9 +1,9 @@
 <app-card *ngIf="publication"
   class="mt-2">
-  <!-- Title -->
-  <div class="flex justify-between border-b border-b-gray-300 shadow print:border-0 print:shadow-none">
-    <!-- Company -->
-    <div>
+  <!-- Header -->
+  <div class="grid grid-flow-col grid-cols-[80px_1fr_80px] print:flex print:justify-between border-b border-b-gray-300 shadow print:border-0 print:shadow-none">
+    <!-- Company logo -->
+    <div class="">
       <!-- ADP -->
       <app-logo-card *ngIf="publication.publisher === 'ADP Global Product & Development Connect'"
         src="assets/logo-adp.jpeg"

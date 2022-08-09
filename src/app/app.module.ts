@@ -15,13 +15,13 @@ import { NgModule } from '@angular/core';
 import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pages-dropdown.component";
 import { ProfileCardComponent } from './components/cards/profile-card/profile-card.component';
 import { PublicationCardComponent } from './components/cards/publication-card/publication-card.component';
+import { ReleaseCardComponent } from './components/cards/release-card/release-card.component';
 import { ResumeComponent } from './resume/resume.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { SkillCardComponent } from './components/cards/skill-card/skill-card.component';
 import { SummaryCardComponent } from './components/cards/summary-card/summary-card.component';
 import { WorkExperienceCardComponent } from './components/cards/work-experience-card/work-experience-card.component';
 import { environment } from '../environments/environment';
-import { SkillCardComponent } from './components/cards/skill-card/skill-card.component';
-import { ReleaseCardComponent } from './components/cards/release-card/release-card.component';
 
 @NgModule({
   bootstrap: [
