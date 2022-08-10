@@ -1,0 +1,140 @@
+<div>
+  <div *ngIf="resume && resume.basics"
+    class="flex justify-between content-evenly gap-1 flex-row">
+    <!-- Photo, location and contacts -->
+    <app-card>
+      <!-- Photo -->
+      <div class="print:hidden">
+        <!-- TODO: update the photo to be provided by basics interface -->
+        <img class="p-2 mt-2 rounded-full shadow-lg m-auto border border-indigo-200 "
+          width="218"
+          height="218"
+          alt="portrait"
+          src="assets/leo-meirelles.jpeg" />
+      </div>
+      <!-- Details -->
+      <div class="p-2 flex flex-col lg:flex-row lg:gap-4 justify-between print:p-0 print:h-full">
+        <!-- Top: photo, basic information -->
+        <div>
+          <!-- Name -->
+          <h1 class="font-semibold text-2xl whitespace-nowrap print:text-xl text-indigo-900">{{resume.basics.name}}</h1>
+          <!-- Label and pronoun -->
+          <div class="flex justify-between">
+            <!-- Label -->
+            <p>{{resume.basics.label}}</p>
+            <!-- Pronoun -->
+            <p class="text-gray-500">{{resume.basics.pronoun}}</p>
+          </div>
+          <!-- Location -->
+          <p class="text-center text-gray-500 text-sm mb-2">
+            {{resume.basics.location.city}}, &nbsp;
+            {{resume.basics.location.region}}, &nbsp;
+            {{resume.basics.location.countryCode}}
+          </p>
+        </div>
+        <!-- Bottom: contact information -->
+        <div class="flex flex-col justify-end">
+          <!-- Phone contact -->
+          <p class="flex text-indigo-600">
+            <span class="material-icons-outlined text-black">
+              phone
+            </span>
+            <a class="pl-2"
+              rel="noopener noreferrer"
+              href="tel:{{resume.basics.phone}}">
+              {{resume.basics.phone}}
+            </a>
+          </p>
+          <!-- Email contact -->
+          <p class="flex pt-1 text-indigo-600">
+            <span class="material-icons-outlined text-black">
+              alternate_email
+            </span>
+            <a class="pl-2"
+              rel="noopener noreferrer"
+              href="mailto:{{resume.basics.email}}">
+              {{resume.basics.email}}
+            </a>
+          </p>
+          <!-- Website -->
+          <p class="flex pt-1 text-indigo-600">
+            <span class="material-icons-outlined text-black">
+              contact_page
+            </span>
+            <a class="pl-2"
+              rel="noopener noreferrer"
+              href="{{resume.basics.website}}">
+              {{resume.basics.website}}
+            </a>
+          </p>
+        </div>
+      </div>
+    </app-card>
+
+    <!-- Summary -->
+    <app-card>
+      <div class="p-4 print:p-0 flex flex-col justify-between h-full">
+        <h2 class="border-b text-2xl mb-4 print:hidden">Summary</h2>
+
+        <!-- Summary -->
+        <p class="text-md sm:text-xl print:text-sm">
+          <img class="float-right hidden print:inline"
+            width="50"
+            height="50"
+            alt="QR code"
+            src={{qrCode}} />
+          {{resume.basics.summary}}
+        </p>
+
+        <!-- Links and version -->
+        <div class="flex flex-row justify-between pt-1 h-full">
+          <!-- Links -->
+          <div class="flex flex-row content-end flex-wrap text-indigo-600">
+            <a *ngFor="let profile of resume.basics.profiles"
+              class="whitespace-nowrap mr-6 print-link pt-1"
+              rel="noopener noreferrer"
+              target="_blank"
+              href="{{profile.url}}">
+              <!-- Twitter -->
+              <svg *ngIf="profile.network == 'Twitter'"
+                class="mr-1 inline"
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z" />
+              </svg>
+              <!-- LinkedIn -->
+              <svg *ngIf="profile.network == 'LinkedIn'"
+                class="mr-1 inline"
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z" />
+              </svg>
+              <!-- GitHub -->
+              <svg *ngIf="profile.network == 'GitHub'"
+                class="mr-1 inline"
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              <!-- Usermane -->
+              <span class="print:hidden">{{profile.username}}</span>
+            </a>
+          </div>
+          <!-- Version -->
+          <div class="flex items-end">
+            <span class="text-right -mb-1 text-gray-500 text-sm print:text-xs inline">v{{release?.version}} </span>
+          </div>
+        </div>
+      </div>
+    </app-card>
+  </div>
+</div>

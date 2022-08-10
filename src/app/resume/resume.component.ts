@@ -32,7 +32,7 @@ export class ResumeComponent {
   /**
    * Holds the date to filter.
    */
-  private dateFilter: string;
+  private readonly dateFilter: string;
 
   /**
    * Initialize the component.
