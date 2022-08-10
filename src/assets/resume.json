@@ -178,8 +178,20 @@
       "company": "ADP",
       "endDate": "Current",
       "highlights": [
+        "Working on Small Business services (clients with less than 100 employees) by developing applications, building libraries, and improving security and code quality for more than 260 developers and 750k clients. Increase the mobile-web app security by creating a two-factor authentication application for sensitive operations like hiring or viewing the employee's SSN. Create a chart library to show rich data with multiple developers' contributions.",
+        "Migrate an application to TypeScript as a proof-of-concept to show the effectiveness in detecting bugs earlier in development. Work with multiple developers to increase the test coverage from several repositories, improving code quality, sharing knowledge, and campaigning to identify errors earlier as possible during the development cycle."
+      ],
+      "position": "Principal Architect",
+      "startDate": "2021-10-11",
+      "summary": "I architect, design, and build features used by SBS micro frontend applications and backend microservices. Focus on security, user-friendliness libraries, and code quality.",
+      "website": "https://www.adp.com"
+    },
+    {
+      "company": "ADP",
+      "endDate": "2021-10-11",
+      "highlights": [
         "Reverse-engineered an Adobe Flash application with XML/SOAP API and replaced it with a new web application with a small team under a tight deadline. Integrated cross-browsing tests using SauceLabs with the ADP's CI/CD framework using VPN reverse-proxies and side-car containers.",
-        "Building a proof-of-concept application to recognize payroll documents misdeliveries using images from PDF documents. It prevents security incidents for clients and employees; while allowing seamless integrations across multiple payroll services."
+        "Build a proof-of-concept application to recognize payroll documents misdeliveries using images from PDF documents. It prevents security incidents for clients and employees; while allowing seamless integrations across multiple payroll services."
       ],
       "position": "Principal Architect",
       "startDate": "2018-09-21",

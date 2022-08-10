@@ -84,7 +84,8 @@ describe('ResumeComponent', () => {
         resume.work[0],
         resume.work[1],
         resume.work[2],
-        resume.work[3]
+        resume.work[3],
+        resume.work[4]
       ]);
   });
 
@@ -113,6 +114,7 @@ describe('ResumeComponent', () => {
         resume.work[5],
         resume.work[6],
         resume.work[7],
+        resume.work[8]
       ]);
   });
 
