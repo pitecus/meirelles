@@ -5,16 +5,16 @@
     <div>
       <!-- ADP -->
       <app-logo-card *ngIf="work.company === 'ADP'"
-        src="assets/logo-adp.jpeg"
+        src="assets/logo-adp.webp"
         alt="ADP logo"></app-logo-card>
       <!-- Google -->
       <app-logo-card *ngIf="work.company === 'Google'"
-        src="assets/logo-google.png"
+        src="assets/logo-google.webp"
         alt="Google logo"></app-logo-card>
       <!-- NYT -->
       <app-logo-card *ngIf="work.company === 'The New York Times'"
         alt="The New York Times logo"
-        src="assets/logo-nyt.png"></app-logo-card>
+        src="assets/logo-nyt.webp"></app-logo-card>
     </div>
     <!-- Position -->
     <div class="flex place-content-center flex-col text-center print:flex-grow print:text-left print:pl-4">
@@ -26,7 +26,8 @@
       </h3>
     </div>
     <!-- Period -->
-    <div class="flex place-content-center flex-col text-sm pr-4 print:whitespace-nowrap print:flex-row print:pr-0 print:items-center">
+    <div
+      class="flex place-content-center flex-col text-sm pr-4 print:whitespace-nowrap print:flex-row print:pr-0 print:items-center">
       {{work.startDate | date: 'MMM yyyy'}}
       <br class="print:hidden" />
       <span class="hidden print:inline">&nbsp;to&nbsp;</span>
@@ -35,7 +36,8 @@
     </div>
   </div>
   <!-- Summary -->
-  <h4 class="px-4 bg-gray-50 text-lg shadow border border-y-gray-300 py-1 print:mt-2 print:p-0 print:border-0 print:shadow-none print:bg-white print:text-sm">
+  <h4
+    class="px-4 bg-gray-50 text-lg shadow border border-y-gray-300 py-1 print:mt-2 print:p-0 print:border-0 print:shadow-none print:bg-white print:text-sm">
     {{work.summary}}
   </h4>
 

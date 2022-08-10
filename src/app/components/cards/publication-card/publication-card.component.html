@@ -1,16 +1,17 @@
 <app-card *ngIf="publication"
   class="mt-2">
   <!-- Header -->
-  <div class="grid grid-flow-col grid-cols-[80px_1fr_80px] print:flex print:justify-between border-b border-b-gray-300 shadow print:border-0 print:shadow-none">
+  <div
+    class="grid grid-flow-col grid-cols-[80px_1fr_80px] print:flex print:justify-between border-b border-b-gray-300 shadow print:border-0 print:shadow-none">
     <!-- Company logo -->
     <div class="">
       <!-- ADP -->
       <app-logo-card *ngIf="publication.publisher === 'ADP Global Product & Development Connect'"
-        src="assets/logo-adp.jpeg"
+        src="assets/logo-adp.webp"
         alt="ADP logo"></app-logo-card>
       <!-- ADP -->
       <app-logo-card *ngIf="publication.publisher === 'ADP Tech & Innovation Blog'"
-        src="assets/logo-adp.jpeg"
+        src="assets/logo-adp.webp"
         alt="ADP logo"></app-logo-card>
     </div>
     <!-- Position -->
@@ -23,7 +24,8 @@
       </h3>
     </div>
     <!-- Period -->
-    <div class="flex place-content-center flex-col text-sm pr-4 print:whitespace-nowrap print:flex-row print:pr-0 print:items-center">
+    <div
+      class="flex place-content-center flex-col text-sm pr-4 print:whitespace-nowrap print:flex-row print:pr-0 print:items-center">
       {{ publication.releaseDate | date: 'MMM/yyyy'}}
     </div>
   </div>

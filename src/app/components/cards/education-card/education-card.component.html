@@ -4,7 +4,7 @@
   <div class="grid grid-flow-col grid-cols-[80px_1fr_80px] print:flex print:justify-between">
     <!-- Logo card -->
     <app-logo-card *ngIf="education.institution === 'Pontifícia Universidade Católica'"
-      src="assets/logo-pucrs.png"
+      src="assets/logo-pucrs.webp"
       alt="Pontifícia Universidade Católica"></app-logo-card>
 
     <!-- Position -->
@@ -18,7 +18,8 @@
       </h3>
     </div>
 
-    <div class="flex place-content-center flex-col text-sm pr-4 print:whitespace-nowrap print:flex-row print:pr-0 print:items-center">
+    <div
+      class="flex place-content-center flex-col text-sm pr-4 print:whitespace-nowrap print:flex-row print:pr-0 print:items-center">
       {{education.startDate | date: 'MMM/yyyy'}}
       <br class="print:hidden" />
       <span class="hidden print:inline">&nbsp;to&nbsp;</span>
